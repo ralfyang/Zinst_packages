@@ -6,6 +6,6 @@
 # Zinst packages for zinst installer
 ## What is the Zinst ?
 ### zinst?
-* <b>*It's not a tool! It just a package. If you need a package tool as well, Please follow as below link :)*</b>
+* <b>*It's not a tool! It just a package. If you need a package tool as well, Please follow the link as below :)*</b>
 * [*Link: zinst starters package set in github*](https://github.com/goody80/Ralf_Dev)
 
