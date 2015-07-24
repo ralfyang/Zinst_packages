@@ -10,3 +10,7 @@
 * <b>*It's not a tool! It just a package. If you need a package tool as well, Please follow the link as below :)*</b>
 * [*Link: zinst starters package set in github*](https://github.com/goody80/Ralf_Dev)
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/goody80/zinst_packages/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
