@@ -1,0 +1,17 @@
+
+## Package infomation
+PACKAGENAME = mysql_check_realtime_select
+VERSION = 1.0.0
+AUTHORIZED = jiooky@zuminternet.com
+DESCRIPTION = 'It can help easy show about of the select query by real-time'
+CUSTODIAN = zum-se-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+FILE - - - bin/check-mysql-select 		 ./bin/check-mysql-select
+
+ZINST requires pkg mysql_server
+

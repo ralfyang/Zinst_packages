@@ -1,0 +1,111 @@
+
+## Package infomation
+PACKAGENAME = vsftpd_64
+VERSION = 2.2.2
+AUTHORIZED = AUTH@gsshop.com
+DESCRIPTION = 'Please insert a description for this package'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 644 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/REWARD 		 ./z/usr/share/doc/vsftpd-2.2.2/REWARD
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/TODO 		 ./z/usr/share/doc/vsftpd-2.2.2/TODO
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/AUDIT 		 ./z/usr/share/doc/vsftpd-2.2.2/AUDIT
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/Changelog 		 ./z/usr/share/doc/vsftpd-2.2.2/Changelog
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/COPYING 		 ./z/usr/share/doc/vsftpd-2.2.2/COPYING
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/LICENSE 		 ./z/usr/share/doc/vsftpd-2.2.2/LICENSE
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/SIZE 		 ./z/usr/share/doc/vsftpd-2.2.2/SIZE
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/BUGS 		 ./z/usr/share/doc/vsftpd-2.2.2/BUGS
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/README.security 		 ./z/usr/share/doc/vsftpd-2.2.2/README.security
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/FAQ 		 ./z/usr/share/doc/vsftpd-2.2.2/FAQ
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/SPEED 		 ./z/usr/share/doc/vsftpd-2.2.2/SPEED
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/INSTALL 		 ./z/usr/share/doc/vsftpd-2.2.2/INSTALL
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS_2/README 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS_2/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/README.configuration 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/README.configuration
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/vsftpd.conf 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/vsftpd.conf
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/README 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/vsftpd.xinetd 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE/vsftpd.xinetd
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_HOSTS/README 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_HOSTS/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/logins.txt 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/logins.txt
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/README.configuration 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/README.configuration
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/vsftpd.conf 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/vsftpd.conf
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/vsftpd.pam 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/vsftpd.pam
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/README 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/VIRTUAL_USERS/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/PER_IP_CONFIG/README.configuration 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/PER_IP_CONFIG/README.configuration
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/PER_IP_CONFIG/hosts.allow 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/PER_IP_CONFIG/hosts.allow
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/PER_IP_CONFIG/README 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/PER_IP_CONFIG/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/README 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE_NOINETD/README.configuration 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE_NOINETD/README.configuration
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE_NOINETD/vsftpd.conf 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE_NOINETD/vsftpd.conf
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE_NOINETD/README 		 ./z/usr/share/doc/vsftpd-2.2.2/EXAMPLE/INTERNET_SITE_NOINETD/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/BENCHMARKS 		 ./z/usr/share/doc/vsftpd-2.2.2/BENCHMARKS
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/README 		 ./z/usr/share/doc/vsftpd-2.2.2/README
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/SECURITY/TRUST 		 ./z/usr/share/doc/vsftpd-2.2.2/SECURITY/TRUST
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/SECURITY/DESIGN 		 ./z/usr/share/doc/vsftpd-2.2.2/SECURITY/DESIGN
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/SECURITY/IMPLEMENTATION 		 ./z/usr/share/doc/vsftpd-2.2.2/SECURITY/IMPLEMENTATION
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/SECURITY/OVERVIEW 		 ./z/usr/share/doc/vsftpd-2.2.2/SECURITY/OVERVIEW
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/TUNING 		 ./z/usr/share/doc/vsftpd-2.2.2/TUNING
+FILE 644 - - z/usr/share/doc/vsftpd-2.2.2/vsftpd.xinetd 		 ./z/usr/share/doc/vsftpd-2.2.2/vsftpd.xinetd
+FILE 644 - - z/usr/share/man/man5/vsftpd.conf.5.gz 		 ./z/usr/share/man/man5/vsftpd.conf.5.gz
+FILE 644 - - z/usr/share/man/man8/vsftpd.8.gz 		 ./z/usr/share/man/man8/vsftpd.8.gz
+FILE 755 - - z/usr/sbin/vsftpd 		 ./z/usr/sbin/vsftpd
+CONF 600 - - z/etc/vsftpd/vsftpd.conf 		 ./z/etc/vsftpd/vsftpd.conf
+FILE 600 - - z/etc/vsftpd/user_list 		 ./z/etc/vsftpd/user_list
+FILE 744 - - z/etc/vsftpd/vsftpd_conf_migrate.sh 		 ./z/etc/vsftpd/vsftpd_conf_migrate.sh
+FILE 600 - - z/etc/vsftpd/ftpusers 		 ./z/etc/vsftpd/ftpusers
+FILE 644 - - z/etc/logrotate.d/vsftpd 		 ./z/etc/logrotate.d/vsftpd
+FILE 644 - - z/etc/pam.d/vsftpd 		 ./z/etc/pam.d/vsftpd
+FILE 755 - - z/etc/rc.d/init.d/vsftpd 		 ./z/etc/rc.d/init.d/vsftpd
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+ZINST set write_enable YES
+ZINST set anonymous_enable NO
+ZINST set local_enable NO
+ZINST set write_enable YES
+ZINST set local_umask 022
+ZINST set anon_upload_enable YES
+ZINST set anon_mkdir_write_enable YES
+ZINST set listen YES
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

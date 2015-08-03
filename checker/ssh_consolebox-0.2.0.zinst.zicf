@@ -1,0 +1,21 @@
+
+## Package infomation
+PACKAGENAME = ssh_consolebox
+VERSION = 0.2.0
+AUTHORIZED = ralf@gsshop.com
+DESCRIPTION = 'Console box for SSH connection easy'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 775 - - bin/ssh_consolebox 		 ./bin/ssh_consolebox
+CONF 664 - - conf/ssh_hosts.list 		 ./conf/ssh_hosts.list
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+#COMM service network restart
+ZINST set server_list "manager01.platform:22,backup01.platform:22"

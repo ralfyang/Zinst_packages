@@ -1,0 +1,54 @@
+## Package infomation
+PACKAGENAME = cloudera_flume_master
+VERSION = 0.9.4+25.40-1
+AUTHORIZED = jiooky@zuminternet.com
+DESCRIPTION = 'Cloudera flume RPM package for the master'
+CUSTODIAN = zum-se-team
+
+#Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+
+FILE - - -	vault/RPM/hadoop-0.20-0.20.2+923.197-1.noarch.rpm			./RPMs_v3/hadoop-0.20-0.20.2+923.197-1.noarch.rpm
+FILE - - -	vault/RPM/hadoop-zookeeper-3.3.4+19.3-1.noarch.rpm			./RPMs_v3/hadoop-zookeeper-3.3.4+19.3-1.noarch.rpm
+FILE - - -	vault/RPM/flume-0.9.4+25.40-1.noarch.rpm					./RPMs_v3/flume-0.9.4+25.40-1.noarch.rpm
+FILE - - -	vault/RPM/flume-node-0.9.4+25.40-1.noarch.rpm				./RPMs_v3/flume-node-0.9.4+25.40-1.noarch.rpm
+FILE - - -	vault/RPM/flume-master-0.9.4+25.40-1.noarch.rpm				./RPMs_v3/flume-master-0.9.4+25.40-1.noarch.rpm
+
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+#
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+COMM cd /data/vault/RPM/; rpm -Uvh hadoop-0.20-0.20.2+923.197-1.noarch.rpm hadoop-zookeeper-3.3.4+19.3-1.noarch.rpm flume-0.9.4+25.40-1.noarch.rpm flume-node-0.9.4+25.40-1.noarch.rpm flume-master-0.9.4+25.40-1.noarch.rpm

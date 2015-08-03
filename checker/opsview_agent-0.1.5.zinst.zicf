@@ -1,0 +1,374 @@
+
+## Package infomation
+PACKAGENAME = opsview_agent
+VERSION = 0.1.5
+AUTHORIZED = canopus@gsshop.com
+DESCRIPTION = 'opsview package with perl-Nagios'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 775
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 644 - - z/var/log/nagios/.bash_profile 		 ./z/var/log/nagios/.bash_profile
+FILE 755 - - z/usr/bin/ucalc 		 ./z/usr/bin/ucalc
+FILE 644 - - z/usr/local/nagios/var/nrpe.pid 		 ./z/usr/local/nagios/var/nrpe.pid
+FILE 755 - - z/usr/local/nagios/bin/send_nsca 		 ./z/usr/local/nagios/bin/send_nsca
+FILE 755 - - z/usr/local/nagios/bin/nrpe 		 ./z/usr/local/nagios/bin/nrpe
+FILE 755 - - z/usr/local/nagios/libexec/check_nt 		 ./z/usr/local/nagios/libexec/check_nt
+FILE 755 - - z/usr/local/nagios/libexec/check_mrtgtraf 		 ./z/usr/local/nagios/libexec/check_mrtgtraf
+FILE 755 - - z/usr/local/nagios/libexec/check_mysql_query 		 ./z/usr/local/nagios/libexec/check_mysql_query
+FILE 755 - - z/usr/local/nagios/libexec/check_flexlm 		 ./z/usr/local/nagios/libexec/check_flexlm
+FILE 755 - - z/usr/local/nagios/libexec/check_procs 		 ./z/usr/local/nagios/libexec/check_procs
+FILE 755 - - z/usr/local/nagios/libexec/check_nwstat 		 ./z/usr/local/nagios/libexec/check_nwstat
+FILE 755 - - z/usr/local/nagios/libexec/check_load 		 ./z/usr/local/nagios/libexec/check_load
+FILE 755 - - z/usr/local/nagios/libexec/check_dummy 		 ./z/usr/local/nagios/libexec/check_dummy
+FILE 755 - - z/usr/local/nagios/libexec/check_mysql 		 ./z/usr/local/nagios/libexec/check_mysql
+FILE 755 - - z/usr/local/nagios/libexec/negate 		 ./z/usr/local/nagios/libexec/negate
+FILE 755 - - z/usr/local/nagios/libexec/check_smtp 		 ./z/usr/local/nagios/libexec/check_smtp
+FILE 755 - - z/usr/local/nagios/libexec/check_dhcp 		 ./z/usr/local/nagios/libexec/check_dhcp
+FILE 755 - - z/usr/local/nagios/libexec/check_nrpe 		 ./z/usr/local/nagios/libexec/check_nrpe
+FILE 755 - - z/usr/local/nagios/libexec/check_disk_smb 		 ./z/usr/local/nagios/libexec/check_disk_smb
+FILE 755 - - z/usr/local/nagios/libexec/check_ntp_peer 		 ./z/usr/local/nagios/libexec/check_ntp_peer
+FILE 755 - - z/usr/local/nagios/libexec/utils.sh 		 ./z/usr/local/nagios/libexec/utils.sh
+FILE 755 - - z/usr/local/nagios/libexec/check_postgres 		 ./z/usr/local/nagios/libexec/check_postgres
+FILE 755 - - z/usr/local/nagios/libexec/check_mailq 		 ./z/usr/local/nagios/libexec/check_mailq
+FILE 755 - - z/usr/local/nagios/libexec/check_log 		 ./z/usr/local/nagios/libexec/check_log
+FILE 755 - - z/usr/local/nagios/libexec/check_radius_ih 		 ./z/usr/local/nagios/libexec/check_radius_ih
+FILE 755 - - z/usr/local/nagios/libexec/check_time 		 ./z/usr/local/nagios/libexec/check_time
+FILE 755 - - z/usr/local/nagios/libexec/check_http 		 ./z/usr/local/nagios/libexec/check_http
+FILE 755 - - z/usr/local/nagios/libexec/check_raid 		 ./z/usr/local/nagios/libexec/check_raid
+FILE 755 - - z/usr/local/nagios/libexec/utils.pm 		 ./z/usr/local/nagios/libexec/utils.pm
+FILE 755 - - z/usr/local/nagios/libexec/check_ntp_time 		 ./z/usr/local/nagios/libexec/check_ntp_time
+FILE 755 - - z/usr/local/nagios/libexec/check_cluster 		 ./z/usr/local/nagios/libexec/check_cluster
+FILE 755 - - z/usr/local/nagios/libexec/check_time_skew 		 ./z/usr/local/nagios/libexec/check_time_skew
+FILE 755 - - z/usr/local/nagios/libexec/urlize 		 ./z/usr/local/nagios/libexec/urlize
+FILE 755 - - z/usr/local/nagios/libexec/check_ldap 		 ./z/usr/local/nagios/libexec/check_ldap
+FILE 755 - - z/usr/local/nagios/libexec/check_dns 		 ./z/usr/local/nagios/libexec/check_dns
+FILE 755 - - z/usr/local/nagios/libexec/check_disk 		 ./z/usr/local/nagios/libexec/check_disk
+FILE 755 - - z/usr/local/nagios/libexec/check_ifstatus 		 ./z/usr/local/nagios/libexec/check_ifstatus
+FILE 755 - - z/usr/local/nagios/libexec/check_ide_smart 		 ./z/usr/local/nagios/libexec/check_ide_smart
+FILE 755 - - z/usr/local/nagios/libexec/check_mrtg 		 ./z/usr/local/nagios/libexec/check_mrtg
+FILE 755 - - z/usr/local/nagios/libexec/check_breeze 		 ./z/usr/local/nagios/libexec/check_breeze
+FILE 755 - - z/usr/local/nagios/libexec/check_wave 		 ./z/usr/local/nagios/libexec/check_wave
+FILE 755 - - z/usr/local/nagios/libexec/check_ifoperstatus 		 ./z/usr/local/nagios/libexec/check_ifoperstatus
+FILE 755 - - z/usr/local/nagios/libexec/check_ntp 		 ./z/usr/local/nagios/libexec/check_ntp
+FILE 755 - - z/usr/local/nagios/libexec/check_smart 		 ./z/usr/local/nagios/libexec/check_smart
+FILE 755 - - z/usr/local/nagios/libexec/check_swap 		 ./z/usr/local/nagios/libexec/check_swap
+FILE 755 - - z/usr/local/nagios/libexec/check_users 		 ./z/usr/local/nagios/libexec/check_users
+FILE 755 - - z/usr/local/nagios/libexec/check_apt 		 ./z/usr/local/nagios/libexec/check_apt
+FILE 755 - - z/usr/local/nagios/libexec/check_overcr 		 ./z/usr/local/nagios/libexec/check_overcr
+FILE 755 - - z/usr/local/nagios/libexec/check_memory 		 ./z/usr/local/nagios/libexec/check_memory
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/jmxquery.jar 		 ./z/usr/local/nagios/libexec/nrpe_local/jmxquery.jar
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_mysql_connections 		 ./z/usr/local/nagios/libexec/nrpe_local/check_mysql_connections
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_redis 		 ./z/usr/local/nagios/libexec/nrpe_local/check_redis
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_linux_stats.pl 		 ./z/usr/local/nagios/libexec/nrpe_local/check_linux_stats.pl
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_redis_memory 		 ./z/usr/local/nagios/libexec/nrpe_local/check_redis_memory
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_mysql_selects 		 ./z/usr/local/nagios/libexec/nrpe_local/check_mysql_selects
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_linux-stats.pl 		 ./z/usr/local/nagios/libexec/nrpe_local/check_linux-stats.pl
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_mount.pl 		 ./z/usr/local/nagios/libexec/nrpe_local/check_mount.pl
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_mysql_commands 		 ./z/usr/local/nagios/libexec/nrpe_local/check_mysql_commands
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_linux-procstat.pl 		 ./z/usr/local/nagios/libexec/nrpe_local/check_linux-procstat.pl
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_mem.pl 		 ./z/usr/local/nagios/libexec/nrpe_local/check_mem.pl
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_redis.pl 		 ./z/usr/local/nagios/libexec/nrpe_local/check_redis.pl
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_jmx 		 ./z/usr/local/nagios/libexec/nrpe_local/check_jmx
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_apache 		 ./z/usr/local/nagios/libexec/nrpe_local/check_apache
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_iostat 		 ./z/usr/local/nagios/libexec/nrpe_local/check_iostat
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_redis_keycount 		 ./z/usr/local/nagios/libexec/nrpe_local/check_redis_keycount
+FILE 755 - - z/usr/local/nagios/libexec/nrpe_local/check_mongodb.py 		 ./z/usr/local/nagios/libexec/nrpe_local/check_mongodb.py
+FILE 755 - - z/usr/local/nagios/libexec/check_dir_age 		 ./z/usr/local/nagios/libexec/check_dir_age
+FILE 755 - - z/usr/local/nagios/libexec/check_icmp 		 ./z/usr/local/nagios/libexec/check_icmp
+FILE 755 - - z/usr/local/nagios/libexec/check_nagios 		 ./z/usr/local/nagios/libexec/check_nagios
+FILE 755 - - z/usr/local/nagios/libexec/check_file_age 		 ./z/usr/local/nagios/libexec/check_file_age
+FILE 755 - - z/usr/local/nagios/libexec/check_real 		 ./z/usr/local/nagios/libexec/check_real
+FILE 755 - - z/usr/local/nagios/libexec/check_ircd 		 ./z/usr/local/nagios/libexec/check_ircd
+FILE 755 - - z/usr/local/nagios/libexec/check_oracle 		 ./z/usr/local/nagios/libexec/check_oracle
+FILE 755 - - z/usr/local/nagios/libexec/check_sensors 		 ./z/usr/local/nagios/libexec/check_sensors
+FILE 755 - - z/usr/local/nagios/libexec/check_ssh 		 ./z/usr/local/nagios/libexec/check_ssh
+FILE 755 - - z/usr/local/nagios/libexec/check_by_ssh 		 ./z/usr/local/nagios/libexec/check_by_ssh
+FILE 755 - - z/usr/local/nagios/libexec/check_rpc 		 ./z/usr/local/nagios/libexec/check_rpc
+FILE 755 - - z/usr/local/nagios/libexec/check_dig 		 ./z/usr/local/nagios/libexec/check_dig
+FILE 755 - - z/usr/local/nagios/libexec/check_ping 		 ./z/usr/local/nagios/libexec/check_ping
+FILE 755 - - z/usr/local/nagios/libexec/check_tcp 		 ./z/usr/local/nagios/libexec/check_tcp
+FILE 755 - - z/usr/local/nagios/libexec/check_ups 		 ./z/usr/local/nagios/libexec/check_ups
+FILE 755 - - z/usr/local/nagios/libexec/check_hpjd 		 ./z/usr/local/nagios/libexec/check_hpjd
+FILE 755 - - z/usr/local/nagios/libexec/check_snmp 		 ./z/usr/local/nagios/libexec/check_snmp
+FILE 755 - - z/usr/local/nagios/perl/bin/ucalc 		 ./z/usr/local/nagios/perl/bin/ucalc
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Range.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Range.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Getopt.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Getopt.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Test::Builder.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Test::Builder.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Class::Accessor.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Class::Accessor.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::ExitResult.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::ExitResult.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Attribute::Params::Validate.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Attribute::Params::Validate.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Class::Accessor::Fast.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Class::Accessor::Fast.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Test::Builder::Tester::Color.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Test::Builder::Tester::Color.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Params::ValidateXS.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Params::ValidateXS.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Test::More.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Test::More.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Test::Tutorial.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Test::Tutorial.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Test::Builder::Module.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Test::Builder::Module.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Test::Builder::Tester.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Test::Builder::Tester.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Class::Accessor::Faster.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Class::Accessor::Faster.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Config.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Config.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Math::Calc::Units.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Math::Calc::Units.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Functions.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Functions.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Config::Tiny.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Config::Tiny.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Performance.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Performance.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Threshold.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin::Threshold.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Params::Validate.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Params::Validate.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Nagios::Plugin.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Test::Simple.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Test::Simple.3pm
+FILE 755 - - z/usr/local/nagios/perl/share/man/man3/Params::ValidatePP.3pm 		 ./z/usr/local/nagios/perl/share/man/man3/Params::ValidatePP.3pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin/Performance.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin/Performance.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin/Config.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin/Config.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin/Range.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin/Range.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin/Functions.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin/Functions.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin/Getopt.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin/Getopt.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin/ExitResult.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin/ExitResult.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin/Threshold.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin/Threshold.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Nagios/Plugin.pm 		 ./z/usr/local/nagios/perl/lib/Nagios/Plugin.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Class/Accessor.pm 		 ./z/usr/local/nagios/perl/lib/Class/Accessor.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Class/Accessor/Faster.pm 		 ./z/usr/local/nagios/perl/lib/Class/Accessor/Faster.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Class/Accessor/Fast.pm 		 ./z/usr/local/nagios/perl/lib/Class/Accessor/Fast.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Config/Tiny.pm 		 ./z/usr/local/nagios/perl/lib/Config/Tiny.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Test/Tutorial.pod 		 ./z/usr/local/nagios/perl/lib/Test/Tutorial.pod
+FILE 755 - - z/usr/local/nagios/perl/lib/Test/Builder/Module.pm 		 ./z/usr/local/nagios/perl/lib/Test/Builder/Module.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Test/Builder/Tester/Color.pm 		 ./z/usr/local/nagios/perl/lib/Test/Builder/Tester/Color.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Test/Builder/Tester.pm 		 ./z/usr/local/nagios/perl/lib/Test/Builder/Tester.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Test/More.pm 		 ./z/usr/local/nagios/perl/lib/Test/More.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Test/Builder.pm 		 ./z/usr/local/nagios/perl/lib/Test/Builder.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Test/Simple.pm 		 ./z/usr/local/nagios/perl/lib/Test/Simple.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Params/ValidateXS.pm 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Params/ValidateXS.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Params/ValidatePP.pm 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Params/ValidatePP.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Params/Validate.pm 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Params/Validate.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/perllocal.pod 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/perllocal.pod
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Nagios/Plugin/.packlist 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Nagios/Plugin/.packlist
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Class/Accessor/.packlist 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Class/Accessor/.packlist
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Config/Tiny/.packlist 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Config/Tiny/.packlist
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Params/Validate/Validate.bs 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Params/Validate/Validate.bs
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Params/Validate/.packlist 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Params/Validate/.packlist
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Params/Validate/Validate.so 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Params/Validate/Validate.so
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Test/Simple/.packlist 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Test/Simple/.packlist
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Math/Calc/Units/.packlist 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/auto/Math/Calc/Units/.packlist
+FILE 755 - - z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Attribute/Params/Validate.pm 		 ./z/usr/local/nagios/perl/lib/x86_64-linux-thread-multi/Attribute/Params/Validate.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Grammar.y 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Grammar.y
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Compute.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Compute.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Combo.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Combo.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Multi.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Multi.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Byte.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Byte.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Base2Metric.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Base2Metric.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Distance.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Distance.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Date.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Date.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Metric.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Metric.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Base.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Base.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Time.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Convert/Time.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Rank.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Rank.pm
+FILE 755 - - z/usr/local/nagios/perl/lib/Math/Calc/Units/Grammar.pm 		 ./z/usr/local/nagios/perl/lib/Math/Calc/Units/Grammar.pm
+FILE 644 - - z/usr/local/nagios/etc/send_nsca.cfg 		 ./z/usr/local/nagios/etc/send_nsca.cfg
+FILE 644 - - z/usr/local/nagios/etc/nrpe_local/allowed_hosts.cfg 		 ./z/usr/local/nagios/etc/nrpe_local/allowed_hosts.cfg
+FILE 644 - - z/usr/local/nagios/etc/nrpe_local/check_redis.cfg 		 ./z/usr/local/nagios/etc/nrpe_local/check_redis.cfg
+FILE 644 - - z/usr/local/nagios/etc/nrpe_local/apache.cfg 		 ./z/usr/local/nagios/etc/nrpe_local/apache.cfg
+FILE 644 - - z/usr/local/nagios/etc/nrpe_local/mongodb_check.cfg 		 ./z/usr/local/nagios/etc/nrpe_local/mongodb_check.cfg
+FILE 644 - - z/usr/local/nagios/etc/nrpe_local/jmx.cfg 		 ./z/usr/local/nagios/etc/nrpe_local/jmx.cfg
+FILE 644 - - z/usr/local/nagios/etc/nrpe_local/default_addon.cfg 		 ./z/usr/local/nagios/etc/nrpe_local/default_addon.cfg
+FILE 755 - - z/usr/local/nagios/etc/nrpe.cfg 		 ./z/usr/local/nagios/etc/nrpe.cfg
+FILE 644 - - z/usr/share/doc/perl-Config-Tiny-2.12/Changes 		 ./z/usr/share/doc/perl-Config-Tiny-2.12/Changes
+FILE 644 - - z/usr/share/doc/perl-Config-Tiny-2.12/README 		 ./z/usr/share/doc/perl-Config-Tiny-2.12/README
+FILE 644 - - z/usr/share/doc/perl-Config-Tiny-2.12/LICENSE 		 ./z/usr/share/doc/perl-Config-Tiny-2.12/LICENSE
+FILE 644 - - z/usr/share/doc/perl-Params-Validate-0.92/Changes 		 ./z/usr/share/doc/perl-Params-Validate-0.92/Changes
+FILE 644 - - z/usr/share/doc/perl-Params-Validate-0.92/README 		 ./z/usr/share/doc/perl-Params-Validate-0.92/README
+FILE 644 - - z/usr/share/doc/perl-Params-Validate-0.92/LICENSE 		 ./z/usr/share/doc/perl-Params-Validate-0.92/LICENSE
+FILE 644 - - z/usr/share/doc/perl-Params-Validate-0.92/TODO 		 ./z/usr/share/doc/perl-Params-Validate-0.92/TODO
+FILE 644 - - z/usr/share/doc/perl-Class-Accessor-0.31/Changes 		 ./z/usr/share/doc/perl-Class-Accessor-0.31/Changes
+FILE 644 - - z/usr/share/doc/perl-Class-Accessor-0.31/examples/benchmark 		 ./z/usr/share/doc/perl-Class-Accessor-0.31/examples/benchmark
+FILE 644 - - z/usr/share/doc/perl-Nagios-Plugin-0.35/META.yml 		 ./z/usr/share/doc/perl-Nagios-Plugin-0.35/META.yml
+FILE 644 - - z/usr/share/doc/perl-Nagios-Plugin-0.35/Changes 		 ./z/usr/share/doc/perl-Nagios-Plugin-0.35/Changes
+FILE 644 - - z/usr/share/doc/perl-Nagios-Plugin-0.35/MANIFEST 		 ./z/usr/share/doc/perl-Nagios-Plugin-0.35/MANIFEST
+FILE 644 - - z/usr/share/doc/perl-Nagios-Plugin-0.35/README 		 ./z/usr/share/doc/perl-Nagios-Plugin-0.35/README
+FILE 644 - - z/usr/share/doc/perl-Math-Calc-Units-1.07/Changes 		 ./z/usr/share/doc/perl-Math-Calc-Units-1.07/Changes
+FILE 644 - - z/usr/share/doc/perl-Math-Calc-Units-1.07/README 		 ./z/usr/share/doc/perl-Math-Calc-Units-1.07/README
+FILE 644 - - z/usr/share/perl5/Class/Accessor.pm 		 ./z/usr/share/perl5/Class/Accessor.pm
+FILE 644 - - z/usr/share/perl5/Class/ISA.pm 		 ./z/usr/share/perl5/Class/ISA.pm
+FILE 644 - - z/usr/share/perl5/Class/Struct.pm 		 ./z/usr/share/perl5/Class/Struct.pm
+FILE 644 - - z/usr/share/perl5/Class/Accessor/Faster.pm 		 ./z/usr/share/perl5/Class/Accessor/Faster.pm
+FILE 644 - - z/usr/share/perl5/Class/Accessor/Fast.pm 		 ./z/usr/share/perl5/Class/Accessor/Fast.pm
+FILE 644 - - z/usr/share/perl5/Config/Tiny.pm 		 ./z/usr/share/perl5/Config/Tiny.pm
+FILE 644 - - z/usr/share/perl5/Config/Extensions.pm 		 ./z/usr/share/perl5/Config/Extensions.pm
+FILE 644 - - z/usr/share/perl5/Perl/OSType.pm 		 ./z/usr/share/perl5/Perl/OSType.pm
+FILE 644 - - z/usr/share/perl5/Redis.pm 		 ./z/usr/share/perl5/Redis.pm
+FILE 644 - - z/usr/share/perl5/Test/NoWarnings.pm 		 ./z/usr/share/perl5/Test/NoWarnings.pm
+FILE 644 - - z/usr/share/perl5/Test/Exception.pm 		 ./z/usr/share/perl5/Test/Exception.pm
+FILE 644 - - z/usr/share/perl5/Test/Fatal.pm 		 ./z/usr/share/perl5/Test/Fatal.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/All.pm 		 ./z/usr/share/perl5/Test/Deep/All.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/ScalarRefOnly.pm 		 ./z/usr/share/perl5/Test/Deep/ScalarRefOnly.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/ScalarRef.pm 		 ./z/usr/share/perl5/Test/Deep/ScalarRef.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Ignore.pm 		 ./z/usr/share/perl5/Test/Deep/Ignore.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/RegexpOnly.pm 		 ./z/usr/share/perl5/Test/Deep/RegexpOnly.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/ListMethods.pm 		 ./z/usr/share/perl5/Test/Deep/ListMethods.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Blessed.pm 		 ./z/usr/share/perl5/Test/Deep/Blessed.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/HashKeysOnly.pm 		 ./z/usr/share/perl5/Test/Deep/HashKeysOnly.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Shallow.pm 		 ./z/usr/share/perl5/Test/Deep/Shallow.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Boolean.pm 		 ./z/usr/share/perl5/Test/Deep/Boolean.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/ArrayLengthOnly.pm 		 ./z/usr/share/perl5/Test/Deep/ArrayLengthOnly.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Cmp.pm 		 ./z/usr/share/perl5/Test/Deep/Cmp.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Methods.pm 		 ./z/usr/share/perl5/Test/Deep/Methods.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/RegexpRefOnly.pm 		 ./z/usr/share/perl5/Test/Deep/RegexpRefOnly.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/ArrayElementsOnly.pm 		 ./z/usr/share/perl5/Test/Deep/ArrayElementsOnly.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Code.pm 		 ./z/usr/share/perl5/Test/Deep/Code.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/String.pm 		 ./z/usr/share/perl5/Test/Deep/String.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/ArrayLength.pm 		 ./z/usr/share/perl5/Test/Deep/ArrayLength.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Stack.pm 		 ./z/usr/share/perl5/Test/Deep/Stack.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Cache/Simple.pm 		 ./z/usr/share/perl5/Test/Deep/Cache/Simple.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Array.pm 		 ./z/usr/share/perl5/Test/Deep/Array.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Set.pm 		 ./z/usr/share/perl5/Test/Deep/Set.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/RegexpMatches.pm 		 ./z/usr/share/perl5/Test/Deep/RegexpMatches.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Any.pm 		 ./z/usr/share/perl5/Test/Deep/Any.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/RegexpRef.pm 		 ./z/usr/share/perl5/Test/Deep/RegexpRef.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/HashKeys.pm 		 ./z/usr/share/perl5/Test/Deep/HashKeys.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Cache.pm 		 ./z/usr/share/perl5/Test/Deep/Cache.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/HashElements.pm 		 ./z/usr/share/perl5/Test/Deep/HashElements.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Isa.pm 		 ./z/usr/share/perl5/Test/Deep/Isa.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Ref.pm 		 ./z/usr/share/perl5/Test/Deep/Ref.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/RegexpVersion.pm 		 ./z/usr/share/perl5/Test/Deep/RegexpVersion.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Regexp.pm 		 ./z/usr/share/perl5/Test/Deep/Regexp.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Hash.pm 		 ./z/usr/share/perl5/Test/Deep/Hash.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Number.pm 		 ./z/usr/share/perl5/Test/Deep/Number.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/MM.pm 		 ./z/usr/share/perl5/Test/Deep/MM.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/NoTest.pm 		 ./z/usr/share/perl5/Test/Deep/NoTest.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/RefType.pm 		 ./z/usr/share/perl5/Test/Deep/RefType.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/Class.pm 		 ./z/usr/share/perl5/Test/Deep/Class.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/HashEach.pm 		 ./z/usr/share/perl5/Test/Deep/HashEach.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep/ArrayEach.pm 		 ./z/usr/share/perl5/Test/Deep/ArrayEach.pm
+FILE 644 - - z/usr/share/perl5/Test/Deep.pm 		 ./z/usr/share/perl5/Test/Deep.pm
+FILE 644 - - z/usr/share/perl5/Test/NoWarnings/Warning.pm 		 ./z/usr/share/perl5/Test/NoWarnings/Warning.pm
+FILE 644 - - z/usr/share/perl5/Module/Metadata.pm 		 ./z/usr/share/perl5/Module/Metadata.pm
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Metadata-1.000011/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Metadata-1.000011/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Load-Conditional-0.54/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Load-Conditional-0.54/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Tester-0.108/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Tester-0.108/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Deep-0.110/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Deep-0.110/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/IPC-Cmd-0.78/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/IPC-Cmd-0.78/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/IO-String-1.08/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/IO-String-1.08/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Params-Check-0.36/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Params-Check-0.36/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Locale-Maketext-Simple-0.21/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Locale-Maketext-Simple-0.21/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/ExtUtils-CBuilder-0.280205/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/ExtUtils-CBuilder-0.280205/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/CPAN-Meta-YAML-0.008/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/CPAN-Meta-YAML-0.008/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-NoWarnings-1.04/MYMETA.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-NoWarnings-1.04/MYMETA.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-NoWarnings-1.04/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-NoWarnings-1.04/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-CoreList-2.79/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-CoreList-2.79/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Parse-CPAN-Meta-1.4404/MYMETA.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Parse-CPAN-Meta-1.4404/MYMETA.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Parse-CPAN-Meta-1.4404/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Parse-CPAN-Meta-1.4404/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Perl-OSType-1.002/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Perl-OSType-1.002/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Load-0.22/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Load-0.22/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Sub-Uplevel-0.24/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Sub-Uplevel-0.24/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/CPAN-Meta-2.120921/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/CPAN-Meta-2.120921/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Try-Tiny-0.11/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Try-Tiny-0.11/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/JSON-PP-2.27200/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/JSON-PP-2.27200/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Simple-0.98/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Simple-0.98/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Redis-1.955/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Redis-1.955/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/version-0.9901/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/version-0.9901/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Digest-SHA1-2.13/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Digest-SHA1-2.13/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/CPAN-Meta-Requirements-2.122/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/CPAN-Meta-Requirements-2.122/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Exception-0.31/MYMETA.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Exception-0.31/MYMETA.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Exception-0.31/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Exception-0.31/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Fatal-0.010/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Test-Fatal-0.010/install.json
+FILE 644 - - z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Build-0.4003/install.json 		 ./z/usr/share/perl5/x86_64-linux-thread-multi/.meta/Module-Build-0.4003/install.json
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin/Performance.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin/Performance.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin/Config.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin/Config.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin/Range.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin/Range.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin/Functions.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin/Functions.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin/Getopt.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin/Getopt.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin/ExitResult.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin/ExitResult.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin/Threshold.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin/Threshold.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Nagios/Plugin.pm 		 ./z/usr/share/perl5/vendor_perl/Nagios/Plugin.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Grammar.y 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Grammar.y
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Compute.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Compute.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Combo.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Combo.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Multi.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Multi.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Byte.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Byte.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Base2Metric.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Base2Metric.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Distance.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Distance.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Date.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Date.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Metric.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Metric.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Base.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Base.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Time.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Convert/Time.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Rank.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Rank.pm
+FILE 644 - - z/usr/share/perl5/vendor_perl/Math/Calc/Units/Grammar.pm 		 ./z/usr/share/perl5/vendor_perl/Math/Calc/Units/Grammar.pm
+FILE 644 - - z/usr/share/perl5/IO/String.pm 		 ./z/usr/share/perl5/IO/String.pm
+FILE 644 - - z/usr/share/perl5/Sub/Uplevel.pm 		 ./z/usr/share/perl5/Sub/Uplevel.pm
+FILE 644 - - z/usr/share/perl5/Redis/List.pm 		 ./z/usr/share/perl5/Redis/List.pm
+FILE 644 - - z/usr/share/perl5/Redis/Hash.pm 		 ./z/usr/share/perl5/Redis/Hash.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/Converter.pm 		 ./z/usr/share/perl5/CPAN/Meta/Converter.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/Validator.pm 		 ./z/usr/share/perl5/CPAN/Meta/Validator.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/Spec.pm 		 ./z/usr/share/perl5/CPAN/Meta/Spec.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/History.pm 		 ./z/usr/share/perl5/CPAN/Meta/History.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/Feature.pm 		 ./z/usr/share/perl5/CPAN/Meta/Feature.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/Prereqs.pm 		 ./z/usr/share/perl5/CPAN/Meta/Prereqs.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/YAML.pm 		 ./z/usr/share/perl5/CPAN/Meta/YAML.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta/Requirements.pm 		 ./z/usr/share/perl5/CPAN/Meta/Requirements.pm
+FILE 644 - - z/usr/share/perl5/CPAN/Meta.pm 		 ./z/usr/share/perl5/CPAN/Meta.pm
+FILE 644 - - z/usr/share/perl5/JSON/PP/Boolean.pm 		 ./z/usr/share/perl5/JSON/PP/Boolean.pm
+FILE 644 - - z/usr/share/perl5/JSON/PP.pm 		 ./z/usr/share/perl5/JSON/PP.pm
+FILE 644 - - z/usr/share/perl5/Try/Tiny.pm 		 ./z/usr/share/perl5/Try/Tiny.pm
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin::Getopt.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin::Getopt.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin::Range.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin::Range.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Attribute::Params::Validate.3pm.gz 		 ./z/usr/share/man/man3/Attribute::Params::Validate.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin::Functions.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin::Functions.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin::Performance.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin::Performance.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Params::Validate.3pm.gz 		 ./z/usr/share/man/man3/Params::Validate.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Class::Accessor::Faster.3pm.gz 		 ./z/usr/share/man/man3/Class::Accessor::Faster.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Params::ValidatePP.3pm.gz 		 ./z/usr/share/man/man3/Params::ValidatePP.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Time::HiRes.3pm.gz 		 ./z/usr/share/man/man3/Time::HiRes.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Config::Tiny.3pm.gz 		 ./z/usr/share/man/man3/Config::Tiny.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Class::Accessor::Fast.3pm.gz 		 ./z/usr/share/man/man3/Class::Accessor::Fast.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin::Config.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin::Config.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Params::ValidateXS.3pm.gz 		 ./z/usr/share/man/man3/Params::ValidateXS.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Math::Calc::Units.3pm.gz 		 ./z/usr/share/man/man3/Math::Calc::Units.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin::Threshold.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin::Threshold.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Class::Accessor.3pm.gz 		 ./z/usr/share/man/man3/Class::Accessor.3pm.gz
+FILE 644 - - z/usr/share/man/man3/Nagios::Plugin::ExitResult.3pm.gz 		 ./z/usr/share/man/man3/Nagios::Plugin::ExitResult.3pm.gz
+FILE 644 - - z/usr/lib64/perl5/Params/ValidateXS.pm 		 ./z/usr/lib64/perl5/Params/ValidateXS.pm
+FILE 644 - - z/usr/lib64/perl5/Params/ValidatePP.pm 		 ./z/usr/lib64/perl5/Params/ValidatePP.pm
+FILE 644 - - z/usr/lib64/perl5/Params/Validate.pm 		 ./z/usr/lib64/perl5/Params/Validate.pm
+FILE 644 - - z/usr/lib64/perl5/auto/Params/Validate/Validate.bs 		 ./z/usr/lib64/perl5/auto/Params/Validate/Validate.bs
+FILE 755 - - z/usr/lib64/perl5/auto/Params/Validate/Validate.so 		 ./z/usr/lib64/perl5/auto/Params/Validate/Validate.so
+FILE 755 - - z/usr/lib64/perl5/auto/Time/HiRes/HiRes.so 		 ./z/usr/lib64/perl5/auto/Time/HiRes/HiRes.so
+FILE 644 - - z/usr/lib64/perl5/Attribute/Params/Validate.pm 		 ./z/usr/lib64/perl5/Attribute/Params/Validate.pm
+FILE 644 - - z/usr/lib64/perl5/Time/HiRes.pm 		 ./z/usr/lib64/perl5/Time/HiRes.pm
+FILE 755 - - z/etc/init.d/opsview-agent 		 ./z/etc/init.d/opsview-agent
+
+
+
+
+ZINST requires pkg server_default_setting
+
+
+COMM sudo chown -R nagios.wheel /usr/local/nagios
+COMM sudo chmod 755 /var/log/nagios
+COMM sudo chown -R nagios.wheel /var/log/nagios
+COMM sudo chkconfig opsview-agent on
+COMM sudo service opsview-agent restart

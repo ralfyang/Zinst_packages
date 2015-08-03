@@ -1,0 +1,16 @@
+
+## Package infomation
+PACKAGENAME = git_tool
+VERSION = 1.0.0
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'git package upload tool'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+FILE 755 - - bin/gitpush 		 ./gitpush
+

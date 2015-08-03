@@ -1,0 +1,305 @@
+## Package infomation
+PACKAGENAME = yum
+VERSION = 3.2.30
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'yum installer made by zinst'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 644 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 755 - - z/usr/sbin/yumdb 		 ./z/usr/sbin/yumdb
+FILE 755 - - z/usr/sbin/yum-complete-transaction 		 ./z/usr/sbin/yum-complete-transaction
+FILE 644 - - z/usr/share/man/man1/show-changed-rco.1.gz 		 ./z/usr/share/man/man1/show-changed-rco.1.gz
+FILE 644 - - z/usr/share/man/man1/yum-debug-restore.1.gz 		 ./z/usr/share/man/man1/yum-debug-restore.1.gz
+FILE 644 - - z/usr/share/man/man1/yum-builddep.1.gz 		 ./z/usr/share/man/man1/yum-builddep.1.gz
+FILE 644 - - z/usr/share/man/man1/package-cleanup.1.gz 		 ./z/usr/share/man/man1/package-cleanup.1.gz
+FILE 644 - - z/usr/share/man/man1/yum-utils.1.gz 		 ./z/usr/share/man/man1/yum-utils.1.gz
+FILE 644 - - z/usr/share/man/man1/repo-rss.1.gz 		 ./z/usr/share/man/man1/repo-rss.1.gz
+FILE 644 - - z/usr/share/man/man1/yum-debug-dump.1.gz 		 ./z/usr/share/man/man1/yum-debug-dump.1.gz
+FILE 644 - - z/usr/share/man/man1/yum-groups-manager.1.gz 		 ./z/usr/share/man/man1/yum-groups-manager.1.gz
+FILE 644 - - z/usr/share/man/man1/repodiff.1.gz 		 ./z/usr/share/man/man1/repodiff.1.gz
+FILE 644 - - z/usr/share/man/man1/yumdownloader.1.gz 		 ./z/usr/share/man/man1/yumdownloader.1.gz
+FILE 644 - - z/usr/share/man/man1/repoquery.1.gz 		 ./z/usr/share/man/man1/repoquery.1.gz
+FILE 644 - - z/usr/share/man/man1/debuginfo-install.1.gz 		 ./z/usr/share/man/man1/debuginfo-install.1.gz
+FILE 644 - - z/usr/share/man/man1/reposync.1.gz 		 ./z/usr/share/man/man1/reposync.1.gz
+FILE 644 - - z/usr/share/man/man1/show-installed.1.gz 		 ./z/usr/share/man/man1/show-installed.1.gz
+FILE 644 - - z/usr/share/man/man8/yum-shell.8.gz 		 ./z/usr/share/man/man8/yum-shell.8.gz
+FILE 644 - - z/usr/share/man/man8/yum-complete-transaction.8.gz 		 ./z/usr/share/man/man8/yum-complete-transaction.8.gz
+FILE 644 - - z/usr/share/man/man8/yum.8.gz 		 ./z/usr/share/man/man8/yum.8.gz
+FILE 644 - - z/usr/share/man/man8/yumdb.8.gz 		 ./z/usr/share/man/man8/yumdb.8.gz
+FILE 644 - - z/usr/share/man/man8/yum-security.8.gz 		 ./z/usr/share/man/man8/yum-security.8.gz
+FILE 644 - - z/usr/share/man/man5/yum.conf.5.gz 		 ./z/usr/share/man/man5/yum.conf.5.gz
+FILE 644 - - z/usr/share/yum-cli/yummain.pyc 		 ./z/usr/share/yum-cli/yummain.pyc
+FILE 644 - - z/usr/share/yum-cli/output.pyc 		 ./z/usr/share/yum-cli/output.pyc
+FILE 644 - - z/usr/share/yum-cli/callback.pyc 		 ./z/usr/share/yum-cli/callback.pyc
+FILE 644 - - z/usr/share/yum-cli/utils.pyc 		 ./z/usr/share/yum-cli/utils.pyc
+FILE 644 - - z/usr/share/yum-cli/utils.pyo 		 ./z/usr/share/yum-cli/utils.pyo
+FILE 755 - - z/usr/share/yum-cli/yummain.py 		 ./z/usr/share/yum-cli/yummain.py
+FILE 755 - - z/usr/share/yum-cli/shell.py 		 ./z/usr/share/yum-cli/shell.py
+FILE 755 - - z/usr/share/yum-cli/cli.py 		 ./z/usr/share/yum-cli/cli.py
+FILE 644 - - z/usr/share/yum-cli/cli.pyo 		 ./z/usr/share/yum-cli/cli.pyo
+FILE 644 - - z/usr/share/yum-cli/cli.pyc 		 ./z/usr/share/yum-cli/cli.pyc
+FILE 644 - - z/usr/share/yum-cli/output.pyo 		 ./z/usr/share/yum-cli/output.pyo
+FILE 644 - - z/usr/share/yum-cli/yumcommands.pyo 		 ./z/usr/share/yum-cli/yumcommands.pyo
+FILE 755 - - z/usr/share/yum-cli/yumcommands.py 		 ./z/usr/share/yum-cli/yumcommands.py
+FILE 644 - - z/usr/share/yum-cli/callback.pyo 		 ./z/usr/share/yum-cli/callback.pyo
+FILE 644 - - z/usr/share/yum-cli/shell.pyo 		 ./z/usr/share/yum-cli/shell.pyo
+FILE 755 - - z/usr/share/yum-cli/utils.py 		 ./z/usr/share/yum-cli/utils.py
+FILE 755 - - z/usr/share/yum-cli/output.py 		 ./z/usr/share/yum-cli/output.py
+FILE 755 - - z/usr/share/yum-cli/callback.py 		 ./z/usr/share/yum-cli/callback.py
+FILE 644 - - z/usr/share/yum-cli/yummain.pyo 		 ./z/usr/share/yum-cli/yummain.pyo
+FILE 644 - - z/usr/share/yum-cli/yumcommands.pyc 		 ./z/usr/share/yum-cli/yumcommands.pyc
+FILE 644 - - z/usr/share/yum-cli/shell.pyc 		 ./z/usr/share/yum-cli/shell.pyc
+FILE 644 - - z/usr/share/locale/fi/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/fi/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/de/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/de/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/pa/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/pa/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/it/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/it/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/ja/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/ja/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/ms/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/ms/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/pl/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/pl/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/en_GB/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/en_GB/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/fr/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/fr/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/nb/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/nb/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/da/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/da/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/da/LC_MESSAGES/yum-utils.mo 		 ./z/usr/share/locale/da/LC_MESSAGES/yum-utils.mo
+FILE 644 - - z/usr/share/locale/ca/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/ca/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/zh_CN/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/zh_CN/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/sr@latin/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/sr@latin/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/sv/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/sv/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/uk/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/uk/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/es/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/es/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/cs/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/cs/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/sr/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/sr/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/ru/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/ru/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/pt_BR/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/pt_BR/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/locale/pt/LC_MESSAGES/yum.mo 		 ./z/usr/share/locale/pt/LC_MESSAGES/yum.mo
+FILE 644 - - z/usr/share/doc/yum-plugin-security-1.1.30/COPYING 		 ./z/usr/share/doc/yum-plugin-security-1.1.30/COPYING
+FILE 644 - - z/usr/share/doc/yum-metadata-parser-1.1.2/ChangeLog 		 ./z/usr/share/doc/yum-metadata-parser-1.1.2/ChangeLog
+FILE 644 - - z/usr/share/doc/yum-metadata-parser-1.1.2/README 		 ./z/usr/share/doc/yum-metadata-parser-1.1.2/README
+FILE 644 - - z/usr/share/doc/yum-metadata-parser-1.1.2/AUTHORS 		 ./z/usr/share/doc/yum-metadata-parser-1.1.2/AUTHORS
+FILE 644 - - z/usr/share/doc/yum-3.2.29/ChangeLog 		 ./z/usr/share/doc/yum-3.2.29/ChangeLog
+FILE 644 - - z/usr/share/doc/yum-3.2.29/INSTALL 		 ./z/usr/share/doc/yum-3.2.29/INSTALL
+FILE 644 - - z/usr/share/doc/yum-3.2.29/README 		 ./z/usr/share/doc/yum-3.2.29/README
+FILE 644 - - z/usr/share/doc/yum-3.2.29/TODO 		 ./z/usr/share/doc/yum-3.2.29/TODO
+FILE 644 - - z/usr/share/doc/yum-3.2.29/COPYING 		 ./z/usr/share/doc/yum-3.2.29/COPYING
+FILE 644 - - z/usr/share/doc/yum-3.2.29/AUTHORS 		 ./z/usr/share/doc/yum-3.2.29/AUTHORS
+FILE 644 - - z/usr/share/doc/yum-utils-1.1.30/yum-util-cli-template 		 ./z/usr/share/doc/yum-utils-1.1.30/yum-util-cli-template
+FILE 644 - - z/usr/share/doc/yum-utils-1.1.30/README 		 ./z/usr/share/doc/yum-utils-1.1.30/README
+FILE 644 - - z/usr/share/doc/yum-utils-1.1.30/COPYING 		 ./z/usr/share/doc/yum-utils-1.1.30/COPYING
+FILE 644 - - z/usr/share/doc/yum-plugin-fastestmirror-1.1.30/COPYING 		 ./z/usr/share/doc/yum-plugin-fastestmirror-1.1.30/COPYING
+FILE 755 - - z/usr/lib64/python2.6/site-packages/_sqlitecache.so 		 ./z/usr/lib64/python2.6/site-packages/_sqlitecache.so
+FILE 644 - - z/usr/lib64/python2.6/site-packages/sqlitecachec.pyo 		 ./z/usr/lib64/python2.6/site-packages/sqlitecachec.pyo
+FILE 644 - - z/usr/lib64/python2.6/site-packages/sqlitecachec.py 		 ./z/usr/lib64/python2.6/site-packages/sqlitecachec.py
+FILE 644 - - z/usr/lib64/python2.6/site-packages/sqlitecachec.pyc 		 ./z/usr/lib64/python2.6/site-packages/sqlitecachec.pyc
+FILE 644 - - z/usr/lib64/python2.6/site-packages/yum_metadata_parser-1.1.2-py2.6.egg-info 		 ./z/usr/lib64/python2.6/site-packages/yum_metadata_parser-1.1.2-py2.6.egg-info
+FILE 644 - - z/usr/lib/yum-plugins/security.pyo 		 ./z/usr/lib/yum-plugins/security.pyo
+FILE 644 - - z/usr/lib/yum-plugins/downloadonly.py 		 ./z/usr/lib/yum-plugins/downloadonly.py
+FILE 644 - - z/usr/lib/yum-plugins/downloadonly.pyo 		 ./z/usr/lib/yum-plugins/downloadonly.pyo
+FILE 644 - - z/usr/lib/yum-plugins/security.py 		 ./z/usr/lib/yum-plugins/security.py
+FILE 644 - - z/usr/lib/yum-plugins/fastestmirror.py 		 ./z/usr/lib/yum-plugins/fastestmirror.py
+FILE 644 - - z/usr/lib/yum-plugins/downloadonly.pyc 		 ./z/usr/lib/yum-plugins/downloadonly.pyc
+FILE 644 - - z/usr/lib/yum-plugins/security.pyc 		 ./z/usr/lib/yum-plugins/security.pyc
+FILE 644 - - z/usr/lib/yum-plugins/fastestmirror.pyc 		 ./z/usr/lib/yum-plugins/fastestmirror.pyc
+FILE 644 - - z/usr/lib/yum-plugins/fastestmirror.pyo 		 ./z/usr/lib/yum-plugins/fastestmirror.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/transactioninfo.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/transactioninfo.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/packages.py 		 ./z/usr/lib/python2.6/site-packages/yum/packages.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/logginglevels.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/logginglevels.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/plugins.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/plugins.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/config.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/config.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/rpmsack.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/rpmsack.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/yumRepo.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/yumRepo.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/rpmsack.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/rpmsack.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/transactioninfo.py 		 ./z/usr/lib/python2.6/site-packages/yum/transactioninfo.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/callbacks.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/callbacks.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/comps.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/comps.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/Errors.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/Errors.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/misc.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/misc.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/metalink.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/metalink.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/pkgtag_db.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/pkgtag_db.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/sqlitesack.py 		 ./z/usr/lib/python2.6/site-packages/yum/sqlitesack.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/parser.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/parser.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/mdparser.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/mdparser.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/transactioninfo.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/transactioninfo.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/sqlutils.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/sqlutils.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/history.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/history.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/comps.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/comps.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/parser.py 		 ./z/usr/lib/python2.6/site-packages/yum/parser.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/i18n.py 		 ./z/usr/lib/python2.6/site-packages/yum/i18n.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/metalink.py 		 ./z/usr/lib/python2.6/site-packages/yum/metalink.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/packages.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/packages.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/yumRepo.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/yumRepo.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/plugins.py 		 ./z/usr/lib/python2.6/site-packages/yum/plugins.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/repoMDObject.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/repoMDObject.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/constants.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/constants.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/pkgtag_db.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/pkgtag_db.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/pgpmsg.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/pgpmsg.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/depsolve.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/depsolve.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/rpmtrans.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/rpmtrans.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/mdparser.py 		 ./z/usr/lib/python2.6/site-packages/yum/mdparser.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/rpmsack.py 		 ./z/usr/lib/python2.6/site-packages/yum/rpmsack.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/packageSack.py 		 ./z/usr/lib/python2.6/site-packages/yum/packageSack.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/misc.py 		 ./z/usr/lib/python2.6/site-packages/yum/misc.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/callbacks.py 		 ./z/usr/lib/python2.6/site-packages/yum/callbacks.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/constants.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/constants.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/plugins.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/plugins.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/history.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/history.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/constants.py 		 ./z/usr/lib/python2.6/site-packages/yum/constants.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/comps.py 		 ./z/usr/lib/python2.6/site-packages/yum/comps.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/sqlutils.py 		 ./z/usr/lib/python2.6/site-packages/yum/sqlutils.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/rpmtrans.py 		 ./z/usr/lib/python2.6/site-packages/yum/rpmtrans.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/Errors.py 		 ./z/usr/lib/python2.6/site-packages/yum/Errors.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/failover.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/failover.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/update_md.py 		 ./z/usr/lib/python2.6/site-packages/yum/update_md.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/parser.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/parser.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/pgpmsg.py 		 ./z/usr/lib/python2.6/site-packages/yum/pgpmsg.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/depsolve.py 		 ./z/usr/lib/python2.6/site-packages/yum/depsolve.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/sqlutils.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/sqlutils.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/Errors.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/Errors.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/__init__.py 		 ./z/usr/lib/python2.6/site-packages/yum/__init__.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/logginglevels.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/logginglevels.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/sqlitesack.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/sqlitesack.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/depsolve.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/depsolve.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/i18n.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/i18n.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/sqlitesack.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/sqlitesack.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/packages.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/packages.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/logginglevels.py 		 ./z/usr/lib/python2.6/site-packages/yum/logginglevels.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/callbacks.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/callbacks.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/i18n.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/i18n.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/__init__.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/__init__.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/failover.py 		 ./z/usr/lib/python2.6/site-packages/yum/failover.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/config.py 		 ./z/usr/lib/python2.6/site-packages/yum/config.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/metalink.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/metalink.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/repos.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/repos.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/__init__.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/__init__.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/mdparser.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/mdparser.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/misc.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/misc.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/failover.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/failover.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/history.py 		 ./z/usr/lib/python2.6/site-packages/yum/history.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/repos.py 		 ./z/usr/lib/python2.6/site-packages/yum/repos.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/update_md.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/update_md.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/rpmtrans.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/rpmtrans.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/pgpmsg.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/pgpmsg.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/update_md.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/update_md.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/packageSack.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/packageSack.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/packageSack.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/packageSack.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/yumRepo.py 		 ./z/usr/lib/python2.6/site-packages/yum/yumRepo.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/repoMDObject.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/repoMDObject.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/repos.pyo 		 ./z/usr/lib/python2.6/site-packages/yum/repos.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yum/config.pyc 		 ./z/usr/lib/python2.6/site-packages/yum/config.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/pkgtag_db.py 		 ./z/usr/lib/python2.6/site-packages/yum/pkgtag_db.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yum/repoMDObject.py 		 ./z/usr/lib/python2.6/site-packages/yum/repoMDObject.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yumutils/i18n.py 		 ./z/usr/lib/python2.6/site-packages/yumutils/i18n.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/yumutils/__init__.py 		 ./z/usr/lib/python2.6/site-packages/yumutils/__init__.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/yumutils/i18n.pyo 		 ./z/usr/lib/python2.6/site-packages/yumutils/i18n.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yumutils/i18n.pyc 		 ./z/usr/lib/python2.6/site-packages/yumutils/i18n.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/yumutils/__init__.pyo 		 ./z/usr/lib/python2.6/site-packages/yumutils/__init__.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/yumutils/__init__.pyc 		 ./z/usr/lib/python2.6/site-packages/yumutils/__init__.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/rpmUtils/arch.py 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/arch.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/arch.pyc 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/arch.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/transaction.pyc 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/transaction.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/rpmUtils/transaction.py 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/transaction.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/rpmUtils/oldUtils.py 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/oldUtils.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/oldUtils.pyc 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/oldUtils.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/arch.pyo 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/arch.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/transaction.pyo 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/transaction.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/oldUtils.pyo 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/oldUtils.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/miscutils.pyc 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/miscutils.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/updates.pyc 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/updates.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/updates.pyo 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/updates.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/rpmUtils/miscutils.py 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/miscutils.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/rpmUtils/__init__.py 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/__init__.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/rpmUtils/updates.py 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/updates.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/__init__.pyo 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/__init__.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/__init__.pyc 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/__init__.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/rpmUtils/miscutils.pyo 		 ./z/usr/lib/python2.6/site-packages/rpmUtils/miscutils.pyo
+FILE 755 - - z/usr/bin/debuginfo-install 		 ./z/usr/bin/debuginfo-install
+FILE 755 - - z/usr/bin/repoquery 		 ./z/usr/bin/repoquery
+FILE 755 - - z/usr/bin/yum-debug-dump 		 ./z/usr/bin/yum-debug-dump
+FILE 755 - - z/usr/bin/yum 		 ./z/usr/bin/yum
+FILE 755 - - z/usr/bin/package-cleanup 		 ./z/usr/bin/package-cleanup
+FILE 755 - - z/usr/bin/reposync 		 ./z/usr/bin/reposync
+FILE 755 - - z/usr/bin/repoclosure 		 ./z/usr/bin/repoclosure
+FILE 755 - - z/usr/bin/repomanage 		 ./z/usr/bin/repomanage
+FILE 755 - - z/usr/bin/repo-graph 		 ./z/usr/bin/repo-graph
+FILE 755 - - z/usr/bin/verifytree 		 ./z/usr/bin/verifytree
+FILE 755 - - z/usr/bin/repo-rss 		 ./z/usr/bin/repo-rss
+FILE 755 - - z/usr/bin/yum-debug-restore 		 ./z/usr/bin/yum-debug-restore
+FILE 755 - - z/usr/bin/show-installed 		 ./z/usr/bin/show-installed
+FILE 755 - - z/usr/bin/yum-builddep 		 ./z/usr/bin/yum-builddep
+FILE 755 - - z/usr/bin/needs-restarting 		 ./z/usr/bin/needs-restarting
+FILE 755 - - z/usr/bin/yumdownloader 		 ./z/usr/bin/yumdownloader
+FILE 755 - - z/usr/bin/yum-config-manager 		 ./z/usr/bin/yum-config-manager
+FILE 755 - - z/usr/bin/find-repos-of-install 		 ./z/usr/bin/find-repos-of-install
+FILE 755 - - z/usr/bin/repotrack 		 ./z/usr/bin/repotrack
+FILE 755 - - z/usr/bin/repodiff 		 ./z/usr/bin/repodiff
+FILE 755 - - z/usr/bin/yum-groups-manager 		 ./z/usr/bin/yum-groups-manager
+FILE 755 - - z/usr/bin/show-changed-rco 		 ./z/usr/bin/show-changed-rco
+FILE 644 - - z/var/lib/yum/rpmdb-indexes/pkgtups-checksums 		 ./z/var/lib/yum/rpmdb-indexes/pkgtups-checksums
+FILE 644 - - z/var/lib/yum/rpmdb-indexes/conflicts 		 ./z/var/lib/yum/rpmdb-indexes/conflicts
+FILE 644 - - z/var/lib/yum/rpmdb-indexes/version 		 ./z/var/lib/yum/rpmdb-indexes/version
+FILE 644 - - z/var/lib/yum/rpmdb-indexes/file-requires 		 ./z/var/lib/yum/rpmdb-indexes/file-requires
+FILE 644 - - z/var/lib/yum/uuid 		 ./z/var/lib/yum/uuid
+FILE 644 - - z/var/cache/yum/x86_64/6/.gpgkeyschecked.yum 		 ./z/var/cache/yum/x86_64/6/.gpgkeyschecked.yum
+FILE 644 - - z/var/cache/yum/timedhosts.txt 		 ./z/var/cache/yum/timedhosts.txt
+FILE 644 - - z/etc/yum/pluginconf.d/downloadonly.conf 		 ./z/etc/yum/pluginconf.d/downloadonly.conf
+FILE 644 - - z/etc/yum/pluginconf.d/security.conf 		 ./z/etc/yum/pluginconf.d/security.conf
+FILE 644 - - z/etc/yum/pluginconf.d/fastestmirror.conf 		 ./z/etc/yum/pluginconf.d/fastestmirror.conf
+FILE 644 - - z/etc/yum/version-groups.conf 		 ./z/etc/yum/version-groups.conf
+FILE 644 - - z/etc/logrotate.d/yum 		 ./z/etc/logrotate.d/yum
+FILE 644 - - z/etc/yum.conf 		 ./z/etc/yum.conf
+FILE 644 - - z/etc/yum.repos.d/mirrors-rpmforge-testing 		 ./z/etc/yum.repos.d/mirrors-rpmforge-testing
+FILE 644 - - z/etc/yum.repos.d/mirrors-rpmforge 		 ./z/etc/yum.repos.d/mirrors-rpmforge
+FILE 644 - - z/etc/yum.repos.d/CentOS-Vault.repo 		 ./z/etc/yum.repos.d/CentOS-Vault.repo
+FILE 644 - - z/etc/yum.repos.d/mirrors-rpmforge-extras 		 ./z/etc/yum.repos.d/mirrors-rpmforge-extras
+FILE 644 - - z/etc/yum.repos.d/CentOS-Debuginfo.repo 		 ./z/etc/yum.repos.d/CentOS-Debuginfo.repo
+FILE 644 - - z/etc/yum.repos.d/CloudStack.repo 		 ./z/etc/yum.repos.d/CloudStack.repo
+FILE 644 - - z/etc/yum.repos.d/rpmforge.repo 		 ./z/etc/yum.repos.d/rpmforge.repo
+FILE 644 - - z/etc/yum.repos.d/CentOS-Base.repo 		 ./z/etc/yum.repos.d/CentOS-Base.repo
+FILE 644 - - z/etc/yum.repos.d/CentOS-Media.repo 		 ./z/etc/yum.repos.d/CentOS-Media.repo
+FILE 644 - - z/etc/bash_completion.d/yum.bash 		 ./z/etc/bash_completion.d/yum.bash
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

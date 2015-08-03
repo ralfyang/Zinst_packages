@@ -1,0 +1,39 @@
+
+## Package infomation
+PACKAGENAME = yum_downloadonly
+VERSION = 1.1.3
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'Yum download only package for the RPM package download'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 644 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 644 - - z/usr/share/doc/yum-plugin-downloadonly-1.1.30/COPYING 		 ./z/usr/share/doc/yum-plugin-downloadonly-1.1.30/COPYING
+FILE 644 - - z/usr/lib/yum-plugins/downloadonly.py 		 ./z/usr/lib/yum-plugins/downloadonly.py
+FILE 644 - - z/usr/lib/yum-plugins/downloadonly.pyo 		 ./z/usr/lib/yum-plugins/downloadonly.pyo
+FILE 644 - - z/usr/lib/yum-plugins/downloadonly.pyc 		 ./z/usr/lib/yum-plugins/downloadonly.pyc
+FILE 644 - - z/etc/yum/pluginconf.d/downloadonly.conf 		 ./z/etc/yum/pluginconf.d/downloadonly.conf

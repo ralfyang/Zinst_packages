@@ -1,0 +1,43 @@
+## Package infomation
+PACKAGENAME = mysql_server
+VERSION = 5.5.10.7
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'mysql server install package for the master replication in the zum'
+CUSTODIAN = gsshop-eit-team
+
+#Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 775
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+FILE 664 - -		src/mysql/cmake-2.6.4-5.el5.2.x86_64.rpm	./mysql/cmake-2.6.4-5.el5.2.x86_64.rpm
+FILE 770 - -		src/mysql/install.sh						./mysql/install.sh
+CONF 664 - -		src/mysql/my.cnf							./mysql/my.cnf
+FILE 664 - -		src/mysql/mysql-5.5.10.tar.gz				./mysql/mysql-5.5.10.tar.gz
+FILE 775 - -		bin/ysar_mysql_gather						./mysql/ysar_mysql_gather
+
+
+ZINST set server-id 9999
+ZINST set max_connections 500
+ZINST set wait_timeout 28800
+ZINST set open-files-limit 8192 
+
+## cp, mv, ln command can remove when the package remove
+## "ln -sf /data/src/ha.d /etc/ha.d"   ---> "rm -Rfv /etc/ha.d" command will be send when the package remove.
+
+COMM cd /data/src/mysql;sh /data/src/mysql/install.sh;/etc/init.d/mysqld start

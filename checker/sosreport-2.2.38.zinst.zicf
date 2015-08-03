@@ -1,0 +1,512 @@
+
+## Package infomation
+PACKAGENAME = sosreport
+VERSION = 2.2.38
+AUTHORIZED = raly.yang@gsshop.com
+DESCRIPTION = 'sos report tool with libxml2-python-2.7.6-12 package'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 644 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 755 - - z/usr/sbin/sosreport 		 ./z/usr/sbin/sosreport
+FILE 644 - - z/usr/share/man/man1/sosreport.1.gz 		 ./z/usr/share/man/man1/sosreport.1.gz
+FILE 644 - - z/usr/share/man/man5/sos.conf.5.gz 		 ./z/usr/share/man/man5/sos.conf.5.gz
+FILE 644 - - z/usr/share/sos/README 		 ./z/usr/share/sos/README
+FILE 644 - - z/usr/share/sos/TODO 		 ./z/usr/share/sos/TODO
+FILE 644 - - z/usr/share/sos/LICENSE 		 ./z/usr/share/sos/LICENSE
+FILE 644 - - z/usr/share/sos/rhsupport.pub 		 ./z/usr/share/sos/rhsupport.pub
+FILE 644 - - z/usr/share/locale/ro/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ro/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/bn/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/bn/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ml/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ml/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/nn/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/nn/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/th/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/th/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/fi/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/fi/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/de/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/de/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/tr/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/tr/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/bn_IN/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/bn_IN/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/hu/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/hu/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/pa/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/pa/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/mr/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/mr/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/fa/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/fa/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/it/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/it/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/af/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/af/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/cy/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/cy/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/lo/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/lo/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ja/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ja/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/el/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/el/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/zh_TW/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/zh_TW/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/or/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/or/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/gl/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/gl/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/bg/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/bg/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/sl/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/sl/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ms/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ms/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/si/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/si/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/et/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/et/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/pl/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/pl/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/en_GB/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/en_GB/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/fr/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/fr/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/id/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/id/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ka/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ka/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/nb/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/nb/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/is/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/is/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/da/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/da/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/mk/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/mk/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/be/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/be/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/my/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/my/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ko/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ko/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ur/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ur/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/sk/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/sk/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/hr/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/hr/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ast/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ast/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ca/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ca/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/sq/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/sq/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/hy/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/hy/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ilo/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ilo/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/de_CH/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/de_CH/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/lv/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/lv/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/zh_CN/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/zh_CN/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/sr@latin/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/sr@latin/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/nso/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/nso/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/sv/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/sv/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/kn/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/kn/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ar/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ar/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ku/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ku/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/hi/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/hi/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/lt/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/lt/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/uk/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/uk/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/vi/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/vi/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/eu_ES/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/eu_ES/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/es/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/es/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/he/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/he/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/am/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/am/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/gu/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/gu/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/cs/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/cs/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/te/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/te/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/en/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/en/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/nl/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/nl/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/as/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/as/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/sr/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/sr/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ta/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ta/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/ru/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/ru/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/pt_BR/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/pt_BR/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/zu/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/zu/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/bs/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/bs/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/locale/pt/LC_MESSAGES/sos.mo 		 ./z/usr/share/locale/pt/LC_MESSAGES/sos.mo
+FILE 644 - - z/usr/share/doc/sos-2.2/ChangeLog 		 ./z/usr/share/doc/sos-2.2/ChangeLog
+FILE 644 - - z/usr/share/doc/sos-2.2/README 		 ./z/usr/share/doc/sos-2.2/README
+FILE 644 - - z/usr/share/doc/sos-2.2/TODO 		 ./z/usr/share/doc/sos-2.2/TODO
+FILE 644 - - z/usr/share/doc/sos-2.2/index.rst 		 ./z/usr/share/doc/sos-2.2/index.rst
+FILE 644 - - z/usr/share/doc/sos-2.2/make.bat 		 ./z/usr/share/doc/sos-2.2/make.bat
+FILE 644 - - z/usr/share/doc/sos-2.2/conf.py 		 ./z/usr/share/doc/sos-2.2/conf.py
+FILE 644 - - z/usr/share/doc/sos-2.2/Makefile 		 ./z/usr/share/doc/sos-2.2/Makefile
+FILE 644 - - z/usr/share/doc/sos-2.2/LICENSE 		 ./z/usr/share/doc/sos-2.2/LICENSE
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/schema.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/schema.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/pushSAXhtml.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/pushSAXhtml.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader3.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader3.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/xpathret.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/xpathret.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/relaxng.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/relaxng.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/tstmem.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/tstmem.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/validRNG.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/validRNG.py
+FILE 644 - - z/usr/share/doc/libxml2-python-2.7.6/readererr.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/readererr.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/xpathext.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/xpathext.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/tstLastError.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/tstLastError.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/validate.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/validate.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader4.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader4.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader2.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader2.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/nsdel.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/nsdel.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader8.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader8.py
+FILE 644 - - z/usr/share/doc/libxml2-python-2.7.6/libxml2class.txt 		 ./z/usr/share/doc/libxml2-python-2.7.6/libxml2class.txt
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/serialize.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/serialize.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/apibuild.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/apibuild.py
+FILE 644 - - z/usr/share/doc/libxml2-python-2.7.6/TODO 		 ./z/usr/share/doc/libxml2-python-2.7.6/TODO
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/tstxpath.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/tstxpath.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/indexes.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/indexes.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/compareNodes.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/compareNodes.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/inbuf.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/inbuf.py
+FILE 644 - - z/usr/share/doc/libxml2-python-2.7.6/python.html 		 ./z/usr/share/doc/libxml2-python-2.7.6/python.html
+FILE 644 - - z/usr/share/doc/libxml2-python-2.7.6/regexp.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/regexp.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/error.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/error.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader6.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader6.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/ctxterror.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/ctxterror.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/tst.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/tst.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/outbuf.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/outbuf.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/push.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/push.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/walker.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/walker.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/cutnpaste.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/cutnpaste.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/build.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/build.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/attribs.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/attribs.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/dtdvalid.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/dtdvalid.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/validDTD.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/validDTD.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/sync.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/sync.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/readernext.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/readernext.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader5.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader5.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/xpathns.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/xpathns.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/index.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/index.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/pushSAX.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/pushSAX.py
+FILE 644 - - z/usr/share/doc/libxml2-python-2.7.6/xpathleak.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/xpathleak.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/thread2.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/thread2.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/validSchemas.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/validSchemas.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/tstURI.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/tstURI.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/resolver.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/resolver.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/xpath.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/xpath.py
+FILE 755 - - z/usr/share/doc/libxml2-python-2.7.6/reader7.py 		 ./z/usr/share/doc/libxml2-python-2.7.6/reader7.py
+FILE 755 - - z/usr/lib64/python2.6/site-packages/libxml2mod.la 		 ./z/usr/lib64/python2.6/site-packages/libxml2mod.la
+FILE 644 - - z/usr/lib64/python2.6/site-packages/libxml2.pyc 		 ./z/usr/lib64/python2.6/site-packages/libxml2.pyc
+FILE 644 - - z/usr/lib64/python2.6/site-packages/libxml2.py 		 ./z/usr/lib64/python2.6/site-packages/libxml2.py
+FILE 644 - - z/usr/lib64/python2.6/site-packages/libxml2mod.a 		 ./z/usr/lib64/python2.6/site-packages/libxml2mod.a
+FILE 644 - - z/usr/lib64/python2.6/site-packages/drv_libxml2.pyo 		 ./z/usr/lib64/python2.6/site-packages/drv_libxml2.pyo
+FILE 644 - - z/usr/lib64/python2.6/site-packages/libxml2.pyo 		 ./z/usr/lib64/python2.6/site-packages/libxml2.pyo
+FILE 644 - - z/usr/lib64/python2.6/site-packages/drv_libxml2.py 		 ./z/usr/lib64/python2.6/site-packages/drv_libxml2.py
+FILE 644 - - z/usr/lib64/python2.6/site-packages/drv_libxml2.pyc 		 ./z/usr/lib64/python2.6/site-packages/drv_libxml2.pyc
+FILE 755 - - z/usr/lib64/python2.6/site-packages/libxml2mod.so 		 ./z/usr/lib64/python2.6/site-packages/libxml2mod.so
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugintools.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugintools.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugintools.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugintools.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/policyredhat.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/policyredhat.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/sosreport.py 		 ./z/usr/lib/python2.6/site-packages/sos/sosreport.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/helpers.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/helpers.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/sosreport.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/sosreport.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/printing.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/printing.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kdump.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kdump.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ftp.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ftp.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/acpid.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/acpid.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/logrotate.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/logrotate.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/devicemapper.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/devicemapper.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/auditd.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/auditd.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cgroups.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cgroups.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/x11.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/x11.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/samba.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/samba.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/anaconda.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/anaconda.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ssh.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ssh.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/memory.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/memory.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/hardware.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/hardware.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/iscsitarget.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/iscsitarget.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/kernel_realtime.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kernel_realtime.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/gluster.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/gluster.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/rhui.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rhui.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ipa.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ipa.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/filesys.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/filesys.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/networking.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/networking.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/qpidd.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/qpidd.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/hts.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/hts.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/emc.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/emc.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/apache.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/apache.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/corosync.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/corosync.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ssh.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ssh.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kernel_realtime.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kernel_realtime.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/quagga.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/quagga.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kvm.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kvm.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/yum.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/yum.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/mrgmessg.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mrgmessg.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cobbler.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cobbler.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/networking.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/networking.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/gdm.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/gdm.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cobbler.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cobbler.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/lsbrelease.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/lsbrelease.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/openswan.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/openswan.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ssh.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ssh.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/openssl.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/openssl.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kernel_realtime.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kernel_realtime.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/process.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/process.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/selinux.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/selinux.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/dovecot.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/dovecot.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/system.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/system.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sendmail.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sendmail.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ldap.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ldap.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/iscsi.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/iscsi.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/oddjob.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/oddjob.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/soundcard.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/soundcard.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/devicemapper.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/devicemapper.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/acpid.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/acpid.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/process.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/process.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/qpidd.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/qpidd.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/netdump.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/netdump.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/mrgmessg.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mrgmessg.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/dhcp.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/dhcp.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kdump.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kdump.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cloudforms.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cloudforms.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/rhn.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rhn.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/snmp.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/snmp.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ds.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ds.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/cobbler.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cobbler.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/quagga.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/quagga.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/anaconda.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/anaconda.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/hts.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/hts.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/libraries.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/libraries.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/infiniband.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/infiniband.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cluster.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cluster.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/yum.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/yum.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/iscsitarget.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/iscsitarget.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/postfix.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/postfix.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sunrpc.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sunrpc.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/postfix.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/postfix.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/cloudforms.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cloudforms.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/sar.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sar.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kernel.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kernel.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/oddjob.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/oddjob.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/memory.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/memory.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/i18n.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/i18n.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ds.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ds.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kvm.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kvm.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/named.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/named.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/apache.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/apache.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/dhcp.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/dhcp.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/netdump.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/netdump.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/nscd.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/nscd.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ipsec.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ipsec.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/rpm.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rpm.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/gluster.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/gluster.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/postfix.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/postfix.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/lsbrelease.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/lsbrelease.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/veritas.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/veritas.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ntp.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ntp.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sssd.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sssd.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/nscd.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/nscd.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/xinetd.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/xinetd.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/openssl.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/openssl.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/openswan.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/openswan.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/mrgmessg.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mrgmessg.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/quagga.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/quagga.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ntp.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ntp.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/vmware.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/vmware.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/sendmail.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sendmail.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/mrggrid.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mrggrid.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sanitize.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sanitize.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sar.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sar.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/startup.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/startup.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cs.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cs.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/rhui.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rhui.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/rpm.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rpm.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ntp.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ntp.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/amd.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/amd.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/mrggrid.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mrggrid.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/openswan.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/openswan.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sar.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sar.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/emc.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/emc.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/system.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/system.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/oddjob.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/oddjob.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sssd.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sssd.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/nfsserver.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/nfsserver.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/libvirt.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/libvirt.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/squid.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/squid.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/infiniband.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/infiniband.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/udev.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/udev.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/anaconda.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/anaconda.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/hardware.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/hardware.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/cluster.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cluster.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/soundcard.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/soundcard.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/general.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/general.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/veritas.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/veritas.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/psacct.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/psacct.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/kernel.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kernel.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/tftpserver.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/tftpserver.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/netdump.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/netdump.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/tomcat.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/tomcat.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/radius.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/radius.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/gdm.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/gdm.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/kdump.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kdump.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/initrd.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/initrd.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/s390.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/s390.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/nfsserver.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/nfsserver.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/psacct.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/psacct.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/iscsi.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/iscsi.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/gluster.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/gluster.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/rpm.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rpm.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/cs.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cs.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/sssd.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sssd.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/corosync.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/corosync.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/pxe.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pxe.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/soundcard.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/soundcard.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/devicemapper.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/devicemapper.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/mrggrid.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mrggrid.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/libraries.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/libraries.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/veritas.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/veritas.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cluster.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cluster.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/samba.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/samba.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/snmp.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/snmp.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/crontab.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/crontab.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/sanitize.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sanitize.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/xen.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/xen.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/process.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/process.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cs.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cs.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/libvirt.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/libvirt.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/pxe.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pxe.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/gdm.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/gdm.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/dovecot.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/dovecot.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/logrotate.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/logrotate.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/xinetd.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/xinetd.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ldap.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ldap.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sendmail.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sendmail.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/bootloader.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/bootloader.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/system.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/system.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/bootloader.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/bootloader.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/filesys.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/filesys.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/udev.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/udev.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/startup.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/startup.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/libvirt.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/libvirt.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/tftpserver.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/tftpserver.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ftp.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ftp.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ppp.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ppp.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/startup.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/startup.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ds.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ds.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/auditd.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/auditd.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/tomcat.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/tomcat.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/tftpserver.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/tftpserver.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/emc.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/emc.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/__init__.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/__init__.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/general.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/general.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/initrd.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/initrd.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/mysql.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mysql.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/openssl.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/openssl.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/samba.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/samba.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/i18n.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/i18n.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/xen.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/xen.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/corosync.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/corosync.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/squid.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/squid.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/named.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/named.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/x11.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/x11.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/kvm.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kvm.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/sanlock.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sanlock.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sanlock.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sanlock.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/sunrpc.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sunrpc.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/systemtap.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/systemtap.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/i18n.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/i18n.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/apache.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/apache.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/infiniband.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/infiniband.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/__init__.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/__init__.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/pgsql.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pgsql.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/iscsi.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/iscsi.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/autofs.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/autofs.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/rhn.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rhn.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sanitize.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sanitize.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/hardware.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/hardware.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/pgsql.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pgsql.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/named.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/named.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/smartcard.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/smartcard.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/s390.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/s390.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ftp.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ftp.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/crontab.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/crontab.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/s390.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/s390.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/vmware.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/vmware.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/selinux.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/selinux.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/__init__.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/__init__.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/iscsitarget.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/iscsitarget.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/smartcard.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/smartcard.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/systemtap.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/systemtap.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/vmware.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/vmware.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/autofs.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/autofs.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/kernel.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/kernel.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/general.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/general.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/crontab.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/crontab.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/acpid.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/acpid.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/auditd.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/auditd.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/pam.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pam.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ipa.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ipa.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/pam.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pam.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/snmp.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/snmp.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/udev.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/udev.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/qpidd.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/qpidd.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/networking.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/networking.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/amd.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/amd.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/yum.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/yum.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/squid.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/squid.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cgroups.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cgroups.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/dovecot.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/dovecot.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/autofs.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/autofs.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/selinux.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/selinux.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/dhcp.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/dhcp.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/mysql.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mysql.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/psacct.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/psacct.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/smartcard.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/smartcard.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/filesys.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/filesys.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sanlock.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sanlock.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/radius.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/radius.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/rhui.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rhui.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/hts.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/hts.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/systemtap.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/systemtap.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/memory.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/memory.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/cloudforms.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cloudforms.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/rhn.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/rhn.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ipsec.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ipsec.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/x11.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/x11.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/printing.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/printing.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ipa.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ipa.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/lsbrelease.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/lsbrelease.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/tomcat.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/tomcat.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/printing.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/printing.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/pgsql.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pgsql.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/mysql.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/mysql.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/xen.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/xen.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/logrotate.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/logrotate.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/nfsserver.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/nfsserver.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ldap.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ldap.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/pxe.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pxe.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ipsec.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ipsec.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/ppp.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ppp.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/libraries.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/libraries.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/pam.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/pam.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/xinetd.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/xinetd.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/radius.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/radius.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/initrd.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/initrd.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/sunrpc.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/sunrpc.pyo
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/plugins/cgroups.py 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/cgroups.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/nscd.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/nscd.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/ppp.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/ppp.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/amd.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/amd.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugins/bootloader.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/plugins/bootloader.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/plugintools.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/plugintools.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/policyredhat.py 		 ./z/usr/lib/python2.6/site-packages/sos/policyredhat.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/sosreport.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/sosreport.pyc
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/helpers.py 		 ./z/usr/lib/python2.6/site-packages/sos/helpers.py
+FILE 755 - - z/usr/lib/python2.6/site-packages/sos/__init__.py 		 ./z/usr/lib/python2.6/site-packages/sos/__init__.py
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/__init__.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/__init__.pyo
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/__init__.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/__init__.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/helpers.pyc 		 ./z/usr/lib/python2.6/site-packages/sos/helpers.pyc
+FILE 644 - - z/usr/lib/python2.6/site-packages/sos/policyredhat.pyo 		 ./z/usr/lib/python2.6/site-packages/sos/policyredhat.pyo
+FILE 644 - - z/etc/sos.conf 		 ./z/etc/sos.conf
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

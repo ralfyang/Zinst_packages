@@ -1,0 +1,80 @@
+
+
+## Package infomation
+PACKAGENAME = gsshop_redis
+VERSION = 0.0.1
+AUTHORIZED = AUTH@gsshop.com
+DESCRIPTION = 'redis server install package'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+
+FILE 775 - - z/etc/init.d/redis                  ./z/applications/redis-2.6.4/redis
+CONF 775 - - conf/redis.conf                 ./redis.conf
+FILE 664 - - z/applications/redis-2.6.4/logs/.zinst 		 ./z/applications/redis-2.6.4/logs/.zinst
+FILE 664 - - z/applications/redis-2.6.4/data/.zinst 		 ./z/applications/redis-2.6.4/data/.zinst
+FILE 644 - - z/applications/redis-2.6.4/etc/redis.conf 		 ./z/applications/redis-2.6.4/etc/redis.conf
+FILE 644 - - z/applications/redis-2.6.4/etc/sentinel.conf 		 ./z/applications/redis-2.6.4/etc/sentinel.conf
+FILE 755 - - z/applications/redis-2.6.4/bin/redis-check-aof 		 ./z/applications/redis-2.6.4/bin/redis-check-aof
+FILE 755 - - z/applications/redis-2.6.4/bin/redis-benchmark 		 ./z/applications/redis-2.6.4/bin/redis-benchmark
+FILE 755 - - z/applications/redis-2.6.4/bin/redis-check-dump 		 ./z/applications/redis-2.6.4/bin/redis-check-dump
+FILE 755 - - z/applications/redis-2.6.4/bin/redis-sentinel 		 ./z/applications/redis-2.6.4/bin/redis-sentinel
+FILE 755 - - z/applications/redis-2.6.4/bin/redis_init_script 		 ./z/applications/redis-2.6.4/bin/redis_init_script
+FILE 755 - - z/applications/redis-2.6.4/bin/redis-cli 		 ./z/applications/redis-2.6.4/bin/redis-cli
+FILE 755 - - z/applications/redis-2.6.4/bin/redis-server 		 ./z/applications/redis-2.6.4/bin/redis-server
+FILE 644 - - z/usr/share/man/man3/jemalloc.3.gz 		 ./z/usr/share/man/man3/jemalloc.3.gz
+FILE 644 - - z/usr/share/doc/jemalloc-3.4.0/README 		 ./z/usr/share/doc/jemalloc-3.4.0/README
+FILE 644 - - z/usr/share/doc/jemalloc-3.4.0/VERSION 		 ./z/usr/share/doc/jemalloc-3.4.0/VERSION
+FILE 644 - - z/usr/share/doc/jemalloc-3.4.0/COPYING 		 ./z/usr/share/doc/jemalloc-3.4.0/COPYING
+FILE 644 - - z/usr/share/doc/jemalloc-3.4.0/jemalloc.html 		 ./z/usr/share/doc/jemalloc-3.4.0/jemalloc.html
+FILE 644 - - z/usr/include/jemalloc/jemalloc_defs.h 		 ./z/usr/include/jemalloc/jemalloc_defs.h
+FILE 644 - - z/usr/include/jemalloc/jemalloc.h 		 ./z/usr/include/jemalloc/jemalloc.h
+FILE 755 - - z/usr/bin/jemalloc.sh 		 ./z/usr/bin/jemalloc.sh
+FILE 755 - - z/usr/lib64/libjemalloc.so.1 		 ./z/usr/lib64/libjemalloc.so.1
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+
+ZINST set Node Master
+ZINST set MNode 10.52.164.173
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
+COMM sudo chkconfig --add redis
+COMM sudo chkconfig --level 2345 redis on
+COMM sudo chkconfig --list redis
+COMM sudo chown -R service.wheel /applications/redis-2.6.4

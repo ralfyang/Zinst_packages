@@ -1,0 +1,40 @@
+## Package infomation
+PACKAGENAME = mysql_rpmserver_conf
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'mysql server config package for the cloudstack - my.cnf'
+CUSTODIAN = gsshop-eit-team
+
+#Global setting of the files
+OWNER = mysql
+GROUP = mysql
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+CONF 644 root wheel		conf/my.cnf							./mysql/my.cnf
+FILE 755 root wheel		bin/ysar_mysql_gather					./mysql/ysar_mysql_gather
+FILE 755 - -			mysql/data/.zinst					./mysql/.zinst
+
+ZINST set server-id 9999
+ZINST set max_connections 350
+ZINST set wait_timeout 28800
+ZINST set open-files-limit 8192 
+
+## cp, mv, ln command can remove when the package remove
+## "ln -sf /data/src/ha.d /etc/ha.d"   ---> "rm -Rfv /etc/ha.d" command will be send when the package remove.
+
+COMM chown -R mysql.mysql /data/mysql;mv /data/z/etc/my.cnf  /data/z/etc/my.cnf_bak; ln -sf /data/conf/my.cnf /data/z/etc/my.cnf;zinst start mysqld

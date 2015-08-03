@@ -1,0 +1,88 @@
+
+## Package infomation
+PACKAGENAME = gsshop_xmpi_module
+VERSION = 0.0.1
+AUTHORIZED = canopus@gsshop.com
+DESCRIPTION = 'x_mpi module install package'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 664 - - z/applications/x_mpi/cert/test/mall/signCert.der 		 ./z/applications/x_mpi/cert/test/mall/signCert.der
+FILE 664 - - z/applications/x_mpi/cert/test/mall/kmPri.key 		 ./z/applications/x_mpi/cert/test/mall/kmPri.key
+FILE 664 - - z/applications/x_mpi/cert/test/mall/EncPasswd 		 ./z/applications/x_mpi/cert/test/mall/EncPasswd
+FILE 664 - - z/applications/x_mpi/cert/test/mall/signPri.key 		 ./z/applications/x_mpi/cert/test/mall/signPri.key
+FILE 664 - - z/applications/x_mpi/cert/test/card/kmCert_samsung.der 		 ./z/applications/x_mpi/cert/test/card/kmCert_samsung.der
+FILE 664 - - z/applications/x_mpi/cert/test/card/kmCert_lotte.der 		 ./z/applications/x_mpi/cert/test/card/kmCert_lotte.der
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/MsgConsumerImpl.java 		 ./z/applications/x_mpi/cert/test/dbin/MsgConsumerImpl.java
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/MsgTest.java 		 ./z/applications/x_mpi/cert/test/dbin/MsgTest.java
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/MsgProducer.java 		 ./z/applications/x_mpi/cert/test/dbin/MsgProducer.java
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/MsgMDP.java 		 ./z/applications/x_mpi/cert/test/dbin/MsgMDP.java
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/Msg.java 		 ./z/applications/x_mpi/cert/test/dbin/Msg.java
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/MsgProducerImpl.java 		 ./z/applications/x_mpi/cert/test/dbin/MsgProducerImpl.java
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/MsgConverterImpl.java 		 ./z/applications/x_mpi/cert/test/dbin/MsgConverterImpl.java
+FILE 664 - - z/applications/x_mpi/cert/test/dbin/MsgConsumer.java 		 ./z/applications/x_mpi/cert/test/dbin/MsgConsumer.java
+FILE 664 - - z/applications/x_mpi/cert/sLotte/card/kmCert_lotte.der 		 ./z/applications/x_mpi/cert/sLotte/card/kmCert_lotte.der
+FILE 664 - - z/applications/x_mpi/cert/sLotte/pg/signCert.der 		 ./z/applications/x_mpi/cert/sLotte/pg/signCert.der
+FILE 664 - - z/applications/x_mpi/cert/sLotte/pg/kmPri.key 		 ./z/applications/x_mpi/cert/sLotte/pg/kmPri.key
+FILE 664 - - z/applications/x_mpi/cert/sLotte/pg/EncPasswd 		 ./z/applications/x_mpi/cert/sLotte/pg/EncPasswd
+FILE 664 - - z/applications/x_mpi/cert/sLotte/pg/signPri.key 		 ./z/applications/x_mpi/cert/sLotte/pg/signPri.key
+FILE 664 - - z/applications/x_mpi/cert/real/mall/CaPubs 		 ./z/applications/x_mpi/cert/real/mall/CaPubs
+FILE 664 - - z/applications/x_mpi/cert/real/mall/signCert.der 		 ./z/applications/x_mpi/cert/real/mall/signCert.der
+FILE 664 - - z/applications/x_mpi/cert/real/mall/kmCert.der 		 ./z/applications/x_mpi/cert/real/mall/kmCert.der
+FILE 664 - - z/applications/x_mpi/cert/real/mall/kmPri.key 		 ./z/applications/x_mpi/cert/real/mall/kmPri.key
+FILE 664 - - z/applications/x_mpi/cert/real/mall/EncPasswd 		 ./z/applications/x_mpi/cert/real/mall/EncPasswd
+FILE 664 - - z/applications/x_mpi/cert/real/mall/signPri.key 		 ./z/applications/x_mpi/cert/real/mall/signPri.key
+FILE 664 - - z/applications/x_mpi/cert/real/card/kmCert_nh.der 		 ./z/applications/x_mpi/cert/real/card/kmCert_nh.der
+FILE 664 - - z/applications/x_mpi/cert/real/card/kmCert_samsung.der 		 ./z/applications/x_mpi/cert/real/card/kmCert_samsung.der
+FILE 664 - - z/applications/x_mpi/cert/real/card/kmCert_kj.der 		 ./z/applications/x_mpi/cert/real/card/kmCert_kj.der
+FILE 664 - - z/applications/x_mpi/cert/real/card/kmCert_lotte.der 		 ./z/applications/x_mpi/cert/real/card/kmCert_lotte.der
+FILE 664 - - z/applications/x_mpi/cert/real/card/kmCert_hd.der 		 ./z/applications/x_mpi/cert/real/card/kmCert_hd.der
+FILE 664 - - z/applications/x_mpi/cert/real/card/kmCert_lg.der 		 ./z/applications/x_mpi/cert/real/card/kmCert_lg.der
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
+COMM sudo chown -R service.wheel /applications/x_mpi

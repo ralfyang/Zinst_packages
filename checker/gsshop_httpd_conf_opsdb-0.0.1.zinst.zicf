@@ -1,0 +1,19 @@
+
+## Package infomation
+PACKAGENAME = gsshop_httpd_conf_opsdb
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+ESCRIPTION = 'Apache server configuration package for the OPSDB'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 775
+
+CONF 644 - - z/httpd/conf/include/gsshop_opsdb.conf       ./gsshop_opsdb.conf
+
+ZINST requires pkg gsshop_httpd_server
+ZINST set DocumentRoot /data/z/htdocs/html
+
+COMM mkdir -p /data/logs/httpd

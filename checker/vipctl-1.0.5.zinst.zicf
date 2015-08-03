@@ -1,0 +1,58 @@
+## Package infomation
+PACKAGENAME = vipctl
+VERSION = 1.0.5
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'Create the loopback and network startup for the vip grouping - update for status page'
+CUSTODIAN = gsshop-eit-team
+
+#Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 775
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+FILE - - -			bin/vipctl				./bin/vipctl
+FILE - - -			src/html/.status			./status
+FILE - - -			var/status				./status
+CONF - - -			conf/vipctl.conf		./bin/vipctl.conf
+SYMB x - x			z/etc/init.d/vipctl		bin/vipctl
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+#
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+
+ZINST set name DEFAULT
+ZINST set vips VIPS
+ZINST set onboot yes
+ZINST set DIR /data/src/html
+ZINST set Check_file l4-check.html
+
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh

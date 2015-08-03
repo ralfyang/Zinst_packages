@@ -1,0 +1,18 @@
+
+## Package infomation
+PACKAGENAME = gsshop_httpd_conf_blog
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+ESCRIPTION = 'Apache server configuration package for the e-IT team blog'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 775
+
+CONF 644 - - z/httpd/conf/include/gsshop_blog.conf       ./gsshop_blog.conf
+
+ZINST requires pkg gsshop_httpd_server
+
+

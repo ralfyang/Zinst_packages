@@ -1,0 +1,198 @@
+
+## Package infomation
+PACKAGENAME = gsshop_snmpd
+VERSION = 0.1.0
+AUTHORIZED = canopus@gsshop.com
+DESCRIPTION = 'snmpd package'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 644 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 644 - - z/etc/snmp/snmptrapd.conf 		 ./z/etc/snmp/snmptrapd.conf
+FILE 644 - - z/etc/snmp/snmpd.conf 		 ./z/etc/snmp/snmpd.conf
+FILE 644 - - z/etc/sysconfig/snmpd 		 ./z/etc/sysconfig/snmpd
+FILE 644 - - z/etc/sysconfig/snmptrapd 		 ./z/etc/sysconfig/snmptrapd
+FILE 755 - - z/etc/rc.d/init.d/snmpd 		 ./z/etc/rc.d/init.d/snmpd
+FILE 755 - - z/etc/rc.d/init.d/snmptrapd 		 ./z/etc/rc.d/init.d/snmptrapd
+FILE 755 - - z/usr/bin/snmpconf 		 ./z/usr/bin/snmpconf
+FILE 755 - - z/usr/bin/net-snmp-create-v3-user 		 ./z/usr/bin/net-snmp-create-v3-user
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/NEWS 		 ./z/usr/share/doc/net-snmp-5.5/NEWS
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/ChangeLog.trimmed 		 ./z/usr/share/doc/net-snmp-5.5/ChangeLog.trimmed
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/README 		 ./z/usr/share/doc/net-snmp-5.5/README
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/README.agentx 		 ./z/usr/share/doc/net-snmp-5.5/README.agentx
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/PORTING 		 ./z/usr/share/doc/net-snmp-5.5/PORTING
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/README.snmpv3 		 ./z/usr/share/doc/net-snmp-5.5/README.snmpv3
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/COPYING 		 ./z/usr/share/doc/net-snmp-5.5/COPYING
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/TODO 		 ./z/usr/share/doc/net-snmp-5.5/TODO
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/AGENT.txt 		 ./z/usr/share/doc/net-snmp-5.5/AGENT.txt
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/passtest 		 ./z/usr/share/doc/net-snmp-5.5/passtest
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/README.agent-mibs 		 ./z/usr/share/doc/net-snmp-5.5/README.agent-mibs
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/FAQ 		 ./z/usr/share/doc/net-snmp-5.5/FAQ
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/EXAMPLE.conf 		 ./z/usr/share/doc/net-snmp-5.5/EXAMPLE.conf
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/ipf-mod.pl 		 ./z/usr/share/doc/net-snmp-5.5/ipf-mod.pl
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/README.krb5 		 ./z/usr/share/doc/net-snmp-5.5/README.krb5
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/README.mib2c 		 ./z/usr/share/doc/net-snmp-5.5/README.mib2c
+FILE 644 - - z/usr/share/doc/net-snmp-5.5/README.thread 		 ./z/usr/share/doc/net-snmp-5.5/README.thread
+FILE 644 - - z/usr/share/doc/net-snmp-libs-5.5/NEWS 		 ./z/usr/share/doc/net-snmp-libs-5.5/NEWS
+FILE 644 - - z/usr/share/doc/net-snmp-libs-5.5/ChangeLog.trimmed 		 ./z/usr/share/doc/net-snmp-libs-5.5/ChangeLog.trimmed
+FILE 644 - - z/usr/share/doc/net-snmp-libs-5.5/README 		 ./z/usr/share/doc/net-snmp-libs-5.5/README
+FILE 644 - - z/usr/share/doc/net-snmp-libs-5.5/COPYING 		 ./z/usr/share/doc/net-snmp-libs-5.5/COPYING
+FILE 644 - - z/usr/share/doc/net-snmp-libs-5.5/TODO 		 ./z/usr/share/doc/net-snmp-libs-5.5/TODO
+FILE 644 - - z/usr/share/doc/net-snmp-libs-5.5/FAQ 		 ./z/usr/share/doc/net-snmp-libs-5.5/FAQ
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/operation 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/operation
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/trapsinks 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/trapsinks
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/basic_setup 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/basic_setup
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/system 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/system
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/extending 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/extending
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/snmpconf-config 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/snmpconf-config
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/acl 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/acl
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmpd-data/monitor 		 ./z/usr/share/snmp/snmpconf-data/snmpd-data/monitor
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmp-data/mibs 		 ./z/usr/share/snmp/snmpconf-data/snmp-data/mibs
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmp-data/debugging 		 ./z/usr/share/snmp/snmpconf-data/snmp-data/debugging
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmp-data/output 		 ./z/usr/share/snmp/snmpconf-data/snmp-data/output
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmp-data/snmpconf-config 		 ./z/usr/share/snmp/snmpconf-data/snmp-data/snmpconf-config
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmp-data/authopts 		 ./z/usr/share/snmp/snmpconf-data/snmp-data/authopts
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmptrapd-data/logging 		 ./z/usr/share/snmp/snmpconf-data/snmptrapd-data/logging
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmptrapd-data/runtime 		 ./z/usr/share/snmp/snmpconf-data/snmptrapd-data/runtime
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmptrapd-data/traphandle 		 ./z/usr/share/snmp/snmpconf-data/snmptrapd-data/traphandle
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmptrapd-data/formatting 		 ./z/usr/share/snmp/snmpconf-data/snmptrapd-data/formatting
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmptrapd-data/authentication 		 ./z/usr/share/snmp/snmpconf-data/snmptrapd-data/authentication
+FILE 644 - - z/usr/share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config 		 ./z/usr/share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-NOTIFICATION-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-NOTIFICATION-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/TCP-MIB.txt 		 ./z/usr/share/snmp/mibs/TCP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt 		 ./z/usr/share/snmp/mibs/IANA-ADDRESS-FAMILY-NUMBERS-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IF-INVERTED-STACK-MIB.txt 		 ./z/usr/share/snmp/mibs/IF-INVERTED-STACK-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-PROXY-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-PROXY-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/HCNUM-TC.txt 		 ./z/usr/share/snmp/mibs/HCNUM-TC.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-VIEW-BASED-ACM-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-VIEW-BASED-ACM-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IPV6-TC.txt 		 ./z/usr/share/snmp/mibs/IPV6-TC.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMPv2-TC.txt 		 ./z/usr/share/snmp/mibs/SNMPv2-TC.txt
+FILE 644 - - z/usr/share/snmp/mibs/UCD-DEMO-MIB.txt 		 ./z/usr/share/snmp/mibs/UCD-DEMO-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/DISMAN-EVENT-MIB.txt 		 ./z/usr/share/snmp/mibs/DISMAN-EVENT-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IP-FORWARD-MIB.txt 		 ./z/usr/share/snmp/mibs/IP-FORWARD-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IANA-RTPROTO-MIB.txt 		 ./z/usr/share/snmp/mibs/IANA-RTPROTO-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/LM-SENSORS-MIB.txt 		 ./z/usr/share/snmp/mibs/LM-SENSORS-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IANA-LANGUAGE-MIB.txt 		 ./z/usr/share/snmp/mibs/IANA-LANGUAGE-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/AGENTX-MIB.txt 		 ./z/usr/share/snmp/mibs/AGENTX-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/HOST-RESOURCES-MIB.txt 		 ./z/usr/share/snmp/mibs/HOST-RESOURCES-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/MTA-MIB.txt 		 ./z/usr/share/snmp/mibs/MTA-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IPV6-MIB.txt 		 ./z/usr/share/snmp/mibs/IPV6-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IPV6-UDP-MIB.txt 		 ./z/usr/share/snmp/mibs/IPV6-UDP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMPv2-CONF.txt 		 ./z/usr/share/snmp/mibs/SNMPv2-CONF.txt
+FILE 644 - - z/usr/share/snmp/mibs/NET-SNMP-TC.txt 		 ./z/usr/share/snmp/mibs/NET-SNMP-TC.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMPv2-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMPv2-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NETWORK-SERVICES-MIB.txt 		 ./z/usr/share/snmp/mibs/NETWORK-SERVICES-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/INET-ADDRESS-MIB.txt 		 ./z/usr/share/snmp/mibs/INET-ADDRESS-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/RFC-1215.txt 		 ./z/usr/share/snmp/mibs/RFC-1215.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-COMMUNITY-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-COMMUNITY-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/UCD-IPFWACC-MIB.txt 		 ./z/usr/share/snmp/mibs/UCD-IPFWACC-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMPv2-TM.txt 		 ./z/usr/share/snmp/mibs/SNMPv2-TM.txt
+FILE 644 - - z/usr/share/snmp/mibs/IPV6-TCP-MIB.txt 		 ./z/usr/share/snmp/mibs/IPV6-TCP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/UCD-SNMP-MIB.txt 		 ./z/usr/share/snmp/mibs/UCD-SNMP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NET-SNMP-EXAMPLES-MIB.txt 		 ./z/usr/share/snmp/mibs/NET-SNMP-EXAMPLES-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/RMON-MIB.txt 		 ./z/usr/share/snmp/mibs/RMON-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NET-SNMP-MIB.txt 		 ./z/usr/share/snmp/mibs/NET-SNMP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IANAifType-MIB.txt 		 ./z/usr/share/snmp/mibs/IANAifType-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-USER-BASED-SM-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-USER-BASED-SM-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/UDP-MIB.txt 		 ./z/usr/share/snmp/mibs/UDP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NOTIFICATION-LOG-MIB.txt 		 ./z/usr/share/snmp/mibs/NOTIFICATION-LOG-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-TARGET-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-TARGET-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SMUX-MIB.txt 		 ./z/usr/share/snmp/mibs/SMUX-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IF-MIB.txt 		 ./z/usr/share/snmp/mibs/IF-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SCTP-MIB.txt 		 ./z/usr/share/snmp/mibs/SCTP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMPv2-SMI.txt 		 ./z/usr/share/snmp/mibs/SNMPv2-SMI.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-USM-DH-OBJECTS-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-USM-DH-OBJECTS-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-USM-AES-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-USM-AES-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/RFC1213-MIB.txt 		 ./z/usr/share/snmp/mibs/RFC1213-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-MPD-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-MPD-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/UCD-DISKIO-MIB.txt 		 ./z/usr/share/snmp/mibs/UCD-DISKIO-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NET-SNMP-AGENT-MIB.txt 		 ./z/usr/share/snmp/mibs/NET-SNMP-AGENT-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NET-SNMP-VACM-MIB.txt 		 ./z/usr/share/snmp/mibs/NET-SNMP-VACM-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/RFC1155-SMI.txt 		 ./z/usr/share/snmp/mibs/RFC1155-SMI.txt
+FILE 644 - - z/usr/share/snmp/mibs/DISMAN-SCRIPT-MIB.txt 		 ./z/usr/share/snmp/mibs/DISMAN-SCRIPT-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NET-SNMP-PASS-MIB.txt 		 ./z/usr/share/snmp/mibs/NET-SNMP-PASS-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/UCD-DLMOD-MIB.txt 		 ./z/usr/share/snmp/mibs/UCD-DLMOD-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IPV6-ICMP-MIB.txt 		 ./z/usr/share/snmp/mibs/IPV6-ICMP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/TRANSPORT-ADDRESS-MIB.txt 		 ./z/usr/share/snmp/mibs/TRANSPORT-ADDRESS-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/SNMP-FRAMEWORK-MIB.txt 		 ./z/usr/share/snmp/mibs/SNMP-FRAMEWORK-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/IP-MIB.txt 		 ./z/usr/share/snmp/mibs/IP-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/NET-SNMP-EXTEND-MIB.txt 		 ./z/usr/share/snmp/mibs/NET-SNMP-EXTEND-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/BRIDGE-MIB.txt 		 ./z/usr/share/snmp/mibs/BRIDGE-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/HOST-RESOURCES-TYPES.txt 		 ./z/usr/share/snmp/mibs/HOST-RESOURCES-TYPES.txt
+FILE 644 - - z/usr/share/snmp/mibs/EtherLike-MIB.txt 		 ./z/usr/share/snmp/mibs/EtherLike-MIB.txt
+FILE 644 - - z/usr/share/snmp/mibs/DISMAN-SCHEDULE-MIB.txt 		 ./z/usr/share/snmp/mibs/DISMAN-SCHEDULE-MIB.txt
+FILE 644 - - z/usr/share/man/man5/snmpd.internal.5.gz 		 ./z/usr/share/man/man5/snmpd.internal.5.gz
+FILE 644 - - z/usr/share/man/man5/snmp_config.5.gz 		 ./z/usr/share/man/man5/snmp_config.5.gz
+FILE 644 - - z/usr/share/man/man5/snmptrapd.conf.5.gz 		 ./z/usr/share/man/man5/snmptrapd.conf.5.gz
+FILE 644 - - z/usr/share/man/man5/snmpd.conf.5.gz 		 ./z/usr/share/man/man5/snmpd.conf.5.gz
+FILE 644 - - z/usr/share/man/man5/snmpd.examples.5.gz 		 ./z/usr/share/man/man5/snmpd.examples.5.gz
+FILE 644 - - z/usr/share/man/man5/variables.5.gz 		 ./z/usr/share/man/man5/variables.5.gz
+FILE 644 - - z/usr/share/man/man1/net-snmp-create-v3-user.1.gz 		 ./z/usr/share/man/man1/net-snmp-create-v3-user.1.gz
+FILE 644 - - z/usr/share/man/man1/snmpconf.1.gz 		 ./z/usr/share/man/man1/snmpconf.1.gz
+FILE 644 - - z/usr/share/man/man8/snmptrapd.8.gz 		 ./z/usr/share/man/man8/snmptrapd.8.gz
+FILE 644 - - z/usr/share/man/man8/snmpd.8.gz 		 ./z/usr/share/man/man8/snmpd.8.gz
+FILE 755 - - z/usr/sbin/snmpd 		 ./z/usr/sbin/snmpd
+FILE 755 - - z/usr/sbin/snmptrapd 		 ./z/usr/sbin/snmptrapd
+FILE 755 - - z/usr/lib64/libsnmp.so.20.0.0 		 ./z/usr/lib64/libsnmp.so.20.0.0
+FILE 755 - - z/usr/lib64/libnetsnmp.so.20.0.0 		 ./z/usr/lib64/libnetsnmp.so.20.0.0
+FILE 755 - - z/usr/lib64/libnetsnmptrapd.so.20.0.0 		 ./z/usr/lib64/libnetsnmptrapd.so.20.0.0
+FILE 755 - - z/usr/lib64/libsensors.so.4.2.0 		 ./z/usr/lib64/libsensors.so.4.2.0
+FILE 755 - - z/usr/lib64/libnetsnmpagent.so.20.0.0 		 ./z/usr/lib64/libnetsnmpagent.so.20.0.0
+FILE 755 - - z/usr/lib64/libnetsnmphelpers.so.20.0.0 		 ./z/usr/lib64/libnetsnmphelpers.so.20.0.0
+FILE 755 - - z/usr/lib64/libnetsnmpmibs.so.20.0.0 		 ./z/usr/lib64/libnetsnmpmibs.so.20.0.0
+FILE 600 - - z/var/lib/net-snmp/snmpd.conf 		 ./z/var/lib/net-snmp/snmpd.conf
+FILE 644 - - z/var/lib/net-snmp/mib_indexes/0 		 ./z/var/lib/net-snmp/mib_indexes/0
+SYMB x x x z/usr/lib64/libnetsnmphelpers.so.20 	 z/usr/lib64/libnetsnmphelpers.so.20.0.0
+SYMB x x x z/usr/lib64/libnetsnmp.so.20 	 z/usr/lib64/libnetsnmp.so.20.0.0
+SYMB x x x z/usr/lib64/libnetsnmpagent.so.20 	 z/usr/lib64/libnetsnmpagent.so.20.0.0
+SYMB x x x z/usr/lib64/libsensors.so.4 	 z/usr/lib64/libsensors.so.4.2.0
+SYMB x x x z/usr/lib64/libsnmp.so.20 	 z/usr/lib64/libsnmp.so.20.0.0
+SYMB x x x z/usr/lib64/libnetsnmpmibs.so.20 	 z/usr/lib64/libnetsnmpmibs.so.20.0.0
+SYMB x x x z/usr/lib64/libnetsnmptrapd.so.20 	 z/usr/lib64/libnetsnmptrapd.so.20.0.0
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+COMM chkconfig snmpd on
+COMM service snmpd restart

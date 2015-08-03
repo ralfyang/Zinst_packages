@@ -1,0 +1,38 @@
+
+### Package infomation
+PACKAGENAME = gsshop_httpd_conf_pkgdist
+VERSION = 1.0.2
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'httpd server config package for the Package distribution server in the GSshop'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+ZINST requires pkg gsshop_httpd_server
+
+CONF 664 - - z/httpd/conf/include/gsshop_pkgdist.conf         ./z/httpd/conf/include/gsshop_pkgdist.conf
+FILE 664 - - logs/httpd/									./.zinst
+
+### set = You can control the configuration in the CONF file by this options
+#### ex) ZINST set [Variables name] [Value]
+ZINST set ServerName package.dist.gsshop.com
+ZINST set DocumentRoot /data/dist
+

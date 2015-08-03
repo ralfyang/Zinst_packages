@@ -1,0 +1,21 @@
+## Package infomation
+PACKAGENAME = gsshop_account_policy
+VERSION = 1.0.5
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'gsshop linux system account policy package - update for requiretty remove'
+CUSTODIAN = gsshop-eit-team
+
+#Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 500
+
+FILE - - -		bin/sudo_account_policy.sh		./sudo_account_policy.sh
+FILE - - -		bin/account_mgt				./account_mgt
+FILE - - -		z/etc/account/sudo-as-gsshop/_zinst	./_zinst
+FILE - - -		z/etc/account/sudo/_zinst		./_zinst
+
+COMM chmod g+w /etc
+COMM /data/bin/sudo_account_policy.sh
+
+ZINST requires pkg server_default_setting
