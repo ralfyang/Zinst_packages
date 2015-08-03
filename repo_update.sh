@@ -20,5 +20,22 @@ Count=0
 
 sudo chmod 775 -R $WorkDIR/*
 sudo chgrp wheel -R $WorkDIR/*
-gitpush
-gitpush-branch
+
+
+#gitpush
+git add *; git status
+
+echo ""
+echo "==========================================================================="
+echo " Please insert a comment for commit"
+echo "==========================================================================="
+echo ""
+read commit_log
+git commit -m "$commit_log"; git push -u origin master
+
+#gitpush-branch upload
+Branch=gh-pages
+git checkout $Branch
+git rebase master
+git push origin $Branch
+git checkout master
