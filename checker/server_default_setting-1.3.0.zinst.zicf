@@ -1,0 +1,57 @@
+## Package infomation
+PACKAGENAME = server_default_setting
+VERSION = 1.3.0
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'mkdir /applications /instances /source 2>  /dev/null command added'
+CUSTODIAN = gsshop-eit-team
+
+#Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = $ZinstDir/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+FILE - - -		bin/server_default_setting.sh		./server_default_setting/server_default_setting.sh
+FILE - - -		bin/ssh_alert.sh			./server_default_setting/ssh_alert.sh
+CONF 764 - -		bin/nameserver.sh			./server_default_setting/nameserver.sh
+
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+#ZINST requires hwconfig
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#
+#ZINST set Gateway 10.35.35.1
+ZINST set name1 168.126.63.1
+ZINST set name2 211.44.62.40
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate $ZinstDir/tomcat/bin/tomcat restart
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM $ZinstDir/zinst/foo.bar/install.sh
+COMM $ZinstDir/bin/server_default_setting.sh
+COMM $ZinstDir/bin/nameserver.sh
+COMM $ZinstDir/bin/ssh_alert.sh
+COMM useradd -d /var/log/nagios nagios

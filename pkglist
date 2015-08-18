@@ -61,7 +61,7 @@ package_tracker-1.0.6.zinst
 python_virtualenv-0.1.0.zinst
 rzsz-0.1.2.zinst
 samba_client-0.0.1.zinst
-server_default_setting-1.2.8.zinst
+server_default_setting-1.3.0.zinst
 sosreport-2.2.38.zinst
 ssh_consolebox-0.2.0.zinst
 sshkey_deploy-1.0.3.zinst
