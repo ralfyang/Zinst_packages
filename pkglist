@@ -23,7 +23,7 @@ gsshop_check_backup_scheduler-1.0.0.zinst
 gsshop_deploy_agent-0.0.4.zinst
 gsshop_flume_agent-0.0.1.zinst
 gsshop_httpd_conf_balancer_manager-0.0.1.zinst
-gsshop_httpd_conf_blog-0.0.1.zinst
+gsshop_httpd_conf_blog-0.0.2.zinst
 gsshop_httpd_conf_bloodhound-0.0.2.zinst
 gsshop_httpd_conf_devcenter-0.0.1.zinst
 gsshop_httpd_conf_opsdb-0.0.1.zinst
@@ -31,7 +31,7 @@ gsshop_httpd_conf_pkgdist-1.0.2.zinst
 gsshop_httpd_conf_twiki-1.0.2.zinst
 gsshop_httpd_php-0.0.1.zinst
 gsshop_httpd_php_src-0.0.1.zinst
-gsshop_httpd_server-2.0.2.zinst
+gsshop_httpd_server-2.4.12.zinst
 gsshop_httpd_server_src-0.0.1.zinst
 gsshop_logrotate_tomcat-1.0.1.zinst
 gsshop_mysql_backup-1.0.2.zinst
