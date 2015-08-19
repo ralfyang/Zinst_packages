@@ -1,5 +1,6 @@
 MariaDB_client-5.5.33.zinst
 MariaDB_server-5.5.33.zinst
+asciinema-1.1.1.zinst
 bzr_64-2.1.1.zinst
 centos_heartbeat_el5-1.0.1.zinst
 centos_mond_el5-1.0.0.zinst
