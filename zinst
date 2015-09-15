@@ -10,13 +10,13 @@ ROWW="============================================================="
 ### Base information
 ### ------ Config Area ----- 11st line here
 #
-ManagerIP="goody80.github.io/Zinst_packages"
-Dist_server="http://goody80.github.io/Zinst_packages"
-ZinstBaseRoot="/data"
+ManagerIP="DISTsERVERIp"
+Dist_server="http://DISTsERVERsET"
+ZinstBaseRoot="RootDirectorY"
 ZinstDIRs="$ZinstBaseRoot/zinst"
 ZinstSourceDir="$ZinstBaseRoot/vault/Source"
 #
-### ------ Config Area ----- 19th line here
+### ------ Config Area ----- 19th line her
 
 ### Exception for Docker user
 ### Docker user can changes the hosts-file to the other hosts-file  as below solution
