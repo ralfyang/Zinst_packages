@@ -1,0 +1,166 @@
+
+### Package infomation
+PACKAGENAME = python_setuptools
+VERSION = 0.6.10
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'python_setuptools has a easy_install for python env.'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 664 - - z/usr/lib/python2.6/site-packages/pkg_resources.py 		 ./z/usr/lib/python2.6/site-packages/pkg_resources.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/package_index.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/package_index.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/depends.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/depends.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/archive_util.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/archive_util.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/extension.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/extension.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/archive_util.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/archive_util.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/archive_util.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/archive_util.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/sandbox.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/sandbox.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/sandbox.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/sandbox.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/sandbox.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/sandbox.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/extension.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/extension.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/build_ext.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/build_ext.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/upload_docs.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/upload_docs.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_scripts.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_scripts.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/test.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/test.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/setopt.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/setopt.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/sdist.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/sdist.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_lib.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_lib.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/upload_docs.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/upload_docs.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/alias.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/alias.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/saveopts.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/saveopts.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_wininst.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_wininst.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/alias.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/alias.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_rpm.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_rpm.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/test.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/test.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/build_py.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/build_py.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_wininst.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_wininst.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/rotate.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/rotate.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/rotate.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/rotate.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_scripts.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_scripts.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_lib.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_lib.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/build_ext.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/build_ext.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/upload.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/upload.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/test.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/test.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/saveopts.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/saveopts.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/egg_info.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/egg_info.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/upload.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/upload.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/easy_install.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/easy_install.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_rpm.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_rpm.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_egg_info.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_egg_info.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/setopt.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/setopt.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/develop.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/develop.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/register.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/register.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/sdist.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/sdist.pyc
+FILE 775 - - z/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/saveopts.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/saveopts.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/egg_info.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/egg_info.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/upload_docs.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/upload_docs.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/alias.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/alias.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/sdist.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/sdist.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/upload.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/upload.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_lib.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_lib.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_scripts.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_scripts.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/__init__.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/__init__.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_egg_info.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_egg_info.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/build_py.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/build_py.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/build_ext.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/build_ext.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/install_egg_info.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/install_egg_info.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/develop.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/develop.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/__init__.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/__init__.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_rpm.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_rpm.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/easy_install.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/easy_install.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/setopt.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/setopt.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/egg_info.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/egg_info.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/register.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/register.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/__init__.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/__init__.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/build_py.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/build_py.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/rotate.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/rotate.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/bdist_wininst.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/bdist_wininst.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/develop.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/develop.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/command/register.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/command/register.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/extension.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/extension.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/package_index.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/package_index.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/package_index.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/package_index.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/__init__.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/__init__.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/depends.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/depends.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/__init__.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/__init__.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/depends.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/depends.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/__init__.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/__init__.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/dist.py 		 ./z/usr/lib/python2.6/site-packages/setuptools/dist.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/dist.pyo 		 ./z/usr/lib/python2.6/site-packages/setuptools/dist.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools/dist.pyc 		 ./z/usr/lib/python2.6/site-packages/setuptools/dist.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/pkg_resources.pyc 		 ./z/usr/lib/python2.6/site-packages/pkg_resources.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/site.pyc 		 ./z/usr/lib/python2.6/site-packages/site.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/site.pyo 		 ./z/usr/lib/python2.6/site-packages/site.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools-0.6c11-py2.6.egg-info 		 ./z/usr/lib/python2.6/site-packages/setuptools-0.6c11-py2.6.egg-info
+FILE 664 - - z/usr/lib/python2.6/site-packages/pkg_resources.pyo 		 ./z/usr/lib/python2.6/site-packages/pkg_resources.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/zip-safe 		 ./z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/zip-safe
+FILE 664 - - z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/entry_points.txt 		 ./z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/entry_points.txt
+FILE 664 - - z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/PKG-INFO 		 ./z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/PKG-INFO
+FILE 664 - - z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/SOURCES.txt 		 ./z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/SOURCES.txt
+FILE 664 - - z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/dependency_links.txt 		 ./z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/dependency_links.txt
+FILE 664 - - z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/top_level.txt 		 ./z/usr/lib/python2.6/site-packages/distribute-0.6.10-py2.6.egg-info/top_level.txt
+FILE 664 - - z/usr/lib/python2.6/site-packages/setuptools.pth 		 ./z/usr/lib/python2.6/site-packages/setuptools.pth
+FILE 664 - - z/usr/lib/python2.6/site-packages/easy_install.pyo 		 ./z/usr/lib/python2.6/site-packages/easy_install.pyo
+FILE 664 - - z/usr/lib/python2.6/site-packages/easy_install.py 		 ./z/usr/lib/python2.6/site-packages/easy_install.py
+FILE 664 - - z/usr/lib/python2.6/site-packages/easy_install.pyc 		 ./z/usr/lib/python2.6/site-packages/easy_install.pyc
+FILE 664 - - z/usr/lib/python2.6/site-packages/site.py 		 ./z/usr/lib/python2.6/site-packages/site.py
+FILE 775 - - z/usr/bin/easy_install-2.6 		 ./z/usr/bin/easy_install-2.6
+FILE 775 - - z/usr/bin/easy_install 		 ./z/usr/bin/easy_install
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
