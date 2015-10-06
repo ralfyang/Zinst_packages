@@ -86,6 +86,6 @@ ysar-1.0.8.zinst
 yum-3.2.30.zinst
 yum_conf_repo_epel-0.0.1.zinst
 yum_downloadonly-1.1.3.zinst
-zinst_api_server-0.0.1.zinst
+zinst_api_server-0.0.2.zinst
 zinst_making_tool-1.2.3.zinst
 zinst_sara_mgmt-0.0.5.zinst
