@@ -1,0 +1,99 @@
+### Package infomation
+PACKAGENAME = libcgroup
+VERSION = 0.4.0
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'libcgroup for docker_engine package'
+CUSTODIAN = gsshop-iic
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 775 - - z/sbin/cgclear 		 ./z/sbin/cgclear
+FILE 775 - - z/sbin/cgrulesengd 		 ./z/sbin/cgrulesengd
+FILE 775 - - z/sbin/cgconfigparser 		 ./z/sbin/cgconfigparser
+FILE 664 - - z/usr/share/man/man1/cgcreate.1.gz 		 ./z/usr/share/man/man1/cgcreate.1.gz
+FILE 664 - - z/usr/share/man/man1/cgclassify.1.gz 		 ./z/usr/share/man/man1/cgclassify.1.gz
+FILE 664 - - z/usr/share/man/man1/cgdelete.1.gz 		 ./z/usr/share/man/man1/cgdelete.1.gz
+FILE 664 - - z/usr/share/man/man1/cgexec.1.gz 		 ./z/usr/share/man/man1/cgexec.1.gz
+FILE 664 - - z/usr/share/man/man1/cgsnapshot.1.gz 		 ./z/usr/share/man/man1/cgsnapshot.1.gz
+FILE 664 - - z/usr/share/man/man1/cgset.1.gz 		 ./z/usr/share/man/man1/cgset.1.gz
+FILE 664 - - z/usr/share/man/man1/cgclear.1.gz 		 ./z/usr/share/man/man1/cgclear.1.gz
+FILE 664 - - z/usr/share/man/man1/cgget.1.gz 		 ./z/usr/share/man/man1/cgget.1.gz
+FILE 664 - - z/usr/share/man/man1/lssubsys.1.gz 		 ./z/usr/share/man/man1/lssubsys.1.gz
+FILE 664 - - z/usr/share/man/man1/lscgroup.1.gz 		 ./z/usr/share/man/man1/lscgroup.1.gz
+FILE 664 - - z/usr/share/man/man8/cgrulesengd.8.gz 		 ./z/usr/share/man/man8/cgrulesengd.8.gz
+FILE 664 - - z/usr/share/man/man8/cgconfigparser.8.gz 		 ./z/usr/share/man/man8/cgconfigparser.8.gz
+FILE 664 - - z/usr/share/man/man5/cgconfig.conf.5.gz 		 ./z/usr/share/man/man5/cgconfig.conf.5.gz
+FILE 664 - - z/usr/share/man/man5/cgrules.conf.5.gz 		 ./z/usr/share/man/man5/cgrules.conf.5.gz
+FILE 664 - - z/usr/share/man/man5/cgred.conf.5.gz 		 ./z/usr/share/man/man5/cgred.conf.5.gz
+FILE 664 - - z/usr/share/doc/libcgroup-0.40.rc1/INSTALL 		 ./z/usr/share/doc/libcgroup-0.40.rc1/INSTALL
+FILE 664 - - z/usr/share/doc/libcgroup-0.40.rc1/README.RedHat 		 ./z/usr/share/doc/libcgroup-0.40.rc1/README.RedHat
+FILE 664 - - z/usr/share/doc/libcgroup-0.40.rc1/COPYING 		 ./z/usr/share/doc/libcgroup-0.40.rc1/COPYING
+FILE 664 - - z/usr/share/doc/libcgroup-0.40.rc1/README_daemon 		 ./z/usr/share/doc/libcgroup-0.40.rc1/README_daemon
+FILE 775 - - z/lib64/libcgroup.so.1.0.40 		 ./z/lib64/libcgroup.so.1.0.40
+FILE 775 - - z/bin/cgclassify 		 ./z/bin/cgclassify
+FILE 775 - - z/bin/lssubsys 		 ./z/bin/lssubsys
+FILE 775 - - z/bin/cgexec 		 ./z/bin/cgexec
+FILE 775 - - z/bin/cgset 		 ./z/bin/cgset
+FILE 775 - - z/bin/cgsnapshot 		 ./z/bin/cgsnapshot
+FILE 775 - - z/bin/cgcreate 		 ./z/bin/cgcreate
+FILE 775 - - z/bin/lscgroup 		 ./z/bin/lscgroup
+FILE 775 - - z/bin/cgget 		 ./z/bin/cgget
+FILE 775 - - z/bin/cgdelete 		 ./z/bin/cgdelete
+FILE 775 - - z/etc/cgrules.conf 		 ./z/etc/cgrules.conf
+FILE 664 - - z/etc/cgconfig.conf 		 ./z/etc/cgconfig.conf
+FILE 664 - - z/etc/sysconfig/cgconfig 		 ./z/etc/sysconfig/cgconfig
+FILE 664 - - z/etc/sysconfig/cgred.conf 		 ./z/etc/sysconfig/cgred.conf
+FILE 775 - - z/etc/cgsnapshot_blacklist.conf 		 ./z/etc/cgsnapshot_blacklist.conf
+FILE 775 - - z/etc/rc.d/init.d/cgconfig 		 ./z/etc/rc.d/init.d/cgconfig
+FILE 775 - - z/etc/rc.d/init.d/cgred 		 ./z/etc/rc.d/init.d/cgred
+SYMB x x x z/lib64/libcgroup.so.1 	 z/lib64/libcgroup.so.1.0.40
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
