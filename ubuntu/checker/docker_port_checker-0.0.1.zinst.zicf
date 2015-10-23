@@ -1,0 +1,46 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = docker_port_checker
+VERSION = 0.0.1
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'Docker Host Port Check for Tunneling'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+
+FILE 755 - - bin/docker_port_checker.sh 		 	 ./bin/docker_port_checker.sh
+CONF 644 - - conf/docker_port_checker.conf 		 	 ./conf/docker_port_checker.conf
+FILE 644 - - z/etc/init/docker_port_checker.conf 		 ./z/etc/init/docker_port_checker.conf
+
+ZINST set PROXY_IP "192.168.33.11"
+ZINST set PROXY_BINDING_IP "0.0.0.0"
+ZINST set PROXY_BINDING_ADD_PORT "1000"
+ZINST set PROXY_TUNNEL_CONF_DIR "/data/conf/docker_tunnel"
+ZINST set DOCKER_HOST_IP "192.168.33.210"
+
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+COMM zinst set
+COMM echo ""
+COMM echo "========================================================================="
+COMM echo " Notice!"
+COMM echo " You can set the Docker Host IP by below command"
+COMM echo " zinst set docker_port_checker.DOCKER_HOST_IP=x.x.x.x"
+COMM echo ""
+COMM echo " sudo start docker_port_checker"
+COMM echo "========================================================================="
+COMM echo ""

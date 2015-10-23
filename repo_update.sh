@@ -2,7 +2,11 @@
 
 #BaseRoot=`cat /usr/bin/zinst |grep "ZinstBaseRoot=" | awk -F'=' '{print $2}' | sed -s 's/"//g'`
 #WorkDIR=$BaseRoot/dist
-WorkDIR=$PWD
+
+
+
+Index_pacakge(){
+WorkDIR=$@
 
 ls -ali  |grep "\.zinst" | awk '{print $9}' > pkglist
 mkdir -p $WorkDIR/checker 2> /dev/null
@@ -20,6 +24,12 @@ Count=0
 
 sudo chmod 775 -R $WorkDIR/*
 sudo chgrp wheel -R $WorkDIR/*
+}
+
+Target=$PWD
+
+Index_pacakge $Target
+Index_pacakge $Target/ubuntu
 
 
 #gitpush

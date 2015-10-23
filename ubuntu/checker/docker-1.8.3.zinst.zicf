@@ -1,0 +1,101 @@
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = docker
+VERSION = 1.8.3
+AUTHORIZED = root@gsshop.com
+DESCRIPTION = 'docker_engine package for ubuntu'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+CONF 775 - - bin/dcs 		 ./dcs
+FILE 664 - - z/etc/init/docker.conf 		 ./z/etc/init/docker.conf
+FILE 664 - - z/etc/bash_completion.d/docker 		 ./z/etc/bash_completion.d/docker
+FILE 664 - - z/etc/default/docker 		 ./z/etc/default/docker
+FILE 775 - - z/etc/init.d/docker 		 ./z/etc/init.d/docker
+FILE 664 - - z/lib/udev/rules.d/80-docker-engine.rules 		 ./z/lib/udev/rules.d/80-docker-engine.rules
+FILE 664 - - z/lib/systemd/system/docker.socket 		 ./z/lib/systemd/system/docker.socket
+FILE 664 - - z/lib/systemd/system/docker.service 		 ./z/lib/systemd/system/docker.service
+FILE 775 - - z/usr/bin/docker 		 ./z/usr/bin/docker
+FILE 664 - - z/usr/share/nano/Dockerfile.nanorc 		 ./z/usr/share/nano/Dockerfile.nanorc
+FILE 664 - - z/usr/share/doc/docker-engine/README.md.gz 		 ./z/usr/share/doc/docker-engine/README.md.gz
+FILE 664 - - z/usr/share/doc/docker-engine/changelog.Debian.gz 		 ./z/usr/share/doc/docker-engine/changelog.Debian.gz
+FILE 775 - - z/usr/share/docker-engine/contrib/host-integration/manager/systemd 		 ./z/usr/share/docker-engine/contrib/host-integration/manager/systemd
+FILE 775 - - z/usr/share/docker-engine/contrib/host-integration/manager/upstart 		 ./z/usr/share/docker-engine/contrib/host-integration/manager/upstart
+FILE 664 - - z/usr/share/docker-engine/contrib/host-integration/manager.go 		 ./z/usr/share/docker-engine/contrib/host-integration/manager.go
+FILE 775 - - z/usr/share/docker-engine/contrib/host-integration/manager.sh 		 ./z/usr/share/docker-engine/contrib/host-integration/manager.sh
+FILE 664 - - z/usr/share/docker-engine/contrib/host-integration/Dockerfile.min 		 ./z/usr/share/docker-engine/contrib/host-integration/Dockerfile.min
+FILE 664 - - z/usr/share/docker-engine/contrib/host-integration/Dockerfile.dev 		 ./z/usr/share/docker-engine/contrib/host-integration/Dockerfile.dev
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/.febootstrap-minimize 		 ./z/usr/share/docker-engine/contrib/mkimage/.febootstrap-minimize
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/rinse 		 ./z/usr/share/docker-engine/contrib/mkimage/rinse
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/debootstrap 		 ./z/usr/share/docker-engine/contrib/mkimage/debootstrap
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/busybox-static 		 ./z/usr/share/docker-engine/contrib/mkimage/busybox-static
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/mageia-urpmi 		 ./z/usr/share/docker-engine/contrib/mkimage/mageia-urpmi
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-crux.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-crux.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-debootstrap.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-debootstrap.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkseccomp.pl 		 ./z/usr/share/docker-engine/contrib/mkseccomp.pl
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage.sh 		 ./z/usr/share/docker-engine/contrib/mkimage.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-yum.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-yum.sh
+FILE 664 - - z/usr/share/docker-engine/contrib/desktop-integration/README.md 		 ./z/usr/share/docker-engine/contrib/desktop-integration/README.md
+FILE 664 - - z/usr/share/docker-engine/contrib/desktop-integration/gparted/Dockerfile 		 ./z/usr/share/docker-engine/contrib/desktop-integration/gparted/Dockerfile
+FILE 664 - - z/usr/share/docker-engine/contrib/desktop-integration/chromium/Dockerfile 		 ./z/usr/share/docker-engine/contrib/desktop-integration/chromium/Dockerfile
+FILE 664 - - z/usr/share/docker-engine/contrib/mkimage-arch-pacman.conf 		 ./z/usr/share/docker-engine/contrib/mkimage-arch-pacman.conf
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-rinse.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-rinse.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-alpine.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-alpine.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/check-config.sh 		 ./z/usr/share/docker-engine/contrib/check-config.sh
+FILE 664 - - z/usr/share/docker-engine/contrib/mkseccomp.sample 		 ./z/usr/share/docker-engine/contrib/mkseccomp.sample
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-busybox.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-busybox.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-arch.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-arch.sh
+FILE 664 - - z/usr/share/zsh/vendor-completions/_docker 		 ./z/usr/share/zsh/vendor-completions/_docker
+FILE 775 - - z/usr/lib/docker/dockerinit 		 ./z/usr/lib/docker/dockerinit
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+ZINST set Docker_repo ""
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+COMM service docker start
+COMM update-rc.d docker defaults
