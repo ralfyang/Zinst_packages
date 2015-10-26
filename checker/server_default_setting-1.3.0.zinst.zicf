@@ -39,7 +39,7 @@ CONF 764 - -		bin/nameserver.sh			./server_default_setting/nameserver.sh
 #
 #ZINST set Gateway 10.35.35.1
 ZINST set name1 168.126.63.1
-ZINST set name2 211.44.62.40
+ZINST set name2 8.8.8.8
 
 ### post-activate = You can contral the daemon after the package install as below
 ### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
@@ -52,6 +52,6 @@ ZINST set name2 211.44.62.40
 ## ex) 
 ## COMM $ZinstDir/zinst/foo.bar/install.sh
 COMM $ZinstDir/bin/server_default_setting.sh
-COMM $ZinstDir/bin/nameserver.sh
+#COMM $ZinstDir/bin/nameserver.sh
 COMM $ZinstDir/bin/ssh_alert.sh
 COMM useradd -d /var/log/nagios nagios
