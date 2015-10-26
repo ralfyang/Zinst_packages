@@ -17,8 +17,8 @@ Count=0
 	do
 		cd $WorkDIR/checker
 		OrgName=`echo "${ListUpArry[$Count]}" | awk -F '-' '{print $1}'`
-		tar zxvfp $WorkDIR/${ListUpArry[$Count]} $OrgName.zicf -C $WorkDIR/checker
-		mv $WorkDIR/checker/$OrgName.zicf $WorkDIR/checker/${ListUpArry[$Count]}.zicf
+		tar zxvfp $WorkDIR/${ListUpArry[$Count]} *$OrgName.zicf -C $WorkDIR/checker
+		mv $WorkDIR/checker/*$OrgName.zicf $WorkDIR/checker/${ListUpArry[$Count]}.zicf
 	let Count=$Count+1
 	done
 
