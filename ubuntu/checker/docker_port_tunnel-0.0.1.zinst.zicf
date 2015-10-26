@@ -1,0 +1,41 @@
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = docker_port_tunnel
+VERSION = 0.0.1
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'Please insert a description for this package'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+CONF 755 - - bin/docker_port_tunnel.sh 		 ./bin/docker_port_tunnel.sh
+FILE 755 - - bin/compile_autossh.sh 		 ./bin/compile_autossh.sh
+FILE 644 - - conf/docker_tunnel/.zinst 		 ./conf/docker_tunnel/.zinst
+FILE 664 - - docker_port_tunnel.zicf 		 ./docker_port_tunnel.zicf
+FILE 644 - - src/autossh-1.4e.tgz 		 ./src/autossh-1.4e.tgz
+FILE 644 - - z/etc/init/docker_port_tunnel.conf 		 ./z/etc/init/docker_port_tunnel.conf
+
+ZINST set MaxClient 64
+ZINST set IDENTITY_FILE "/root/.ssh/id_rsa"
+ZINST set TUNNEL_CONF_DIR "/data/conf/docker_tunnel"
+
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+COMM sudo /data/bin/compile_autossh.sh
+COMM sudo start docker_port_tunnel
