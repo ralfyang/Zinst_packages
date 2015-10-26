@@ -7,7 +7,7 @@
 
 Index_pacakge(){
 WorkDIR=$@
-
+cd $WorkDIR
 ls -ali  |grep "\.zinst" | awk '{print $9}' > pkglist
 mkdir -p $WorkDIR/checker 2> /dev/null
 ListUpArry=( `ls $WorkDIR |grep ".zinst"` )
