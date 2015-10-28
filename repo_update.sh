@@ -41,11 +41,13 @@ echo " Please insert a comment for commit"
 echo "==========================================================================="
 echo ""
 read commit_log
-git commit -m "$commit_log"; git push -u origin master
+git commit -m "$commit_log"; git push
 
 #gitpush-branch upload
 Branch=gh-pages
 git checkout $Branch
 git rebase master
+git pull origin $Branch
+git add *
 git push origin $Branch
 git checkout master
