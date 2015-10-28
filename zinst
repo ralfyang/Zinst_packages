@@ -494,7 +494,11 @@ Parse_Result=$@
             HostNum=`echo $ZHosts | awk '{print NF}'`
 			UserID=`whoami`
 			#AuthKey="$ZinstBaseRoot/var/authorized_keys"
-			AuthKey="/home/$UserID/authorized_keys"
+				if [[ $UserID = "root" ]];then
+					AuthKey="/root/authorized_keys"
+				else
+					AuthKey="/home/$UserID/authorized_keys"
+				fi
 				if [[ ! -f $AuthKey ]]; then
 				    sudo touch $AuthKey
 				fi
