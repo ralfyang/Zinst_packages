@@ -1,8 +1,10 @@
+[![Join the chat at https://gitter.im/goody80/Ralf_Dev](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/goody80/Ralf_Dev?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![RecordIt](http://g.recordit.co/DNo5wZmAmp.gif)](http://recordit.co/DNo5wZmAmp)
 If you want to show detail video please click the GIF image :)
 
 * You just can type this command
- * curl -sL http://bit.ly/online-install | sh
+ * curl -sL http://bit.ly/on-install | sh
 
 * Requires: sudo, BASH, SSH
 * Feel free to contact me if you have any Question :) (한국어 지원)
@@ -15,9 +17,10 @@ If you want to show detail video please click the GIF image :)
  * [Official Home](http://ralfyang.com)
  * [*Link: zinst packages repository in github*](https://github.com/goody80/Zinst_packages)
 
-![http://ralfyang.com](http://cfile1.uf.tistory.com/image/2565453E55E52DFF1DACD6)
+![http://ralfyang.com](https://avatars2.githubusercontent.com/u/4043594?v=3&s=460)
 # Zinst 메뉴얼
 ## 개요
+
 [![RecordIt](http://g.recordit.co/5oNjDo9r60.gif)](http://recordit.co/5oNjDo9r60)
 
 * zinst는 분산된 서버군의 효율적인 관리와 제어를 위해 개발 되었으며, 이를 위해 별도의 agent의 설치를 필요로 하지 않습니다. 
@@ -1114,8 +1117,6 @@ Zinst version 4.2.7
 ### ex8) Sudoers/OpenLDAP을 이용한 계정 정책 및 관리 시스템 구축하기
 ### ex9) 무중단 배포 시스템 구축하기
 ### ex10) iptables_port_forwarding 패키지를 이용한 간단한 port forwarding
-
-
 
 
 
