@@ -208,7 +208,7 @@ echo " Scaning..."
 
 	if [[ $package_name = "" ]];then
 		pkg_list=(`zinst  ls | fgrep -v "user_" | awk '{print $4}' | xargs`)
-		Print_list="./result.list"
+		Print_list="/tmp/result.list"
     
 		echo "$BARR" > $Print_list
 		echo " [COMMAND]: \"start/stop/restart/run\" or \"on|off\" " >> $Print_list
@@ -253,7 +253,7 @@ echo " Scaning..."
 	fi
 
 exit 0
-
+rm -f $Print_list
 }
 
 
