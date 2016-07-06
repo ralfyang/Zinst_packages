@@ -39,3 +39,4 @@ FILE - - - bin/package_listup 		 ./package_listup
 #ZINST activate-uninstall
 ZINST set mailing gsshop.com
 ZINST set OS_type "OS"
+ZINST set Custodian iic-team
