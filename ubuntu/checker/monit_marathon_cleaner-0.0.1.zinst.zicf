@@ -1,0 +1,24 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit_marathon_cleaner
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'checker for marathon dashboard old data cleaner of monit-monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/marathon_cleaner 		 ./z/etc/monit/conf.d/marathon_cleaner
+FILE 755 - - bin/marathon_cleaner_chk.sh				 ./bin/marathon_cleaner_chk.sh
+
+ZINST requires pkg monit
+ZINST requires pkg marathon_cleaner_service
+
+ZINST activate-uninstall
+
+COMM monit reload all

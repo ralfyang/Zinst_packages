@@ -1,0 +1,24 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit_haproxy_marathon_bridge
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'checker for haproxy_marathon_bridge of monit-monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/monit_haproxy_marathon_bridge 		 ./z/etc/monit/conf.d/monit_haproxy_marathon_bridge
+FILE 755 - - bin/haproxy_marathon_bri_chk.sh						 ./bin/haproxy_marathon_bri_chk.sh
+
+ZINST requires pkg monit
+ZINST requires pkg haproxy_marathon_bridge
+
+ZINST activate-uninstall
+
+COMM monit reload all

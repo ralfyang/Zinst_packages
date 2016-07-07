@@ -1,0 +1,24 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit_logspout_container
+VERSION = 0.0.2
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'checker for containerized logSpout of monit-monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/logspout_container 		 ./z/etc/monit/conf.d/logspout_container
+FILE 755 - - bin/logspout_container_chk.sh				 ./bin/logspout_container_chk.sh
+
+ZINST requires pkg monit
+ZINST requires pkg docker_compose
+
+ZINST activate-uninstall
+
+COMM monit reload all

@@ -1,0 +1,24 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit_elasticsearch_container
+VERSION = 0.0.2
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'checker for containerized elasticsearch of monit-monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/elasticsearch_container 		 ./z/etc/monit/conf.d/elasticsearch_container
+FILE 755 - - bin/elasticsearch_container_chk.sh				 ./bin/elasticsearch_container_chk.sh
+
+ZINST requires pkg monit
+ZINST requires pkg elasticsearch_container
+
+ZINST activate-uninstall
+
+COMM monit reload all

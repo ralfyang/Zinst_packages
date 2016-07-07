@@ -1,0 +1,21 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit_mesos
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'mesos plugin of monit for monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/mesos 		 ./z/etc/monit/conf.d/mesos
+ZINST requires pkg monit
+ZINST requires pkg mesos
+COMM monit reload all
+
+ZINST activate-uninstall

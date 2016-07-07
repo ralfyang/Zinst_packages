@@ -1,0 +1,65 @@
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = docker_registry_authorize_client
+VERSION = 0.0.1
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'Docker Registry SSL Certification PEM Key Creator and authorized client'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 600 - - conf/keydb/gravity-devel.db 		 	 ./conf/keydb/gravity-devel.db
+CONF 755 - - bin/docker_registry_authorize_client.sh 		 ./docker_registry_authorize_client.sh
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+ZINST set REGISTRY_URL global.registry.gravity.gsenext.com
+ZINST set USER gravity-devel
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+ZINST requires pkg docker
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
+COMM /data/bin/docker_registry_authorize_client.sh

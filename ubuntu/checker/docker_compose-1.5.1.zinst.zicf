@@ -1,0 +1,18 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = docker_compose
+VERSION = 1.5.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'docker compose package'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 755 - - z/usr/local/bin/docker-compose 		 ./z/usr/local/bin/docker-compose
+
+ZINST requires pkg docker

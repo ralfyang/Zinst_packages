@@ -1,0 +1,45 @@
+### Package infomation
+OS = ubuntu
+PACKAGENAME = vagrantfile_gen
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'Vagrantfile generator with consul connection'
+CUSTODIAN = gsshop-iic
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 755 - - z/vagrant/vagrantfile_gen.sh 			 ./vagrantfile_gen.sh
+FILE 664 - - z/vagrant/conf/zzz_consul.conf 			 ./conf/zzz_consul.conf
+FILE 664 - - z/vagrant/conf/mesos.conf 				 ./conf/mesos.conf
+FILE 664 - - z/vagrant/conf/test.conf 				 ./conf/test.conf
+FILE 664 - - z/vagrant/conf/haproxy.conf 	 	 	 ./conf/haproxy.conf
+FILE 664 - - z/vagrant/conf/bakery.conf 			 ./conf/bakery.conf
+FILE 664 - - z/vagrant/host/vagrant01.list 			 ./host/vagrant01.list
+FILE 664 - - z/vagrant/provisioning/consul.sh 			 ./provisioning/consul.sh
+FILE 664 - - z/vagrant/provisioning/docker_registry.sh 		 ./provisioning/docker_registry.sh
+FILE 664 - - z/vagrant/provisioning/bakery.sh 			 ./provisioning/bakery.sh
+FILE 664 - - z/vagrant/provisioning/haproxy.sh 			 ./provisioning/haproxy.sh
+FILE 664 - - z/vagrant/provisioning/mesos.sh 			 ./provisioning/mesos.sh
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+ZINST set consul "10.53.15.219"
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

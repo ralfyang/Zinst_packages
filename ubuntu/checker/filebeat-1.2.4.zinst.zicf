@@ -1,0 +1,70 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = filebeat
+VERSION = 1.2.4
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'file harvester of elastic stack'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 775 - - z/etc/init.d/filebeat 						 ./z/etc/init.d/filebeat
+FILE 664 - - z/etc/filebeat/filebeat.template.json 		 ./z/etc/filebeat/filebeat.template.json
+FILE 664 - - z/etc/filebeat/filebeat.yml_back 			 ./z/etc/filebeat/filebeat.yml_back
+FILE 664 - - z/usr/share/doc/filebeat/changelog.gz 		 ./z/usr/share/doc/filebeat/changelog.gz
+FILE 775 - - z/usr/bin/filebeat-god	 					 ./z/usr/bin/filebeat-god
+FILE 775 - - z/usr/bin/filebeat 						 ./z/usr/bin/filebeat
+FILE 664 - - z/lib/systemd/system/filebeat.service 		 ./z/lib/systemd/system/filebeat.service
+CONF 664 - - z/etc/filebeat/filebeat.yml 				 ./z/etc/filebeat/filebeat.yml
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

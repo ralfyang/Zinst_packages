@@ -1,0 +1,21 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit_docker
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'docker service config of monit for monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/docker 		 ./z/etc/monit/conf.d/docker
+ZINST requires pkg monit
+ZINST requires pkg docker
+COMM monit reload all
+
+ZINST activate-uninstall

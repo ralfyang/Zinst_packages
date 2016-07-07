@@ -1,0 +1,28 @@
+## Package infomation
+OS = ubuntu
+PACKAGENAME = user_account_creator
+VERSION = 0.1.1
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'Account package creation tool'
+CUSTODIAN = gsshop-eit-team
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 775 - - bin/account_pkg_create.sh 		 ./account_pkg_create.sh
+FILE 664 - - var/user_ACCOUNTPKG.dat 		 ./user_ACCOUNTPKG.dat
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+#
+ZINST requires pkg zinst_making_tool
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

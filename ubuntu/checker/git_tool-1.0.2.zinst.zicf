@@ -1,0 +1,17 @@
+OS = ubuntu
+## Package infomation
+PACKAGENAME = git_tool
+VERSION = 1.0.2
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'git package upload tool'
+CUSTODIAN = gsshop-iic
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 775
+
+FILE 775 - - /bin/gitpush 				 ./gitpush
+CONF 775 - - /bin/gitpush-branch 		 ./gitpush-branch
+
+ZINST set Branch gh-pages
