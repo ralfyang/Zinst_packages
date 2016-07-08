@@ -1,0 +1,16 @@
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = filebeat_conf_zinst
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'logs harvester for zinst'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - conf/filebeat/zinst_log.conf					 ./conf/filebeat/zinst_log.conf
+
