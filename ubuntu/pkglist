@@ -1,5 +1,9 @@
+consul-0.0.1.zinst
+docker-1.10.6.zinst
+docker-1.8.3.zinst
 docker_compose-1.5.1.zinst
 docker_port_checker-0.0.1.zinst
+docker_port_tunnel-0.0.1.zinst
 docker_registry_build-0.0.4.zinst
 filebeat-1.2.5.zinst
 filebeat_conf_zinst-0.0.1.zinst
@@ -14,6 +18,7 @@ hosts_file_creator-0.0.2.zinst
 hwconfig-1.3.3.zinst
 marathon_cleaner_service-0.0.5.zinst
 marathon_lb_deploy-0.0.3.zinst
+mesos-0.0.1.zinst
 mesos_allinone-0.0.9.zinst
 mesos_consul_installer-0.0.5.zinst
 mesos_consul_manager-0.0.4.zinst
@@ -33,6 +38,7 @@ monit_nginx_container-0.0.2.zinst
 monit_rootfs-0.0.1.zinst
 proxyctl-0.0.2.zinst
 scp2dist-0.0.3.zinst
+server_default_setting-1.3.0.zinst
 server_default_setting-1.3.5.zinst
 server_default_setting-1.3.6.zinst
 service_flag_elk-0.0.2.zinst
@@ -42,4 +48,5 @@ user_account_creator-0.1.1.zinst
 user_consul-0.0.2.zinst
 vagrantfile_gen-0.0.1.zinst
 vgm-0.0.4.zinst
+zinst_making_tool-0.1.2.zinst
 zinst_making_tool-0.1.3.zinst
