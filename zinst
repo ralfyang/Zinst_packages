@@ -1,7 +1,7 @@
 #!/bin/bash   
-# GSshop package install manager
+# Package install manager
 # Made by Ralf Yang
-# ralf.yang@gsshop.com & goody80762@gmail.com
+# goody80762@gmail.com
 export TIME_STYLE="+%b %d %R"
 Barr="==========================================================================="
 BARR="###########################################################################"
