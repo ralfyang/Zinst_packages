@@ -17,8 +17,9 @@ Count=0
 	do
 		cd $WorkDIR/checker
 		OrgName=`echo "${ListUpArry[$Count]}" | awk -F '-' '{print $1}'`
-		tar zxvfp $WorkDIR/${ListUpArry[$Count]} *$OrgName.zicf -C $WorkDIR/checker
-		mv $WorkDIR/checker/*$OrgName.zicf $WorkDIR/checker/${ListUpArry[$Count]}.zicf
+		Zicf_name=`tar tfv $WorkDIR/${ListUpArry[$Count]} | awk '{print $6}' |grep "\.zicf" |head -1`
+		tar zxvfp $WorkDIR/${ListUpArry[$Count]} $Zicf_name -C $WorkDIR/checker
+		mv $WorkDIR/checker/$Zicf_name $WorkDIR/checker/${ListUpArry[$Count]}.zicf
 	let Count=$Count+1
 	done
 
@@ -28,7 +29,7 @@ sudo chgrp wheel -R $WorkDIR/*
 
 Target=$PWD
 
-Index_pacakge $Target
+Index_pacakge $Target/rhel
 Index_pacakge $Target/ubuntu
 
 
