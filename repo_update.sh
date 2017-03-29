@@ -30,6 +30,7 @@ sudo chgrp wheel -R $WorkDIR/*
 Target=$PWD
 
 Index_pacakge $Target/rhel
+Index_pacakge $Target/rhel7
 Index_pacakge $Target/ubuntu
 
 
