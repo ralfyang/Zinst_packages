@@ -1,0 +1,23 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit_network
+VERSION = 0.0.1
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'Network Inteface Traffic checker of monit for monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/network 		 ./z/etc/monit/conf.d/network
+
+ZINST requires pkg monit
+
+ZINST activate-uninstall
+
+#COMM Target_fs=`mount |grep " / " | awk '{print $1}'`; sed -i "s#::TARGET_FS#$Target_fs#g" /data/z/etc/monit/conf.d/rootfs
+COMM monit reload all

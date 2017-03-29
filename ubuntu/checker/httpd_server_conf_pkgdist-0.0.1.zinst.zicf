@@ -1,0 +1,31 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = httpd_server_conf_pkgdist
+VERSION = 0.0.1
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'httpd server config package for the Package distribution server'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+
+FILE 755 - - bin/indexmaker.sh 		 ./bin/indexmaker.sh
+FILE 644 - - logs/httpd/.zinst 		 ./logs/httpd/.zinst
+CONF 644 - - z/httpd/conf/include/zinst_pkgdist.conf 		 ./z/httpd/conf/include/zinst_pkgdist.conf
+CRON x root x 0 7 * * * bin/indexmaker.sh
+
+ZINST requires pkg httpd_server
+
+ZINST set ServerName package.dist.zinst.me
+ZINST set DocumentRoot /data/dist
+
+COMM sudo mkdir -p /data/dist/rhel
+COMM sudo mkdir -p /data/dist/ubuntu
+COMM sudo mkdir -p /data/dist/osx
+COMM sudo mkdir -p /data/dist/freebsd

@@ -1,0 +1,43 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = monit
+VERSION = 5.19.0
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'monit agent package for server monitoring'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+CONF 775 - - bin/monit_conf_chk 				 ./bin/monit_conf_chk
+FILE 664 - - z/etc/monit/templates/rootbin 		 ./z/etc/monit/templates/rootbin
+FILE 664 - - z/etc/monit/templates/rootrc 		 ./z/etc/monit/templates/rootrc
+FILE 664 - - z/etc/monit/templates/rootstrict 		 ./z/etc/monit/templates/rootstrict
+FILE 700 - - z/etc/monit/monitrc 			 ./z/etc/monit/monitrc
+SYMB x x x   z/etc/monitrc                        	 ./z/etc/monit/monitrc
+FILE 664 - - z/etc/logrotate.d/monit 		 	 ./z/etc/logrotate.d/monit
+FILE 664 - - z/etc/pam.d/monit 				 ./z/etc/pam.d/monit
+FILE 664 - - z/etc/default/monit 			 ./z/etc/default/monit
+FILE 775 - - z/etc/init.d/monit 			 ./z/etc/init.d/monit
+FILE 775 - - z/usr/bin/monit 				 ./z/usr/bin/monit
+FILE 775 - - z/usr/share/bug/monit 			 ./z/usr/share/bug/monit
+FILE 664 - - z/usr/share/lintian/overrides/monit 	 ./z/usr/share/lintian/overrides/monit
+FILE 664 - - z/usr/share/doc/monit/NEWS.Debian.gz 	 ./z/usr/share/doc/monit/NEWS.Debian.gz
+FILE 664 - - z/var/lib/monit/.zinst			 ./z/var/lib/monit/.zinst
+
+ZINST activate-uninstall
+
+ZINST set mmonit_server "10.52.222.80:80"
+
+COMM sudo /usr/sbin/update-rc.d monit defaults
+COMM zinst start monit

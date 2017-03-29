@@ -1,0 +1,182 @@
+
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = ubuntu
+PACKAGENAME = docker
+VERSION = 1.12.2-cs2
+AUTHORIZED = kim.so@gsshop.com
+DESCRIPTION = 'Please insert a description for this package'
+CUSTODIAN = iic-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 664 - - z/lib/udev/rules.d/80-docker-engine.rules 		 ./z/lib/udev/rules.d/80-docker-engine.rules
+FILE 664 - - z/lib/systemd/system/docker.socket 		 ./z/lib/systemd/system/docker.socket
+FILE 664 - - z/lib/systemd/system/docker.service 		 ./z/lib/systemd/system/docker.service
+FILE 664 - - z/etc/bash_completion.d/docker 		 ./z/etc/bash_completion.d/docker
+FILE 664 - - z/etc/default/docker 		 ./z/etc/default/docker
+FILE 664 - - z/etc/init/docker.conf 		 ./z/etc/init/docker.conf
+FILE 775 - - z/etc/init.d/docker 		 ./z/etc/init.d/docker
+FILE 664 - - z/usr/share/zsh/vendor-completions/_docker 		 ./z/usr/share/zsh/vendor-completions/_docker
+FILE 664 - - z/usr/share/doc/docker-engine/LICENSE-EVAL.txt.gz 		 ./z/usr/share/doc/docker-engine/LICENSE-EVAL.txt.gz
+FILE 664 - - z/usr/share/doc/docker-engine/changelog.Debian.gz 		 ./z/usr/share/doc/docker-engine/changelog.Debian.gz
+FILE 664 - - z/usr/share/doc/docker-engine/README.md.gz 		 ./z/usr/share/doc/docker-engine/README.md.gz
+FILE 664 - - z/usr/share/man/man8/dockerd.8.gz 		 ./z/usr/share/man/man8/dockerd.8.gz
+FILE 664 - - z/usr/share/man/man1/docker-network-ls.1.gz 		 ./z/usr/share/man/man1/docker-network-ls.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-network-create.1.gz 		 ./z/usr/share/man/man1/docker-network-create.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-volume-ls.1.gz 		 ./z/usr/share/man/man1/docker-volume-ls.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-rm.1.gz 		 ./z/usr/share/man/man1/docker-rm.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-swarm.1.gz 		 ./z/usr/share/man/man1/docker-swarm.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-exec.1.gz 		 ./z/usr/share/man/man1/docker-exec.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-rmi.1.gz 		 ./z/usr/share/man/man1/docker-rmi.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-cp.1.gz 		 ./z/usr/share/man/man1/docker-cp.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-attach.1.gz 		 ./z/usr/share/man/man1/docker-attach.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-volume-create.1.gz 		 ./z/usr/share/man/man1/docker-volume-create.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-logs.1.gz 		 ./z/usr/share/man/man1/docker-logs.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-wait.1.gz 		 ./z/usr/share/man/man1/docker-wait.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-pause.1.gz 		 ./z/usr/share/man/man1/docker-pause.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-stats.1.gz 		 ./z/usr/share/man/man1/docker-stats.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-events.1.gz 		 ./z/usr/share/man/man1/docker-events.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service-create.1.gz 		 ./z/usr/share/man/man1/docker-service-create.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-volume.1.gz 		 ./z/usr/share/man/man1/docker-volume.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-diff.1.gz 		 ./z/usr/share/man/man1/docker-diff.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-export.1.gz 		 ./z/usr/share/man/man1/docker-export.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-network-rm.1.gz 		 ./z/usr/share/man/man1/docker-network-rm.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-push.1.gz 		 ./z/usr/share/man/man1/docker-push.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-search.1.gz 		 ./z/usr/share/man/man1/docker-search.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-network-inspect.1.gz 		 ./z/usr/share/man/man1/docker-network-inspect.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-network.1.gz 		 ./z/usr/share/man/man1/docker-network.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-top.1.gz 		 ./z/usr/share/man/man1/docker-top.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-login.1.gz 		 ./z/usr/share/man/man1/docker-login.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node-ps.1.gz 		 ./z/usr/share/man/man1/docker-node-ps.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-network-disconnect.1.gz 		 ./z/usr/share/man/man1/docker-network-disconnect.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-volume-rm.1.gz 		 ./z/usr/share/man/man1/docker-volume-rm.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-images.1.gz 		 ./z/usr/share/man/man1/docker-images.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-ps.1.gz 		 ./z/usr/share/man/man1/docker-ps.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node-demote.1.gz 		 ./z/usr/share/man/man1/docker-node-demote.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-update.1.gz 		 ./z/usr/share/man/man1/docker-update.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-start.1.gz 		 ./z/usr/share/man/man1/docker-start.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node-inspect.1.gz 		 ./z/usr/share/man/man1/docker-node-inspect.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-load.1.gz 		 ./z/usr/share/man/man1/docker-load.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service-ps.1.gz 		 ./z/usr/share/man/man1/docker-service-ps.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service-inspect.1.gz 		 ./z/usr/share/man/man1/docker-service-inspect.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-save.1.gz 		 ./z/usr/share/man/man1/docker-save.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-port.1.gz 		 ./z/usr/share/man/man1/docker-port.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-swarm-update.1.gz 		 ./z/usr/share/man/man1/docker-swarm-update.1.gz
+FILE 664 - - z/usr/share/man/man1/docker.1.gz 		 ./z/usr/share/man/man1/docker.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-tag.1.gz 		 ./z/usr/share/man/man1/docker-tag.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-swarm-leave.1.gz 		 ./z/usr/share/man/man1/docker-swarm-leave.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-unpause.1.gz 		 ./z/usr/share/man/man1/docker-unpause.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service-ls.1.gz 		 ./z/usr/share/man/man1/docker-service-ls.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-pull.1.gz 		 ./z/usr/share/man/man1/docker-pull.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-swarm-join-token.1.gz 		 ./z/usr/share/man/man1/docker-swarm-join-token.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-network-connect.1.gz 		 ./z/usr/share/man/man1/docker-network-connect.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-stop.1.gz 		 ./z/usr/share/man/man1/docker-stop.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-history.1.gz 		 ./z/usr/share/man/man1/docker-history.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-rename.1.gz 		 ./z/usr/share/man/man1/docker-rename.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-build.1.gz 		 ./z/usr/share/man/man1/docker-build.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-inspect.1.gz 		 ./z/usr/share/man/man1/docker-inspect.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node-update.1.gz 		 ./z/usr/share/man/man1/docker-node-update.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-kill.1.gz 		 ./z/usr/share/man/man1/docker-kill.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-commit.1.gz 		 ./z/usr/share/man/man1/docker-commit.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-volume-inspect.1.gz 		 ./z/usr/share/man/man1/docker-volume-inspect.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-swarm-init.1.gz 		 ./z/usr/share/man/man1/docker-swarm-init.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-restart.1.gz 		 ./z/usr/share/man/man1/docker-restart.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service-rm.1.gz 		 ./z/usr/share/man/man1/docker-service-rm.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-swarm-join.1.gz 		 ./z/usr/share/man/man1/docker-swarm-join.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node-rm.1.gz 		 ./z/usr/share/man/man1/docker-node-rm.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-run.1.gz 		 ./z/usr/share/man/man1/docker-run.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node-ls.1.gz 		 ./z/usr/share/man/man1/docker-node-ls.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-version.1.gz 		 ./z/usr/share/man/man1/docker-version.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-import.1.gz 		 ./z/usr/share/man/man1/docker-import.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node.1.gz 		 ./z/usr/share/man/man1/docker-node.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service.1.gz 		 ./z/usr/share/man/man1/docker-service.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service-scale.1.gz 		 ./z/usr/share/man/man1/docker-service-scale.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-logout.1.gz 		 ./z/usr/share/man/man1/docker-logout.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-node-promote.1.gz 		 ./z/usr/share/man/man1/docker-node-promote.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-create.1.gz 		 ./z/usr/share/man/man1/docker-create.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-info.1.gz 		 ./z/usr/share/man/man1/docker-info.1.gz
+FILE 664 - - z/usr/share/man/man1/docker-service-update.1.gz 		 ./z/usr/share/man/man1/docker-service-update.1.gz
+FILE 664 - - z/usr/share/man/man5/Dockerfile.5.gz 		 ./z/usr/share/man/man5/Dockerfile.5.gz
+FILE 664 - - z/usr/share/man/man5/docker-config-json.5.gz 		 ./z/usr/share/man/man5/docker-config-json.5.gz
+FILE 664 - - z/usr/share/fish/vendor_completions.d/docker.fish 		 ./z/usr/share/fish/vendor_completions.d/docker.fish
+FILE 664 - - z/usr/share/nano/Dockerfile.nanorc 		 ./z/usr/share/nano/Dockerfile.nanorc
+FILE 664 - - z/usr/share/docker-engine/contrib/mkimage-archarm-pacman.conf 		 ./z/usr/share/docker-engine/contrib/mkimage-archarm-pacman.conf
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-crux.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-crux.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/.febootstrap-minimize 		 ./z/usr/share/docker-engine/contrib/mkimage/.febootstrap-minimize
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/rinse 		 ./z/usr/share/docker-engine/contrib/mkimage/rinse
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/debootstrap 		 ./z/usr/share/docker-engine/contrib/mkimage/debootstrap
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/busybox-static 		 ./z/usr/share/docker-engine/contrib/mkimage/busybox-static
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage/mageia-urpmi 		 ./z/usr/share/docker-engine/contrib/mkimage/mageia-urpmi
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-arch.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-arch.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-alpine.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-alpine.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage.sh 		 ./z/usr/share/docker-engine/contrib/mkimage.sh
+FILE 664 - - z/usr/share/docker-engine/contrib/mkimage-arch-pacman.conf 		 ./z/usr/share/docker-engine/contrib/mkimage-arch-pacman.conf
+FILE 775 - - z/usr/share/docker-engine/contrib/check-config.sh 		 ./z/usr/share/docker-engine/contrib/check-config.sh
+FILE 664 - - z/usr/share/docker-engine/contrib/desktop-integration/README.md 		 ./z/usr/share/docker-engine/contrib/desktop-integration/README.md
+FILE 664 - - z/usr/share/docker-engine/contrib/desktop-integration/chromium/Dockerfile 		 ./z/usr/share/docker-engine/contrib/desktop-integration/chromium/Dockerfile
+FILE 664 - - z/usr/share/docker-engine/contrib/desktop-integration/gparted/Dockerfile 		 ./z/usr/share/docker-engine/contrib/desktop-integration/gparted/Dockerfile
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-rinse.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-rinse.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-debootstrap.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-debootstrap.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-yum.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-yum.sh
+FILE 775 - - z/usr/share/docker-engine/contrib/mkimage-busybox.sh 		 ./z/usr/share/docker-engine/contrib/mkimage-busybox.sh
+FILE 775 - - z/usr/bin/dockerd 		 ./z/usr/bin/dockerd
+FILE 775 - - z/usr/bin/docker-containerd-ctr 		 ./z/usr/bin/docker-containerd-ctr
+FILE 775 - - z/usr/bin/docker-containerd-shim 		 ./z/usr/bin/docker-containerd-shim
+FILE 775 - - z/usr/bin/docker 		 ./z/usr/bin/docker
+FILE 775 - - z/usr/bin/docker-runc 		 ./z/usr/bin/docker-runc
+FILE 775 - - z/usr/bin/docker-proxy 		 ./z/usr/bin/docker-proxy
+FILE 775 - - z/usr/bin/docker-containerd 		 ./z/usr/bin/docker-containerd
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
+COMM sudo apt-get update && sudo apt-get install aufs-tools cgroup-lite git git-man liberror-perl patch libltdl7 libsystemd-journal0 -y
+#COMM sudo service docker restart
+COMM sudo restart docker
