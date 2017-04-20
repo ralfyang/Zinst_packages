@@ -1,0 +1,344 @@
+
+### Package infomation
+PACKAGENAME = gs_nmap
+VERSION = 0.0.1
+AUTHORIZED = ralf.yang@gsshop.com
+DESCRIPTION = 'Server network alive checker'
+CUSTODIAN = gsshop-eit-team
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 664 - - z/usr/share/man/ro/man1/nmap.1.gz 		 ./z/usr/share/man/ro/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/de/man1/nmap.1.gz 		 ./z/usr/share/man/de/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/hu/man1/nmap.1.gz 		 ./z/usr/share/man/hu/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/it/man1/nmap.1.gz 		 ./z/usr/share/man/it/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/ja/man1/nmap.1.gz 		 ./z/usr/share/man/ja/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/pl/man1/nmap.1.gz 		 ./z/usr/share/man/pl/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/fr/man1/nmap.1.gz 		 ./z/usr/share/man/fr/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/man1/nmap.1.gz 		 ./z/usr/share/man/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/man1/ndiff.1.gz 		 ./z/usr/share/man/man1/ndiff.1.gz
+FILE 664 - - z/usr/share/man/man1/nping.1.gz 		 ./z/usr/share/man/man1/nping.1.gz
+FILE 664 - - z/usr/share/man/man1/ncat.1.gz 		 ./z/usr/share/man/man1/ncat.1.gz
+FILE 664 - - z/usr/share/man/sk/man1/nmap.1.gz 		 ./z/usr/share/man/sk/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/hr/man1/nmap.1.gz 		 ./z/usr/share/man/hr/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/pt_PT/man1/nmap.1.gz 		 ./z/usr/share/man/pt_PT/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/es/man1/nmap.1.gz 		 ./z/usr/share/man/es/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/zh/man1/nmap.1.gz 		 ./z/usr/share/man/zh/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/ru/man1/nmap.1.gz 		 ./z/usr/share/man/ru/man1/nmap.1.gz
+FILE 664 - - z/usr/share/man/pt_BR/man1/nmap.1.gz 		 ./z/usr/share/man/pt_BR/man1/nmap.1.gz
+FILE 664 - - z/usr/share/nmap/nmap-services 		 ./z/usr/share/nmap/nmap-services
+FILE 664 - - z/usr/share/nmap/nmap-os-db 		 ./z/usr/share/nmap/nmap-os-db
+FILE 664 - - z/usr/share/nmap/nmap.dtd 		 ./z/usr/share/nmap/nmap.dtd
+FILE 664 - - z/usr/share/nmap/nmap-protocols 		 ./z/usr/share/nmap/nmap-protocols
+FILE 664 - - z/usr/share/nmap/nselib/target.lua 		 ./z/usr/share/nmap/nselib/target.lua
+FILE 664 - - z/usr/share/nmap/nselib/afp.lua 		 ./z/usr/share/nmap/nselib/afp.lua
+FILE 664 - - z/usr/share/nmap/nselib/mongodb.lua 		 ./z/usr/share/nmap/nselib/mongodb.lua
+FILE 664 - - z/usr/share/nmap/nselib/citrixxml.lua 		 ./z/usr/share/nmap/nselib/citrixxml.lua
+FILE 664 - - z/usr/share/nmap/nselib/shortport.lua 		 ./z/usr/share/nmap/nselib/shortport.lua
+FILE 664 - - z/usr/share/nmap/nselib/netbios.lua 		 ./z/usr/share/nmap/nselib/netbios.lua
+FILE 664 - - z/usr/share/nmap/nselib/base64.lua 		 ./z/usr/share/nmap/nselib/base64.lua
+FILE 664 - - z/usr/share/nmap/nselib/msrpctypes.lua 		 ./z/usr/share/nmap/nselib/msrpctypes.lua
+FILE 664 - - z/usr/share/nmap/nselib/giop.lua 		 ./z/usr/share/nmap/nselib/giop.lua
+FILE 664 - - z/usr/share/nmap/nselib/tns.lua 		 ./z/usr/share/nmap/nselib/tns.lua
+FILE 664 - - z/usr/share/nmap/nselib/mysql.lua 		 ./z/usr/share/nmap/nselib/mysql.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/usernames.lst 		 ./z/usr/share/nmap/nselib/data/usernames.lst
+FILE 664 - - z/usr/share/nmap/nselib/data/oracle-sids 		 ./z/usr/share/nmap/nselib/data/oracle-sids
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/experimental.lua 		 ./z/usr/share/nmap/nselib/data/psexec/experimental.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/nmap_service.vcproj 		 ./z/usr/share/nmap/nselib/data/psexec/nmap_service.vcproj
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/backdoor.lua 		 ./z/usr/share/nmap/nselib/data/psexec/backdoor.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/default.lua 		 ./z/usr/share/nmap/nselib/data/psexec/default.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/README 		 ./z/usr/share/nmap/nselib/data/psexec/README
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/nmap_service.c 		 ./z/usr/share/nmap/nselib/data/psexec/nmap_service.c
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/examples.lua 		 ./z/usr/share/nmap/nselib/data/psexec/examples.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/network.lua 		 ./z/usr/share/nmap/nselib/data/psexec/network.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/drives.lua 		 ./z/usr/share/nmap/nselib/data/psexec/drives.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/psexec/pwdump.lua 		 ./z/usr/share/nmap/nselib/data/psexec/pwdump.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/http-fingerprints.lua 		 ./z/usr/share/nmap/nselib/data/http-fingerprints.lua
+FILE 664 - - z/usr/share/nmap/nselib/data/passwords.lst 		 ./z/usr/share/nmap/nselib/data/passwords.lst
+FILE 664 - - z/usr/share/nmap/nselib/data/favicon-db 		 ./z/usr/share/nmap/nselib/data/favicon-db
+FILE 664 - - z/usr/share/nmap/nselib/data/http-folders.txt 		 ./z/usr/share/nmap/nselib/data/http-folders.txt
+FILE 664 - - z/usr/share/nmap/nselib/nsedebug.lua 		 ./z/usr/share/nmap/nselib/nsedebug.lua
+FILE 664 - - z/usr/share/nmap/nselib/rpc.lua 		 ./z/usr/share/nmap/nselib/rpc.lua
+FILE 664 - - z/usr/share/nmap/nselib/datafiles.lua 		 ./z/usr/share/nmap/nselib/datafiles.lua
+FILE 664 - - z/usr/share/nmap/nselib/unpwdb.lua 		 ./z/usr/share/nmap/nselib/unpwdb.lua
+FILE 664 - - z/usr/share/nmap/nselib/url.lua 		 ./z/usr/share/nmap/nselib/url.lua
+FILE 664 - - z/usr/share/nmap/nselib/rmi.lua 		 ./z/usr/share/nmap/nselib/rmi.lua
+FILE 664 - - z/usr/share/nmap/nselib/snmp.lua 		 ./z/usr/share/nmap/nselib/snmp.lua
+FILE 664 - - z/usr/share/nmap/nselib/msrpc.lua 		 ./z/usr/share/nmap/nselib/msrpc.lua
+FILE 664 - - z/usr/share/nmap/nselib/stdnse.lua 		 ./z/usr/share/nmap/nselib/stdnse.lua
+FILE 664 - - z/usr/share/nmap/nselib/mssql.lua 		 ./z/usr/share/nmap/nselib/mssql.lua
+FILE 664 - - z/usr/share/nmap/nselib/strbuf.lua 		 ./z/usr/share/nmap/nselib/strbuf.lua
+FILE 664 - - z/usr/share/nmap/nselib/ldap.lua 		 ./z/usr/share/nmap/nselib/ldap.lua
+FILE 664 - - z/usr/share/nmap/nselib/ssh1.lua 		 ./z/usr/share/nmap/nselib/ssh1.lua
+FILE 664 - - z/usr/share/nmap/nselib/drda.lua 		 ./z/usr/share/nmap/nselib/drda.lua
+FILE 664 - - z/usr/share/nmap/nselib/comm.lua 		 ./z/usr/share/nmap/nselib/comm.lua
+FILE 664 - - z/usr/share/nmap/nselib/smb.lua 		 ./z/usr/share/nmap/nselib/smb.lua
+FILE 664 - - z/usr/share/nmap/nselib/wsdd.lua 		 ./z/usr/share/nmap/nselib/wsdd.lua
+FILE 664 - - z/usr/share/nmap/nselib/json.lua 		 ./z/usr/share/nmap/nselib/json.lua
+FILE 664 - - z/usr/share/nmap/nselib/smbauth.lua 		 ./z/usr/share/nmap/nselib/smbauth.lua
+FILE 664 - - z/usr/share/nmap/nselib/asn1.lua 		 ./z/usr/share/nmap/nselib/asn1.lua
+FILE 664 - - z/usr/share/nmap/nselib/dns.lua 		 ./z/usr/share/nmap/nselib/dns.lua
+FILE 664 - - z/usr/share/nmap/nselib/match.lua 		 ./z/usr/share/nmap/nselib/match.lua
+FILE 664 - - z/usr/share/nmap/nselib/nrpc.lua 		 ./z/usr/share/nmap/nselib/nrpc.lua
+FILE 664 - - z/usr/share/nmap/nselib/strict.lua 		 ./z/usr/share/nmap/nselib/strict.lua
+FILE 664 - - z/usr/share/nmap/nselib/msrpcperformance.lua 		 ./z/usr/share/nmap/nselib/msrpcperformance.lua
+FILE 664 - - z/usr/share/nmap/nselib/brute.lua 		 ./z/usr/share/nmap/nselib/brute.lua
+FILE 664 - - z/usr/share/nmap/nselib/proxy.lua 		 ./z/usr/share/nmap/nselib/proxy.lua
+FILE 664 - - z/usr/share/nmap/nselib/informix.lua 		 ./z/usr/share/nmap/nselib/informix.lua
+FILE 664 - - z/usr/share/nmap/nselib/http.lua 		 ./z/usr/share/nmap/nselib/http.lua
+FILE 664 - - z/usr/share/nmap/nselib/packet.lua 		 ./z/usr/share/nmap/nselib/packet.lua
+FILE 664 - - z/usr/share/nmap/nselib/vnc.lua 		 ./z/usr/share/nmap/nselib/vnc.lua
+FILE 664 - - z/usr/share/nmap/nselib/pop3.lua 		 ./z/usr/share/nmap/nselib/pop3.lua
+FILE 664 - - z/usr/share/nmap/nselib/tab.lua 		 ./z/usr/share/nmap/nselib/tab.lua
+FILE 664 - - z/usr/share/nmap/nselib/pgsql.lua 		 ./z/usr/share/nmap/nselib/pgsql.lua
+FILE 664 - - z/usr/share/nmap/nselib/dhcp.lua 		 ./z/usr/share/nmap/nselib/dhcp.lua
+FILE 664 - - z/usr/share/nmap/nselib/ftp.lua 		 ./z/usr/share/nmap/nselib/ftp.lua
+FILE 664 - - z/usr/share/nmap/nselib/listop.lua 		 ./z/usr/share/nmap/nselib/listop.lua
+FILE 664 - - z/usr/share/nmap/nselib/upnp.lua 		 ./z/usr/share/nmap/nselib/upnp.lua
+FILE 664 - - z/usr/share/nmap/nselib/imap.lua 		 ./z/usr/share/nmap/nselib/imap.lua
+FILE 664 - - z/usr/share/nmap/nselib/ssh2.lua 		 ./z/usr/share/nmap/nselib/ssh2.lua
+FILE 664 - - z/usr/share/nmap/nselib/dnssd.lua 		 ./z/usr/share/nmap/nselib/dnssd.lua
+FILE 664 - - z/usr/share/nmap/nselib/ipOps.lua 		 ./z/usr/share/nmap/nselib/ipOps.lua
+FILE 664 - - z/usr/share/nmap/nselib/iscsi.lua 		 ./z/usr/share/nmap/nselib/iscsi.lua
+FILE 664 - - z/usr/share/nmap/nmap-mac-prefixes 		 ./z/usr/share/nmap/nmap-mac-prefixes
+FILE 664 - - z/usr/share/nmap/scripts/http-trace.nse 		 ./z/usr/share/nmap/scripts/http-trace.nse
+FILE 664 - - z/usr/share/nmap/scripts/oracle-sid-brute.nse 		 ./z/usr/share/nmap/scripts/oracle-sid-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/pptp-version.nse 		 ./z/usr/share/nmap/scripts/pptp-version.nse
+FILE 664 - - z/usr/share/nmap/scripts/couchdb-stats.nse 		 ./z/usr/share/nmap/scripts/couchdb-stats.nse
+FILE 664 - - z/usr/share/nmap/scripts/daytime.nse 		 ./z/usr/share/nmap/scripts/daytime.nse
+FILE 664 - - z/usr/share/nmap/scripts/auth-spoof.nse 		 ./z/usr/share/nmap/scripts/auth-spoof.nse
+FILE 664 - - z/usr/share/nmap/scripts/afp-path-vuln.nse 		 ./z/usr/share/nmap/scripts/afp-path-vuln.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-headers.nse 		 ./z/usr/share/nmap/scripts/http-headers.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-enum-domains.nse 		 ./z/usr/share/nmap/scripts/smb-enum-domains.nse
+FILE 664 - - z/usr/share/nmap/scripts/hddtemp-info.nse 		 ./z/usr/share/nmap/scripts/hddtemp-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/smtp-strangeport.nse 		 ./z/usr/share/nmap/scripts/smtp-strangeport.nse
+FILE 664 - - z/usr/share/nmap/scripts/netbus-info.nse 		 ./z/usr/share/nmap/scripts/netbus-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-zone-transfer.nse 		 ./z/usr/share/nmap/scripts/dns-zone-transfer.nse
+FILE 664 - - z/usr/share/nmap/scripts/netbus-version.nse 		 ./z/usr/share/nmap/scripts/netbus-version.nse
+FILE 664 - - z/usr/share/nmap/scripts/mysql-info.nse 		 ./z/usr/share/nmap/scripts/mysql-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-query.nse 		 ./z/usr/share/nmap/scripts/ms-sql-query.nse
+FILE 664 - - z/usr/share/nmap/scripts/broadcast-ms-sql-discover.nse 		 ./z/usr/share/nmap/scripts/broadcast-ms-sql-discover.nse
+FILE 664 - - z/usr/share/nmap/scripts/ssh-hostkey.nse 		 ./z/usr/share/nmap/scripts/ssh-hostkey.nse
+FILE 664 - - z/usr/share/nmap/scripts/broadcast-upnp-info.nse 		 ./z/usr/share/nmap/scripts/broadcast-upnp-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-system-info.nse 		 ./z/usr/share/nmap/scripts/smb-system-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-hasdbaccess.nse 		 ./z/usr/share/nmap/scripts/ms-sql-hasdbaccess.nse
+FILE 664 - - z/usr/share/nmap/scripts/mysql-brute.nse 		 ./z/usr/share/nmap/scripts/mysql-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-interfaces.nse 		 ./z/usr/share/nmap/scripts/snmp-interfaces.nse
+FILE 664 - - z/usr/share/nmap/scripts/nfs-ls.nse 		 ./z/usr/share/nmap/scripts/nfs-ls.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-brute.nse 		 ./z/usr/share/nmap/scripts/snmp-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/mysql-users.nse 		 ./z/usr/share/nmap/scripts/mysql-users.nse
+FILE 664 - - z/usr/share/nmap/scripts/smtp-enum-users.nse 		 ./z/usr/share/nmap/scripts/smtp-enum-users.nse
+FILE 664 - - z/usr/share/nmap/scripts/giop-info.nse 		 ./z/usr/share/nmap/scripts/giop-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/afp-showmount.nse 		 ./z/usr/share/nmap/scripts/afp-showmount.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-random-txid.nse 		 ./z/usr/share/nmap/scripts/dns-random-txid.nse
+FILE 664 - - z/usr/share/nmap/scripts/ssh2-enum-algos.nse 		 ./z/usr/share/nmap/scripts/ssh2-enum-algos.nse
+FILE 664 - - z/usr/share/nmap/scripts/ntp-monlist.nse 		 ./z/usr/share/nmap/scripts/ntp-monlist.nse
+FILE 664 - - z/usr/share/nmap/scripts/ldap-rootdse.nse 		 ./z/usr/share/nmap/scripts/ldap-rootdse.nse
+FILE 664 - - z/usr/share/nmap/scripts/resolveall.nse 		 ./z/usr/share/nmap/scripts/resolveall.nse
+FILE 664 - - z/usr/share/nmap/scripts/netbus-auth-bypass.nse 		 ./z/usr/share/nmap/scripts/netbus-auth-bypass.nse
+FILE 664 - - z/usr/share/nmap/scripts/hostmap.nse 		 ./z/usr/share/nmap/scripts/hostmap.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-robots.txt.nse 		 ./z/usr/share/nmap/scripts/http-robots.txt.nse
+FILE 664 - - z/usr/share/nmap/scripts/drda-info.nse 		 ./z/usr/share/nmap/scripts/drda-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/iscsi-brute.nse 		 ./z/usr/share/nmap/scripts/iscsi-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/sniffer-detect.nse 		 ./z/usr/share/nmap/scripts/sniffer-detect.nse
+FILE 664 - - z/usr/share/nmap/scripts/ftp-libopie.nse 		 ./z/usr/share/nmap/scripts/ftp-libopie.nse
+FILE 664 - - z/usr/share/nmap/scripts/auth-owners.nse 		 ./z/usr/share/nmap/scripts/auth-owners.nse
+FILE 664 - - z/usr/share/nmap/scripts/wdb-version.nse 		 ./z/usr/share/nmap/scripts/wdb-version.nse
+FILE 664 - - z/usr/share/nmap/scripts/pgsql-brute.nse 		 ./z/usr/share/nmap/scripts/pgsql-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/citrix-enum-apps.nse 		 ./z/usr/share/nmap/scripts/citrix-enum-apps.nse
+FILE 664 - - z/usr/share/nmap/scripts/netbus-brute.nse 		 ./z/usr/share/nmap/scripts/netbus-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-xp-cmdshell.nse 		 ./z/usr/share/nmap/scripts/ms-sql-xp-cmdshell.nse
+FILE 664 - - z/usr/share/nmap/scripts/nfs-statfs.nse 		 ./z/usr/share/nmap/scripts/nfs-statfs.nse
+FILE 664 - - z/usr/share/nmap/scripts/upnp-info.nse 		 ./z/usr/share/nmap/scripts/upnp-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/mysql-databases.nse 		 ./z/usr/share/nmap/scripts/mysql-databases.nse
+FILE 664 - - z/usr/share/nmap/scripts/svn-brute.nse 		 ./z/usr/share/nmap/scripts/svn-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/vnc-info.nse 		 ./z/usr/share/nmap/scripts/vnc-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-title.nse 		 ./z/usr/share/nmap/scripts/http-title.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-psexec.nse 		 ./z/usr/share/nmap/scripts/smb-psexec.nse
+FILE 664 - - z/usr/share/nmap/scripts/sql-injection.nse 		 ./z/usr/share/nmap/scripts/sql-injection.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-check-vulns.nse 		 ./z/usr/share/nmap/scripts/smb-check-vulns.nse
+FILE 664 - - z/usr/share/nmap/scripts/jdwp-version.nse 		 ./z/usr/share/nmap/scripts/jdwp-version.nse
+FILE 664 - - z/usr/share/nmap/scripts/oracle-enum-users.nse 		 ./z/usr/share/nmap/scripts/oracle-enum-users.nse
+FILE 664 - - z/usr/share/nmap/scripts/domcon-brute.nse 		 ./z/usr/share/nmap/scripts/domcon-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-auth.nse 		 ./z/usr/share/nmap/scripts/http-auth.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-recursion.nse 		 ./z/usr/share/nmap/scripts/dns-recursion.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-methods.nse 		 ./z/usr/share/nmap/scripts/http-methods.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-fuzz.nse 		 ./z/usr/share/nmap/scripts/dns-fuzz.nse
+FILE 664 - - z/usr/share/nmap/scripts/afp-serverinfo.nse 		 ./z/usr/share/nmap/scripts/afp-serverinfo.nse
+FILE 664 - - z/usr/share/nmap/scripts/nrpe-enum.nse 		 ./z/usr/share/nmap/scripts/nrpe-enum.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-service-discovery.nse 		 ./z/usr/share/nmap/scripts/dns-service-discovery.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-info.nse 		 ./z/usr/share/nmap/scripts/ms-sql-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/iax2-version.nse 		 ./z/usr/share/nmap/scripts/iax2-version.nse
+FILE 664 - - z/usr/share/nmap/scripts/skypev2-version.nse 		 ./z/usr/share/nmap/scripts/skypev2-version.nse
+FILE 664 - - z/usr/share/nmap/scripts/ssl-enum-ciphers.nse 		 ./z/usr/share/nmap/scripts/ssl-enum-ciphers.nse
+FILE 664 - - z/usr/share/nmap/scripts/modbus-discover.nse 		 ./z/usr/share/nmap/scripts/modbus-discover.nse
+FILE 664 - - z/usr/share/nmap/scripts/p2p-conficker.nse 		 ./z/usr/share/nmap/scripts/p2p-conficker.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-domino-enum-passwords.nse 		 ./z/usr/share/nmap/scripts/http-domino-enum-passwords.nse
+FILE 664 - - z/usr/share/nmap/scripts/telnet-brute.nse 		 ./z/usr/share/nmap/scripts/telnet-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/targets-traceroute.nse 		 ./z/usr/share/nmap/scripts/targets-traceroute.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-security-mode.nse 		 ./z/usr/share/nmap/scripts/smb-security-mode.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-enum-groups.nse 		 ./z/usr/share/nmap/scripts/smb-enum-groups.nse
+FILE 664 - - z/usr/share/nmap/scripts/firewalk.nse 		 ./z/usr/share/nmap/scripts/firewalk.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-enum-shares.nse 		 ./z/usr/share/nmap/scripts/smb-enum-shares.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-brute.nse 		 ./z/usr/share/nmap/scripts/smb-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-config.nse 		 ./z/usr/share/nmap/scripts/ms-sql-config.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-malware-host.nse 		 ./z/usr/share/nmap/scripts/http-malware-host.nse
+FILE 664 - - z/usr/share/nmap/scripts/mysql-variables.nse 		 ./z/usr/share/nmap/scripts/mysql-variables.nse
+FILE 664 - - z/usr/share/nmap/scripts/lexmark-config.nse 		 ./z/usr/share/nmap/scripts/lexmark-config.nse
+FILE 664 - - z/usr/share/nmap/scripts/db2-das-info.nse 		 ./z/usr/share/nmap/scripts/db2-das-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/ftp-anon.nse 		 ./z/usr/share/nmap/scripts/ftp-anon.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-vhosts.nse 		 ./z/usr/share/nmap/scripts/http-vhosts.nse
+FILE 664 - - z/usr/share/nmap/scripts/path-mtu.nse 		 ./z/usr/share/nmap/scripts/path-mtu.nse
+FILE 664 - - z/usr/share/nmap/scripts/oracle-brute.nse 		 ./z/usr/share/nmap/scripts/oracle-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/nat-pmp-info.nse 		 ./z/usr/share/nmap/scripts/nat-pmp-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-win32-software.nse 		 ./z/usr/share/nmap/scripts/snmp-win32-software.nse
+FILE 664 - - z/usr/share/nmap/scripts/mongodb-databases.nse 		 ./z/usr/share/nmap/scripts/mongodb-databases.nse
+FILE 664 - - z/usr/share/nmap/scripts/citrix-brute-xml.nse 		 ./z/usr/share/nmap/scripts/citrix-brute-xml.nse
+FILE 664 - - z/usr/share/nmap/scripts/smtp-open-relay.nse 		 ./z/usr/share/nmap/scripts/smtp-open-relay.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-form-brute.nse 		 ./z/usr/share/nmap/scripts/http-form-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-server-stats.nse 		 ./z/usr/share/nmap/scripts/smb-server-stats.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-open-proxy.nse 		 ./z/usr/share/nmap/scripts/http-open-proxy.nse
+FILE 664 - - z/usr/share/nmap/scripts/citrix-enum-apps-xml.nse 		 ./z/usr/share/nmap/scripts/citrix-enum-apps-xml.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-vmware-path-vuln.nse 		 ./z/usr/share/nmap/scripts/http-vmware-path-vuln.nse
+FILE 664 - - z/usr/share/nmap/scripts/ntp-info.nse 		 ./z/usr/share/nmap/scripts/ntp-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-enum-processes.nse 		 ./z/usr/share/nmap/scripts/smb-enum-processes.nse
+FILE 664 - - z/usr/share/nmap/scripts/broadcast-dns-service-discovery.nse 		 ./z/usr/share/nmap/scripts/broadcast-dns-service-discovery.nse
+FILE 664 - - z/usr/share/nmap/scripts/pop3-capabilities.nse 		 ./z/usr/share/nmap/scripts/pop3-capabilities.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-win32-users.nse 		 ./z/usr/share/nmap/scripts/snmp-win32-users.nse
+FILE 664 - - z/usr/share/nmap/scripts/qscan.nse 		 ./z/usr/share/nmap/scripts/qscan.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-os-discovery.nse 		 ./z/usr/share/nmap/scripts/smb-os-discovery.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-brute.nse 		 ./z/usr/share/nmap/scripts/http-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/stuxnet-detect.nse 		 ./z/usr/share/nmap/scripts/stuxnet-detect.nse
+FILE 664 - - z/usr/share/nmap/scripts/drda-brute.nse 		 ./z/usr/share/nmap/scripts/drda-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/ftp-bounce.nse 		 ./z/usr/share/nmap/scripts/ftp-bounce.nse
+FILE 664 - - z/usr/share/nmap/scripts/nfs-showmount.nse 		 ./z/usr/share/nmap/scripts/nfs-showmount.nse
+FILE 664 - - z/usr/share/nmap/scripts/domcon-cmd.nse 		 ./z/usr/share/nmap/scripts/domcon-cmd.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-tables.nse 		 ./z/usr/share/nmap/scripts/ms-sql-tables.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-iis-webdav-vuln.nse 		 ./z/usr/share/nmap/scripts/http-iis-webdav-vuln.nse
+FILE 664 - - z/usr/share/nmap/scripts/imap-capabilities.nse 		 ./z/usr/share/nmap/scripts/imap-capabilities.nse
+FILE 664 - - z/usr/share/nmap/scripts/nbstat.nse 		 ./z/usr/share/nmap/scripts/nbstat.nse
+FILE 664 - - z/usr/share/nmap/scripts/ftp-proftpd-backdoor.nse 		 ./z/usr/share/nmap/scripts/ftp-proftpd-backdoor.nse
+FILE 664 - - z/usr/share/nmap/scripts/citrix-enum-servers-xml.nse 		 ./z/usr/share/nmap/scripts/citrix-enum-servers-xml.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-enum-users.nse 		 ./z/usr/share/nmap/scripts/smb-enum-users.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-php-version.nse 		 ./z/usr/share/nmap/scripts/http-php-version.nse
+FILE 664 - - z/usr/share/nmap/scripts/iscsi-info.nse 		 ./z/usr/share/nmap/scripts/iscsi-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/script.db 		 ./z/usr/share/nmap/scripts/script.db
+FILE 664 - - z/usr/share/nmap/scripts/pop3-brute.nse 		 ./z/usr/share/nmap/scripts/pop3-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-sysdescr.nse 		 ./z/usr/share/nmap/scripts/snmp-sysdescr.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-win32-shares.nse 		 ./z/usr/share/nmap/scripts/snmp-win32-shares.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-update.nse 		 ./z/usr/share/nmap/scripts/dns-update.nse
+FILE 664 - - z/usr/share/nmap/scripts/ssl-cert.nse 		 ./z/usr/share/nmap/scripts/ssl-cert.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-enum.nse 		 ./z/usr/share/nmap/scripts/http-enum.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-date.nse 		 ./z/usr/share/nmap/scripts/http-date.nse
+FILE 664 - - z/usr/share/nmap/scripts/wsdd-discover.nse 		 ./z/usr/share/nmap/scripts/wsdd-discover.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-processes.nse 		 ./z/usr/share/nmap/scripts/snmp-processes.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-netstat.nse 		 ./z/usr/share/nmap/scripts/snmp-netstat.nse
+FILE 664 - - z/usr/share/nmap/scripts/informix-query.nse 		 ./z/usr/share/nmap/scripts/informix-query.nse
+FILE 664 - - z/usr/share/nmap/scripts/banner.nse 		 ./z/usr/share/nmap/scripts/banner.nse
+FILE 664 - - z/usr/share/nmap/scripts/citrix-enum-servers.nse 		 ./z/usr/share/nmap/scripts/citrix-enum-servers.nse
+FILE 664 - - z/usr/share/nmap/scripts/daap-get-library.nse 		 ./z/usr/share/nmap/scripts/daap-get-library.nse
+FILE 664 - - z/usr/share/nmap/scripts/rmi-dumpregistry.nse 		 ./z/usr/share/nmap/scripts/rmi-dumpregistry.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-empty-password.nse 		 ./z/usr/share/nmap/scripts/ms-sql-empty-password.nse
+FILE 664 - - z/usr/share/nmap/scripts/smtp-commands.nse 		 ./z/usr/share/nmap/scripts/smtp-commands.nse
+FILE 664 - - z/usr/share/nmap/scripts/broadcast-dropbox-listener.nse 		 ./z/usr/share/nmap/scripts/broadcast-dropbox-listener.nse
+FILE 664 - - z/usr/share/nmap/scripts/domino-enum-users.nse 		 ./z/usr/share/nmap/scripts/domino-enum-users.nse
+FILE 664 - - z/usr/share/nmap/scripts/realvnc-auth-bypass.nse 		 ./z/usr/share/nmap/scripts/realvnc-auth-bypass.nse
+FILE 664 - - z/usr/share/nmap/scripts/whois.nse 		 ./z/usr/share/nmap/scripts/whois.nse
+FILE 664 - - z/usr/share/nmap/scripts/ldap-brute.nse 		 ./z/usr/share/nmap/scripts/ldap-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/afp-brute.nse 		 ./z/usr/share/nmap/scripts/afp-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/informix-tables.nse 		 ./z/usr/share/nmap/scripts/informix-tables.nse
+FILE 664 - - z/usr/share/nmap/scripts/sslv2.nse 		 ./z/usr/share/nmap/scripts/sslv2.nse
+FILE 664 - - z/usr/share/nmap/scripts/finger.nse 		 ./z/usr/share/nmap/scripts/finger.nse
+FILE 664 - - z/usr/share/nmap/scripts/rpcinfo.nse 		 ./z/usr/share/nmap/scripts/rpcinfo.nse
+FILE 664 - - z/usr/share/nmap/scripts/couchdb-databases.nse 		 ./z/usr/share/nmap/scripts/couchdb-databases.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-passwd.nse 		 ./z/usr/share/nmap/scripts/http-passwd.nse
+FILE 664 - - z/usr/share/nmap/scripts/vnc-brute.nse 		 ./z/usr/share/nmap/scripts/vnc-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-favicon.nse 		 ./z/usr/share/nmap/scripts/http-favicon.nse
+FILE 664 - - z/usr/share/nmap/scripts/smbv2-enabled.nse 		 ./z/usr/share/nmap/scripts/smbv2-enabled.nse
+FILE 664 - - z/usr/share/nmap/scripts/socks-open-proxy.nse 		 ./z/usr/share/nmap/scripts/socks-open-proxy.nse
+FILE 664 - - z/usr/share/nmap/scripts/http-userdir-enum.nse 		 ./z/usr/share/nmap/scripts/http-userdir-enum.nse
+FILE 664 - - z/usr/share/nmap/scripts/informix-brute.nse 		 ./z/usr/share/nmap/scripts/informix-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/dhcp-discover.nse 		 ./z/usr/share/nmap/scripts/dhcp-discover.nse
+FILE 664 - - z/usr/share/nmap/scripts/irc-unrealircd-backdoor.nse 		 ./z/usr/share/nmap/scripts/irc-unrealircd-backdoor.nse
+FILE 664 - - z/usr/share/nmap/scripts/gopher-ls.nse 		 ./z/usr/share/nmap/scripts/gopher-ls.nse
+FILE 664 - - z/usr/share/nmap/scripts/pjl-ready-message.nse 		 ./z/usr/share/nmap/scripts/pjl-ready-message.nse
+FILE 664 - - z/usr/share/nmap/scripts/ldap-search.nse 		 ./z/usr/share/nmap/scripts/ldap-search.nse
+FILE 664 - - z/usr/share/nmap/scripts/sshv1.nse 		 ./z/usr/share/nmap/scripts/sshv1.nse
+FILE 664 - - z/usr/share/nmap/scripts/broadcast-wsdd-discover.nse 		 ./z/usr/share/nmap/scripts/broadcast-wsdd-discover.nse
+FILE 664 - - z/usr/share/nmap/scripts/snmp-win32-services.nse 		 ./z/usr/share/nmap/scripts/snmp-win32-services.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-random-srcport.nse 		 ./z/usr/share/nmap/scripts/dns-random-srcport.nse
+FILE 664 - - z/usr/share/nmap/scripts/ftp-brute.nse 		 ./z/usr/share/nmap/scripts/ftp-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/ms-sql-brute.nse 		 ./z/usr/share/nmap/scripts/ms-sql-brute.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-enum-sessions.nse 		 ./z/usr/share/nmap/scripts/smb-enum-sessions.nse
+FILE 664 - - z/usr/share/nmap/scripts/mongodb-info.nse 		 ./z/usr/share/nmap/scripts/mongodb-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/x11-access.nse 		 ./z/usr/share/nmap/scripts/x11-access.nse
+FILE 664 - - z/usr/share/nmap/scripts/irc-info.nse 		 ./z/usr/share/nmap/scripts/irc-info.nse
+FILE 664 - - z/usr/share/nmap/scripts/asn-query.nse 		 ./z/usr/share/nmap/scripts/asn-query.nse
+FILE 664 - - z/usr/share/nmap/scripts/mysql-empty-password.nse 		 ./z/usr/share/nmap/scripts/mysql-empty-password.nse
+FILE 664 - - z/usr/share/nmap/scripts/smb-flood.nse 		 ./z/usr/share/nmap/scripts/smb-flood.nse
+FILE 664 - - z/usr/share/nmap/scripts/db2-discover.nse 		 ./z/usr/share/nmap/scripts/db2-discover.nse
+FILE 664 - - z/usr/share/nmap/scripts/ipidseq.nse 		 ./z/usr/share/nmap/scripts/ipidseq.nse
+FILE 664 - - z/usr/share/nmap/scripts/dns-cache-snoop.nse 		 ./z/usr/share/nmap/scripts/dns-cache-snoop.nse
+FILE 664 - - z/usr/share/nmap/nse_main.lua 		 ./z/usr/share/nmap/nse_main.lua
+FILE 664 - - z/usr/share/nmap/nmap-payloads 		 ./z/usr/share/nmap/nmap-payloads
+FILE 664 - - z/usr/share/nmap/nmap.xsl 		 ./z/usr/share/nmap/nmap.xsl
+FILE 664 - - z/usr/share/nmap/nmap-rpc 		 ./z/usr/share/nmap/nmap-rpc
+FILE 664 - - z/usr/share/nmap/nmap-service-probes 		 ./z/usr/share/nmap/nmap-service-probes
+FILE 664 - - z/usr/share/doc/nmap-5.51/README 		 ./z/usr/share/doc/nmap-5.51/README
+FILE 664 - - z/usr/share/doc/nmap-5.51/nmap.usage.txt 		 ./z/usr/share/doc/nmap-5.51/nmap.usage.txt
+FILE 664 - - z/usr/share/doc/nmap-5.51/COPYING 		 ./z/usr/share/doc/nmap-5.51/COPYING
+FILE 664 - - z/usr/share/ncat/ca-bundle.crt 		 ./z/usr/share/ncat/ca-bundle.crt
+FILE 775 - - z/usr/bin/nmap 		 ./z/usr/bin/nmap
+FILE 775 - - z/usr/bin/nping 		 ./z/usr/bin/nping
+FILE 775 - - z/usr/bin/ndiff 		 ./z/usr/bin/ndiff
+FILE 775 - - z/usr/bin/ncat 		 ./z/usr/bin/ncat
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
