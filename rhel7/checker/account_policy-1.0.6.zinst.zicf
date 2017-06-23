@@ -1,0 +1,22 @@
+## Package infomation
+OS = rhel7
+PACKAGENAME = account_policy
+VERSION = 1.0.6
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'linux system account policy package - update for requiretty remove'
+CUSTODIAN = codepost-infra
+
+#Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 500
+
+FILE - - -		bin/sudo_account_policy.sh		./sudo_account_policy.sh
+FILE - - -		bin/account_mgt				./account_mgt
+FILE - - -		z/etc/account/sudo-as-sysadmin/_zinst	./_zinst
+FILE - - -		z/etc/account/sudo/_zinst		./_zinst
+
+COMM chmod g+w /etc
+COMM /data/bin/sudo_account_policy.sh
+
+ZINST requires pkg server_default_setting

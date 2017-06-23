@@ -1,0 +1,305 @@
+### Package infomation
+## OS type: rhel7 or rhel, ubuntu, osx, freebsd
+OS = rhel7
+PACKAGENAME = openldap_servers
+VERSION = 0.0.1
+AUTHORIZED = ralfyang@code-post.com
+DESCRIPTION = 'Please insert a description for this package'
+CUSTODIAN = codepost-infra
+
+### Global setting of the files
+OWNER = ldap
+GROUP = ldap
+PERM = 664
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+# ldap:ldap -R /etc/openldap/slapd.d
+# ldap:ldap -R /var/run/openldap
+
+
+
+CONF 755 - - bin/ldap_install.sh		 		 ./bin/ldap_install.sh
+FILE 664 - - z/etc/openldap/check_password.conf 		 ./z/etc/openldap/check_password.conf
+FILE 464 - - z/etc/openldap/schema/collective.ldif 		 ./z/etc/openldap/schema/collective.ldif
+FILE 464 - - z/etc/openldap/schema/collective.schema 		 ./z/etc/openldap/schema/collective.schema
+FILE 464 - - z/etc/openldap/schema/corba.ldif 		 ./z/etc/openldap/schema/corba.ldif
+FILE 464 - - z/etc/openldap/schema/corba.schema 		 ./z/etc/openldap/schema/corba.schema
+FILE 464 - - z/etc/openldap/schema/core.ldif 		 ./z/etc/openldap/schema/core.ldif
+FILE 464 - - z/etc/openldap/schema/core.schema 		 ./z/etc/openldap/schema/core.schema
+FILE 464 - - z/etc/openldap/schema/cosine.ldif 		 ./z/etc/openldap/schema/cosine.ldif
+FILE 464 - - z/etc/openldap/schema/cosine.schema 		 ./z/etc/openldap/schema/cosine.schema
+FILE 464 - - z/etc/openldap/schema/duaconf.ldif 		 ./z/etc/openldap/schema/duaconf.ldif
+FILE 464 - - z/etc/openldap/schema/duaconf.schema 		 ./z/etc/openldap/schema/duaconf.schema
+FILE 464 - - z/etc/openldap/schema/dyngroup.ldif 		 ./z/etc/openldap/schema/dyngroup.ldif
+FILE 464 - - z/etc/openldap/schema/dyngroup.schema 		 ./z/etc/openldap/schema/dyngroup.schema
+FILE 464 - - z/etc/openldap/schema/inetorgperson.ldif 		 ./z/etc/openldap/schema/inetorgperson.ldif
+FILE 464 - - z/etc/openldap/schema/inetorgperson.schema 		 ./z/etc/openldap/schema/inetorgperson.schema
+FILE 464 - - z/etc/openldap/schema/java.ldif 		 ./z/etc/openldap/schema/java.ldif
+FILE 464 - - z/etc/openldap/schema/java.schema 		 ./z/etc/openldap/schema/java.schema
+FILE 464 - - z/etc/openldap/schema/misc.ldif 		 ./z/etc/openldap/schema/misc.ldif
+FILE 464 - - z/etc/openldap/schema/misc.schema 		 ./z/etc/openldap/schema/misc.schema
+FILE 464 - - z/etc/openldap/schema/nis.ldif 		 ./z/etc/openldap/schema/nis.ldif
+FILE 464 - - z/etc/openldap/schema/nis.schema 		 ./z/etc/openldap/schema/nis.schema
+FILE 464 - - z/etc/openldap/schema/openldap.ldif 		 ./z/etc/openldap/schema/openldap.ldif
+FILE 464 - - z/etc/openldap/schema/openldap.schema 		 ./z/etc/openldap/schema/openldap.schema
+FILE 464 - - z/etc/openldap/schema/pmi.ldif 		 ./z/etc/openldap/schema/pmi.ldif
+FILE 464 - - z/etc/openldap/schema/pmi.schema 		 ./z/etc/openldap/schema/pmi.schema
+FILE 464 - - z/etc/openldap/schema/ppolicy.ldif 		 ./z/etc/openldap/schema/ppolicy.ldif
+FILE 464 - - z/etc/openldap/schema/ppolicy.schema 		 ./z/etc/openldap/schema/ppolicy.schema
+FILE 664 - - z/etc/openldap/slapd.d/slapd_conf.tgz 		 ./z/etc/openldap/slapd.d/slapd_conf.tgz
+FILE 664 - - z/etc/sysconfig/slapd 		 ./z/etc/sysconfig/slapd
+FILE 664 - - z/usr/lib/systemd/system/slapd.service 		 ./z/usr/lib/systemd/system/slapd.service
+FILE 664 - - z/usr/lib/tmpfiles.d/slapd.conf 		 ./z/usr/lib/tmpfiles.d/slapd.conf
+FILE 775 - - z/usr/lib64/openldap/accesslog-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/accesslog-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/accesslog.la 		 ./z/usr/lib64/openldap/accesslog.la
+FILE 775 - - z/usr/lib64/openldap/allop-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/allop-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/allop.la 		 ./z/usr/lib64/openldap/allop.la
+FILE 775 - - z/usr/lib64/openldap/auditlog-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/auditlog-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/auditlog.la 		 ./z/usr/lib64/openldap/auditlog.la
+FILE 775 - - z/usr/lib64/openldap/back_dnssrv-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_dnssrv-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_dnssrv.la 		 ./z/usr/lib64/openldap/back_dnssrv.la
+FILE 775 - - z/usr/lib64/openldap/back_ldap-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_ldap-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_ldap.la 		 ./z/usr/lib64/openldap/back_ldap.la
+FILE 775 - - z/usr/lib64/openldap/back_meta-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_meta-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_meta.la 		 ./z/usr/lib64/openldap/back_meta.la
+FILE 775 - - z/usr/lib64/openldap/back_null-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_null-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_null.la 		 ./z/usr/lib64/openldap/back_null.la
+FILE 775 - - z/usr/lib64/openldap/back_passwd-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_passwd-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_passwd.la 		 ./z/usr/lib64/openldap/back_passwd.la
+FILE 775 - - z/usr/lib64/openldap/back_perl-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_perl-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_perl.la 		 ./z/usr/lib64/openldap/back_perl.la
+FILE 775 - - z/usr/lib64/openldap/back_relay-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_relay-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_relay.la 		 ./z/usr/lib64/openldap/back_relay.la
+FILE 775 - - z/usr/lib64/openldap/back_shell-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_shell-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_shell.la 		 ./z/usr/lib64/openldap/back_shell.la
+FILE 775 - - z/usr/lib64/openldap/back_sock-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/back_sock-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/back_sock.la 		 ./z/usr/lib64/openldap/back_sock.la
+FILE 775 - - z/usr/lib64/openldap/check_password.so.1.1 		 ./z/usr/lib64/openldap/check_password.so.1.1
+FILE 775 - - z/usr/lib64/openldap/collect-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/collect-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/collect.la 		 ./z/usr/lib64/openldap/collect.la
+FILE 775 - - z/usr/lib64/openldap/constraint-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/constraint-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/constraint.la 		 ./z/usr/lib64/openldap/constraint.la
+FILE 775 - - z/usr/lib64/openldap/dds-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/dds-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/dds.la 		 ./z/usr/lib64/openldap/dds.la
+FILE 775 - - z/usr/lib64/openldap/deref-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/deref-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/deref.la 		 ./z/usr/lib64/openldap/deref.la
+FILE 775 - - z/usr/lib64/openldap/dyngroup-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/dyngroup-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/dyngroup.la 		 ./z/usr/lib64/openldap/dyngroup.la
+FILE 775 - - z/usr/lib64/openldap/dynlist-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/dynlist-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/dynlist.la 		 ./z/usr/lib64/openldap/dynlist.la
+FILE 775 - - z/usr/lib64/openldap/memberof-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/memberof-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/memberof.la 		 ./z/usr/lib64/openldap/memberof.la
+FILE 775 - - z/usr/lib64/openldap/pcache-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/pcache-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/pcache.la 		 ./z/usr/lib64/openldap/pcache.la
+FILE 775 - - z/usr/lib64/openldap/ppolicy-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/ppolicy-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/ppolicy.la 		 ./z/usr/lib64/openldap/ppolicy.la
+FILE 775 - - z/usr/lib64/openldap/pw-sha2-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/pw-sha2-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/pw-sha2.la 		 ./z/usr/lib64/openldap/pw-sha2.la
+FILE 775 - - z/usr/lib64/openldap/refint-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/refint-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/refint.la 		 ./z/usr/lib64/openldap/refint.la
+FILE 775 - - z/usr/lib64/openldap/retcode-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/retcode-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/retcode.la 		 ./z/usr/lib64/openldap/retcode.la
+FILE 775 - - z/usr/lib64/openldap/rwm-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/rwm-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/rwm.la 		 ./z/usr/lib64/openldap/rwm.la
+FILE 775 - - z/usr/lib64/openldap/seqmod-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/seqmod-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/seqmod.la 		 ./z/usr/lib64/openldap/seqmod.la
+FILE 775 - - z/usr/lib64/openldap/smbk5pwd-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/smbk5pwd-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/smbk5pwd.la 		 ./z/usr/lib64/openldap/smbk5pwd.la
+FILE 775 - - z/usr/lib64/openldap/sssvlv-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/sssvlv-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/sssvlv.la 		 ./z/usr/lib64/openldap/sssvlv.la
+FILE 775 - - z/usr/lib64/openldap/syncprov-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/syncprov-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/syncprov.la 		 ./z/usr/lib64/openldap/syncprov.la
+FILE 775 - - z/usr/lib64/openldap/translucent-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/translucent-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/translucent.la 		 ./z/usr/lib64/openldap/translucent.la
+FILE 775 - - z/usr/lib64/openldap/unique-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/unique-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/unique.la 		 ./z/usr/lib64/openldap/unique.la
+FILE 775 - - z/usr/lib64/openldap/valsort-2.4.so.2.10.3 		 ./z/usr/lib64/openldap/valsort-2.4.so.2.10.3
+FILE 775 - - z/usr/lib64/openldap/valsort.la 		 ./z/usr/lib64/openldap/valsort.la
+FILE 775 - - z/usr/libexec/openldap/check-config.sh 		 ./z/usr/libexec/openldap/check-config.sh
+FILE 775 - - z/usr/libexec/openldap/convert-config.sh 		 ./z/usr/libexec/openldap/convert-config.sh
+FILE 664 - - z/usr/libexec/openldap/functions 		 ./z/usr/libexec/openldap/functions
+FILE 775 - - z/usr/libexec/openldap/generate-server-cert.sh 		 ./z/usr/libexec/openldap/generate-server-cert.sh
+FILE 775 - - z/usr/libexec/openldap/upgrade-db.sh 		 ./z/usr/libexec/openldap/upgrade-db.sh
+FILE 775 - - z/usr/sbin/slapd 		 ./z/usr/sbin/slapd
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/README.back_perl 		 ./z/usr/share/doc/openldap-servers-2.4.40/README.back_perl
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/README.check_pwd 		 ./z/usr/share/doc/openldap-servers-2.4.40/README.check_pwd
+FILE 464 - - z/usr/share/doc/openldap-servers-2.4.40/README.schema 		 ./z/usr/share/doc/openldap-servers-2.4.40/README.schema
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/README.smbk5pwd 		 ./z/usr/share/doc/openldap-servers-2.4.40/README.smbk5pwd
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/SampleLDAP.pm 		 ./z/usr/share/doc/openldap-servers-2.4.40/SampleLDAP.pm
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/allmail-en.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/allmail-en.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/allusersgroup-en.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/allusersgroup-en.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/config_dit.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/config_dit.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/config_local.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/config_local.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/config_ref.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/config_ref.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/config_repl.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/config_repl.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/delta-syncrepl.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/delta-syncrepl.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/dual_dc.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/dual_dc.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/guide.html 		 ./z/usr/share/doc/openldap-servers-2.4.40/guide.html
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/intro_dctree.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/intro_dctree.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/intro_tree.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/intro_tree.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/ldap-sync-refreshandpersist.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/ldap-sync-refreshandpersist.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/ldap-sync-refreshonly.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/ldap-sync-refreshonly.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/n-way-multi-master.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/n-way-multi-master.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/push-based-complete.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/push-based-complete.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/push-based-standalone.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/push-based-standalone.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/refint.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/refint.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/set-following-references.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/set-following-references.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/set-memberUid.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/set-memberUid.png
+FILE 664 - - z/usr/share/doc/openldap-servers-2.4.40/set-recursivegroup.png 		 ./z/usr/share/doc/openldap-servers-2.4.40/set-recursivegroup.png
+FILE 664 - - z/usr/share/man/man5/slapd-bdb.5.gz 		 ./z/usr/share/man/man5/slapd-bdb.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-config.5.gz 		 ./z/usr/share/man/man5/slapd-config.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-dnssrv.5.gz 		 ./z/usr/share/man/man5/slapd-dnssrv.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-hdb.5.gz 		 ./z/usr/share/man/man5/slapd-hdb.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-ldap.5.gz 		 ./z/usr/share/man/man5/slapd-ldap.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-ldbm.5.gz 		 ./z/usr/share/man/man5/slapd-ldbm.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-ldif.5.gz 		 ./z/usr/share/man/man5/slapd-ldif.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-mdb.5.gz 		 ./z/usr/share/man/man5/slapd-mdb.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-meta.5.gz 		 ./z/usr/share/man/man5/slapd-meta.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-monitor.5.gz 		 ./z/usr/share/man/man5/slapd-monitor.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-ndb.5.gz 		 ./z/usr/share/man/man5/slapd-ndb.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-null.5.gz 		 ./z/usr/share/man/man5/slapd-null.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-passwd.5.gz 		 ./z/usr/share/man/man5/slapd-passwd.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-perl.5.gz 		 ./z/usr/share/man/man5/slapd-perl.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-relay.5.gz 		 ./z/usr/share/man/man5/slapd-relay.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-shell.5.gz 		 ./z/usr/share/man/man5/slapd-shell.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-sock.5.gz 		 ./z/usr/share/man/man5/slapd-sock.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd-sql.5.gz 		 ./z/usr/share/man/man5/slapd-sql.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd.access.5.gz 		 ./z/usr/share/man/man5/slapd.access.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd.backends.5.gz 		 ./z/usr/share/man/man5/slapd.backends.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd.conf.5.gz 		 ./z/usr/share/man/man5/slapd.conf.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd.overlays.5.gz 		 ./z/usr/share/man/man5/slapd.overlays.5.gz
+FILE 664 - - z/usr/share/man/man5/slapd.plugin.5.gz 		 ./z/usr/share/man/man5/slapd.plugin.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-accesslog.5.gz 		 ./z/usr/share/man/man5/slapo-accesslog.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-allop.5.gz 		 ./z/usr/share/man/man5/slapo-allop.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-auditlog.5.gz 		 ./z/usr/share/man/man5/slapo-auditlog.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-chain.5.gz 		 ./z/usr/share/man/man5/slapo-chain.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-collect.5.gz 		 ./z/usr/share/man/man5/slapo-collect.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-constraint.5.gz 		 ./z/usr/share/man/man5/slapo-constraint.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-dds.5.gz 		 ./z/usr/share/man/man5/slapo-dds.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-dyngroup.5.gz 		 ./z/usr/share/man/man5/slapo-dyngroup.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-dynlist.5.gz 		 ./z/usr/share/man/man5/slapo-dynlist.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-memberof.5.gz 		 ./z/usr/share/man/man5/slapo-memberof.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-pbind.5.gz 		 ./z/usr/share/man/man5/slapo-pbind.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-pcache.5.gz 		 ./z/usr/share/man/man5/slapo-pcache.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-ppolicy.5.gz 		 ./z/usr/share/man/man5/slapo-ppolicy.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-refint.5.gz 		 ./z/usr/share/man/man5/slapo-refint.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-retcode.5.gz 		 ./z/usr/share/man/man5/slapo-retcode.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-rwm.5.gz 		 ./z/usr/share/man/man5/slapo-rwm.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-sock.5.gz 		 ./z/usr/share/man/man5/slapo-sock.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-sssvlv.5.gz 		 ./z/usr/share/man/man5/slapo-sssvlv.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-syncprov.5.gz 		 ./z/usr/share/man/man5/slapo-syncprov.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-translucent.5.gz 		 ./z/usr/share/man/man5/slapo-translucent.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-unique.5.gz 		 ./z/usr/share/man/man5/slapo-unique.5.gz
+FILE 664 - - z/usr/share/man/man5/slapo-valsort.5.gz 		 ./z/usr/share/man/man5/slapo-valsort.5.gz
+FILE 664 - - z/usr/share/man/man8/slapacl.8.gz 		 ./z/usr/share/man/man8/slapacl.8.gz
+FILE 664 - - z/usr/share/man/man8/slapadd.8.gz 		 ./z/usr/share/man/man8/slapadd.8.gz
+FILE 664 - - z/usr/share/man/man8/slapauth.8.gz 		 ./z/usr/share/man/man8/slapauth.8.gz
+FILE 664 - - z/usr/share/man/man8/slapcat.8.gz 		 ./z/usr/share/man/man8/slapcat.8.gz
+FILE 664 - - z/usr/share/man/man8/slapd.8.gz 		 ./z/usr/share/man/man8/slapd.8.gz
+FILE 664 - - z/usr/share/man/man8/slapdn.8.gz 		 ./z/usr/share/man/man8/slapdn.8.gz
+FILE 664 - - z/usr/share/man/man8/slapindex.8.gz 		 ./z/usr/share/man/man8/slapindex.8.gz
+FILE 664 - - z/usr/share/man/man8/slappasswd.8.gz 		 ./z/usr/share/man/man8/slappasswd.8.gz
+FILE 664 - - z/usr/share/man/man8/slapschema.8.gz 		 ./z/usr/share/man/man8/slapschema.8.gz
+FILE 664 - - z/usr/share/man/man8/slaptest.8.gz 		 ./z/usr/share/man/man8/slaptest.8.gz
+FILE 664 - - z/usr/share/openldap-servers/DB_CONFIG.example 		 ./z/usr/share/openldap-servers/DB_CONFIG.example
+FILE 664 - - z/usr/share/openldap-servers/slapd.ldif 		 ./z/usr/share/openldap-servers/slapd.ldif
+FILE 664 - - z/var/lib/ldap/DB_CONFIG 		 ./z/var/lib/ldap/DB_CONFIG
+FILE 664 - - z/var/lib/ldap/alock 		 ./z/var/lib/ldap/alock
+FILE 620 - - z/var/lib/ldap/log.0000000001 		 ./z/var/lib/ldap/log.0000000001
+FILE 620 - - z/var/lib/ldap/id2entry.bdb 		 ./z/var/lib/ldap/id2entry.bdb
+FILE 620 - - z/var/lib/ldap/dn2id.bdb 		 ./z/var/lib/ldap/dn2id.bdb
+FILE 620 - - z/var/lib/ldap/__db.001 		 ./z/var/lib/ldap/__db.001
+FILE 620 - - z/var/lib/ldap/__db.002 		 ./z/var/lib/ldap/__db.002
+FILE 620 - - z/var/lib/ldap/__db.003 		 ./z/var/lib/ldap/__db.003
+FILE 664 - - z/var/run/openldap/slapd.args 		 ./z/var/run/openldap/slapd.args
+FILE 664 - - z/var/run/openldap/slapd.pid 		 ./z/var/run/openldap/slapd.pid
+SYMB x x x z/usr/lib64/openldap/accesslog-2.4.so.2 	 z/usr/lib64/openldap/accesslog-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/allop-2.4.so.2 	 z/usr/lib64/openldap/allop-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/auditlog-2.4.so.2 	 z/usr/lib64/openldap/auditlog-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_dnssrv-2.4.so.2 	 z/usr/lib64/openldap/back_dnssrv-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_ldap-2.4.so.2 	 z/usr/lib64/openldap/back_ldap-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_meta-2.4.so.2 	 z/usr/lib64/openldap/back_meta-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_null-2.4.so.2 	 z/usr/lib64/openldap/back_null-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_passwd-2.4.so.2 	 z/usr/lib64/openldap/back_passwd-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_perl-2.4.so.2 	 z/usr/lib64/openldap/back_perl-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_relay-2.4.so.2 	 z/usr/lib64/openldap/back_relay-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_shell-2.4.so.2 	 z/usr/lib64/openldap/back_shell-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/back_sock-2.4.so.2 	 z/usr/lib64/openldap/back_sock-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/check_password.so 	 z/usr/lib64/openldap/check_password.so.1.1
+SYMB x x x z/usr/lib64/openldap/collect-2.4.so.2 	 z/usr/lib64/openldap/collect-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/constraint-2.4.so.2 	 z/usr/lib64/openldap/constraint-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/dds-2.4.so.2 	 z/usr/lib64/openldap/dds-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/deref-2.4.so.2 	 z/usr/lib64/openldap/deref-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/dyngroup-2.4.so.2 	 z/usr/lib64/openldap/dyngroup-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/dynlist-2.4.so.2 	 z/usr/lib64/openldap/dynlist-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/memberof-2.4.so.2 	 z/usr/lib64/openldap/memberof-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/pcache-2.4.so.2 	 z/usr/lib64/openldap/pcache-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/ppolicy-2.4.so.2 	 z/usr/lib64/openldap/ppolicy-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/pw-sha2-2.4.so.2 	 z/usr/lib64/openldap/pw-sha2-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/refint-2.4.so.2 	 z/usr/lib64/openldap/refint-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/retcode-2.4.so.2 	 z/usr/lib64/openldap/retcode-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/rwm-2.4.so.2 	 z/usr/lib64/openldap/rwm-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/seqmod-2.4.so.2 	 z/usr/lib64/openldap/seqmod-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/smbk5pwd-2.4.so.2 	 z/usr/lib64/openldap/smbk5pwd-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/sssvlv-2.4.so.2 	 z/usr/lib64/openldap/sssvlv-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/syncprov-2.4.so.2 	 z/usr/lib64/openldap/syncprov-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/translucent-2.4.so.2 	 z/usr/lib64/openldap/translucent-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/unique-2.4.so.2 	 z/usr/lib64/openldap/unique-2.4.so.2.10.3
+SYMB x x x z/usr/lib64/openldap/valsort-2.4.so.2 	 z/usr/lib64/openldap/valsort-2.4.so.2.10.3
+SYMB x x x z/usr/sbin/slapacl 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slapadd 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slapauth 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slapcat 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slapdn 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slapindex 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slappasswd 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slapschema 	 z/usr/sbin/slapd
+SYMB x x x z/usr/sbin/slaptest 	 z/usr/sbin/slapd
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+ZINST set domain "dc=test,dc=kr"
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+ZINST requires pkg openldap_clients 
+#2017.05.30 by peter
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+COMM echo " -- You have to change the domain as below --"
+COMM echo " zinst set openldap_servers.domain='dc=[YOUR DOMAIN],dc=[YOUR DOMAIN]'"
+COMM echo " and than You can install by /data/bin/ldap_install.sh"

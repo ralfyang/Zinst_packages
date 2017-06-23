@@ -1,0 +1,20 @@
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = rhel7
+PACKAGENAME = monit_package_server
+VERSION = 0.0.1
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'zinst package dist server config of monit for monitoring'
+CUSTODIAN = codepost-infra
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 664 - - z/etc/monit/conf.d/package_server 		 ./z/etc/monit/conf.d/package_server
+ZINST requires pkg monit
+#ZINST requires pkg docker
+COMM zinst reload monitd
+
+ZINST activate-uninstall
