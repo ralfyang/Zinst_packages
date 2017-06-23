@@ -1,0 +1,67 @@
+
+## Package infomation
+PACKAGENAME = remote_backup_scheduler
+OS = rhel7
+VERSION = 1.0.7
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'backup solution - update for dual type db files (Source, DB)'
+CUSTODIAN = codepost-infra
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 755
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 644 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+CONF 644 - - conf/remote_backup_scheduler.conf 	./remote_backup_scheduler.conf
+FILE 755 - - bin/remote_backup_full.sh		./remote_backup_full.sh
+FILE 755 - - bin/remote_backup_incremental.sh	./remote_backup_incremental.sh
+CRON x - x   00 6 * * *					bin/remote_backup_full.sh
+CRON x - x   00 4 * * *					bin/remote_backup_incremental.sh
+	
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+ZINST set BaseDir "/data/Backup"
+ZINST set weekly_rotation 4
+ZINST set daily_rotation 29
+ZINST set server_list server1,server02,10.0.0.1
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

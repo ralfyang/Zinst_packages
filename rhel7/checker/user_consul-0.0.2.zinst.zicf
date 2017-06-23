@@ -1,0 +1,17 @@
+OS = rhel7
+PACKAGENAME = user_consul
+VERSION = 0.0.2
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'user_consul account package'
+CUSTODIAN = codepost-infra
+
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+FILE 755 - - z/var/tmp/consul/consul.sh 		 ./z/var/tmp/consul/consul.sh
+
+#ZINST requires pkg gsshop_authorize_client
+ZINST activate-uninstall
+
+COMM sudo sh /data/z/var/tmp/consul/consul.sh; rm -Rf /data/z/var/tmp/consul 2> /dev/null

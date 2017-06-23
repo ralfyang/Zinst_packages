@@ -1,0 +1,75 @@
+
+### Package infomation
+## OS type: rhel7 or rhel, ubuntu, osx, freebsd
+OS = rhel7
+PACKAGENAME = php_mcrypt
+VERSION = 0.0.1
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'php_mcrypt TEST package'
+CUSTODIAN = codepost-infra
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 775 - - z/usr/lib64/libmcrypt.so.4.4.8 		 ./z/usr/lib64/libmcrypt.so.4.4.8
+FILE 775 - - z/usr/lib64/php/modules/mcrypt.so 		 ./z/usr/lib64/php/modules/mcrypt.so
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/AUTHORS 		 ./z/usr/share/doc/libmcrypt-2.5.8/AUTHORS
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/COPYING.LIB 		 ./z/usr/share/doc/libmcrypt-2.5.8/COPYING.LIB
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/ChangeLog 		 ./z/usr/share/doc/libmcrypt-2.5.8/ChangeLog
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/KNOWN-BUGS 		 ./z/usr/share/doc/libmcrypt-2.5.8/KNOWN-BUGS
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/NEWS 		 ./z/usr/share/doc/libmcrypt-2.5.8/NEWS
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/README 		 ./z/usr/share/doc/libmcrypt-2.5.8/README
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/THANKS 		 ./z/usr/share/doc/libmcrypt-2.5.8/THANKS
+FILE 664 - - z/usr/share/doc/libmcrypt-2.5.8/TODO 		 ./z/usr/share/doc/libmcrypt-2.5.8/TODO
+FILE 664 - - z/usr/share/man/man3/mcrypt.3.gz 		 ./z/usr/share/man/man3/mcrypt.3.gz
+FILE 664 - - z/etc/php.d/mcrypt.ini 		 ./z/etc/php.d/mcrypt.ini
+SYMB x x x z/usr/lib64/libmcrypt.so.4 	 z/usr/lib64/libmcrypt.so.4.4.8
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
