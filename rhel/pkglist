@@ -1,3 +1,5 @@
+MariaDB_client-5.5.33.zinst
+MariaDB_server-5.5.33.zinst
 asciinema-1.1.1.zinst
 bzr_64-2.1.1.zinst
 centos_heartbeat_el5-1.0.1.zinst
@@ -17,6 +19,7 @@ expect-5.4.4.zinst
 fping-0.0.1.zinst
 git_64-1.7.1.zinst
 git_tool-1.0.0.zinst
+gs_source_backup_full-1.0.1.zinst
 gsshop_account_policy-1.0.5.zinst
 gsshop_authorize_client-1.0.2.zinst
 gsshop_bloodhound-0.7.1.zinst
@@ -42,7 +45,6 @@ gsshop_remote_backup_scheduler-1.0.6.zinst
 gsshop_snmpd-0.1.0.zinst
 gsshop_wordpress-0.1.1.zinst
 gsshop_xmpi_module-0.0.1.zinst
-gs_source_backup_full-1.0.1.zinst
 hosts_file_creator-0.0.1.zinst
 httpd_balancer_control-0.0.2.zinst
 httpd_lynx-1.0.0.zinst
@@ -52,8 +54,6 @@ iptables_port_forwarding-0.0.1.zinst
 ldap_server-1.0.5.zinst
 libcgroup-0.4.0.zinst
 linux_kernel-3.10.25.zinst
-MariaDB_client-5.5.33.zinst
-MariaDB_server-5.5.33.zinst
 mysql_check_realtime_select-1.0.0.zinst
 mysql_check_slow_query-1.0.0.zinst
 mysql_client_55-1.0.2.zinst

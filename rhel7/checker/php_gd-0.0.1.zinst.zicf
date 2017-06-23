@@ -1,0 +1,351 @@
+
+### Package infomation
+## OS type: rhel7 or rhel, ubuntu, osx, freebsd
+OS = rhel7
+PACKAGENAME = php_gd
+VERSION = 0.0.1
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'php-gd TEST package'
+CUSTODIAN = codepost-infra
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 775 - - z/usr/lib64/libjpeg.so.62.1.0 		 ./z/usr/lib64/libjpeg.so.62.1.0
+FILE 775 - - z/usr/lib64/libpng15.so.15.13.0 		 ./z/usr/lib64/libpng15.so.15.13.0
+FILE 775 - - z/usr/lib64/libX11-xcb.so.1.0.0 		 ./z/usr/lib64/libX11-xcb.so.1.0.0
+FILE 775 - - z/usr/lib64/libX11.so.6.3.0 		 ./z/usr/lib64/libX11.so.6.3.0
+FILE 775 - - z/usr/lib64/libXau.so.6.0.0 		 ./z/usr/lib64/libXau.so.6.0.0
+FILE 775 - - z/usr/lib64/libxcb-composite.so.0.0.0 		 ./z/usr/lib64/libxcb-composite.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-damage.so.0.0.0 		 ./z/usr/lib64/libxcb-damage.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-dpms.so.0.0.0 		 ./z/usr/lib64/libxcb-dpms.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-dri2.so.0.0.0 		 ./z/usr/lib64/libxcb-dri2.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-dri3.so.0.0.0 		 ./z/usr/lib64/libxcb-dri3.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-glx.so.0.0.0 		 ./z/usr/lib64/libxcb-glx.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-present.so.0.0.0 		 ./z/usr/lib64/libxcb-present.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-randr.so.0.1.0 		 ./z/usr/lib64/libxcb-randr.so.0.1.0
+FILE 775 - - z/usr/lib64/libxcb-record.so.0.0.0 		 ./z/usr/lib64/libxcb-record.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-render.so.0.0.0 		 ./z/usr/lib64/libxcb-render.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-res.so.0.0.0 		 ./z/usr/lib64/libxcb-res.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-screensaver.so.0.0.0 		 ./z/usr/lib64/libxcb-screensaver.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-shape.so.0.0.0 		 ./z/usr/lib64/libxcb-shape.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-shm.so.0.0.0 		 ./z/usr/lib64/libxcb-shm.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-sync.so.1.0.0 		 ./z/usr/lib64/libxcb-sync.so.1.0.0
+FILE 775 - - z/usr/lib64/libxcb-xevie.so.0.0.0 		 ./z/usr/lib64/libxcb-xevie.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-xf86dri.so.0.0.0 		 ./z/usr/lib64/libxcb-xf86dri.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-xfixes.so.0.0.0 		 ./z/usr/lib64/libxcb-xfixes.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-xinerama.so.0.0.0 		 ./z/usr/lib64/libxcb-xinerama.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-xinput.so.0.1.0 		 ./z/usr/lib64/libxcb-xinput.so.0.1.0
+FILE 775 - - z/usr/lib64/libxcb-xkb.so.1.0.0 		 ./z/usr/lib64/libxcb-xkb.so.1.0.0
+FILE 775 - - z/usr/lib64/libxcb-xselinux.so.0.0.0 		 ./z/usr/lib64/libxcb-xselinux.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-xtest.so.0.0.0 		 ./z/usr/lib64/libxcb-xtest.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-xv.so.0.0.0 		 ./z/usr/lib64/libxcb-xv.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb-xvmc.so.0.0.0 		 ./z/usr/lib64/libxcb-xvmc.so.0.0.0
+FILE 775 - - z/usr/lib64/libxcb.so.1.1.0 		 ./z/usr/lib64/libxcb.so.1.1.0
+FILE 775 - - z/usr/lib64/libXpm.so.4.11.0 		 ./z/usr/lib64/libXpm.so.4.11.0
+FILE 775 - - z/usr/lib64/php/modules/gd.so 		 ./z/usr/lib64/php/modules/gd.so
+FILE 775 - - z/usr/lib64/libt1.so.5.1.2 		 ./z/usr/lib64/libt1.so.5.1.2
+FILE 775 - - z/usr/lib64/libt1x.so.5.1.2 		 ./z/usr/lib64/libt1x.so.5.1.2
+FILE 664 - - z/usr/share/doc/libjpeg-turbo-1.2.90/ChangeLog.txt 		 ./z/usr/share/doc/libjpeg-turbo-1.2.90/ChangeLog.txt
+FILE 664 - - z/usr/share/doc/libjpeg-turbo-1.2.90/README 		 ./z/usr/share/doc/libjpeg-turbo-1.2.90/README
+FILE 664 - - z/usr/share/doc/libjpeg-turbo-1.2.90/README-turbo.txt 		 ./z/usr/share/doc/libjpeg-turbo-1.2.90/README-turbo.txt
+FILE 664 - - z/usr/share/doc/libjpeg-turbo-1.2.90/change.log 		 ./z/usr/share/doc/libjpeg-turbo-1.2.90/change.log
+FILE 664 - - z/usr/share/doc/libpng-1.5.13/CHANGES 		 ./z/usr/share/doc/libpng-1.5.13/CHANGES
+FILE 664 - - z/usr/share/doc/libpng-1.5.13/LICENSE 		 ./z/usr/share/doc/libpng-1.5.13/LICENSE
+FILE 664 - - z/usr/share/doc/libpng-1.5.13/README 		 ./z/usr/share/doc/libpng-1.5.13/README
+FILE 664 - - z/usr/share/doc/libpng-1.5.13/TODO 		 ./z/usr/share/doc/libpng-1.5.13/TODO
+FILE 664 - - z/usr/share/doc/libpng-1.5.13/example.c 		 ./z/usr/share/doc/libpng-1.5.13/example.c
+FILE 664 - - z/usr/share/doc/libpng-1.5.13/libpng-manual.txt 		 ./z/usr/share/doc/libpng-1.5.13/libpng-manual.txt
+FILE 664 - - z/usr/share/doc/libX11-common-1.6.3/AUTHORS 		 ./z/usr/share/doc/libX11-common-1.6.3/AUTHORS
+FILE 664 - - z/usr/share/doc/libX11-common-1.6.3/COPYING 		 ./z/usr/share/doc/libX11-common-1.6.3/COPYING
+FILE 664 - - z/usr/share/doc/libX11-common-1.6.3/NEWS 		 ./z/usr/share/doc/libX11-common-1.6.3/NEWS
+FILE 664 - - z/usr/share/doc/libX11-common-1.6.3/README 		 ./z/usr/share/doc/libX11-common-1.6.3/README
+FILE 664 - - z/usr/share/doc/libXau-1.0.8/AUTHORS 		 ./z/usr/share/doc/libXau-1.0.8/AUTHORS
+FILE 664 - - z/usr/share/doc/libXau-1.0.8/COPYING 		 ./z/usr/share/doc/libXau-1.0.8/COPYING
+FILE 664 - - z/usr/share/doc/libXau-1.0.8/ChangeLog 		 ./z/usr/share/doc/libXau-1.0.8/ChangeLog
+FILE 664 - - z/usr/share/doc/libXau-1.0.8/README 		 ./z/usr/share/doc/libXau-1.0.8/README
+FILE 664 - - z/usr/share/doc/libXpm-3.5.11/AUTHORS 		 ./z/usr/share/doc/libXpm-3.5.11/AUTHORS
+FILE 664 - - z/usr/share/doc/libXpm-3.5.11/COPYING 		 ./z/usr/share/doc/libXpm-3.5.11/COPYING
+FILE 664 - - z/usr/share/doc/libXpm-3.5.11/ChangeLog 		 ./z/usr/share/doc/libXpm-3.5.11/ChangeLog
+FILE 664 - - z/usr/share/doc/php-gd-5.4.16/libgd_COPYING 		 ./z/usr/share/doc/php-gd-5.4.16/libgd_COPYING
+FILE 664 - - z/usr/share/doc/php-gd-5.4.16/libgd_README 		 ./z/usr/share/doc/php-gd-5.4.16/libgd_README
+FILE 664 - - z/usr/share/doc/t1lib-5.1.2/Changes 		 ./z/usr/share/doc/t1lib-5.1.2/Changes
+FILE 664 - - z/usr/share/doc/t1lib-5.1.2/LGPL 		 ./z/usr/share/doc/t1lib-5.1.2/LGPL
+FILE 664 - - z/usr/share/doc/t1lib-5.1.2/LICENSE 		 ./z/usr/share/doc/t1lib-5.1.2/LICENSE
+FILE 664 - - z/usr/share/doc/t1lib-5.1.2/README 		 ./z/usr/share/doc/t1lib-5.1.2/README
+FILE 664 - - z/usr/share/man/man5/png.5.gz 		 ./z/usr/share/man/man5/png.5.gz
+FILE 664 - - z/usr/share/man/man5/FontDatabase.5.gz 		 ./z/usr/share/man/man5/FontDatabase.5.gz
+FILE 664 - - z/usr/share/man/man8/t1libconfig.8.gz 		 ./z/usr/share/man/man8/t1libconfig.8.gz
+FILE 664 - - z/usr/share/X11/XErrorDB 		 ./z/usr/share/X11/XErrorDB
+FILE 664 - - z/usr/share/X11/locale/C/Compose 		 ./z/usr/share/X11/locale/C/Compose
+FILE 664 - - z/usr/share/X11/locale/C/XI18N_OBJS 		 ./z/usr/share/X11/locale/C/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/C/XLC_LOCALE 		 ./z/usr/share/X11/locale/C/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/am_ET.UTF-8/Compose 		 ./z/usr/share/X11/locale/am_ET.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/am_ET.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/am_ET.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/am_ET.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/am_ET.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/armscii-8/Compose 		 ./z/usr/share/X11/locale/armscii-8/Compose
+FILE 664 - - z/usr/share/X11/locale/armscii-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/armscii-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/armscii-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/armscii-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/compose.dir 		 ./z/usr/share/X11/locale/compose.dir
+FILE 664 - - z/usr/share/X11/locale/cs_CZ.UTF-8/Compose 		 ./z/usr/share/X11/locale/cs_CZ.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/cs_CZ.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/cs_CZ.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/cs_CZ.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/cs_CZ.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/el_GR.UTF-8/Compose 		 ./z/usr/share/X11/locale/el_GR.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/el_GR.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/el_GR.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/el_GR.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/el_GR.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/en_US.UTF-8/Compose 		 ./z/usr/share/X11/locale/en_US.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/en_US.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/en_US.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/en_US.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/en_US.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/fi_FI.UTF-8/Compose 		 ./z/usr/share/X11/locale/fi_FI.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/fi_FI.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/fi_FI.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/fi_FI.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/fi_FI.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/georgian-academy/Compose 		 ./z/usr/share/X11/locale/georgian-academy/Compose
+FILE 664 - - z/usr/share/X11/locale/georgian-academy/XI18N_OBJS 		 ./z/usr/share/X11/locale/georgian-academy/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/georgian-academy/XLC_LOCALE 		 ./z/usr/share/X11/locale/georgian-academy/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/georgian-ps/Compose 		 ./z/usr/share/X11/locale/georgian-ps/Compose
+FILE 664 - - z/usr/share/X11/locale/georgian-ps/XI18N_OBJS 		 ./z/usr/share/X11/locale/georgian-ps/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/georgian-ps/XLC_LOCALE 		 ./z/usr/share/X11/locale/georgian-ps/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ibm-cp1133/Compose 		 ./z/usr/share/X11/locale/ibm-cp1133/Compose
+FILE 664 - - z/usr/share/X11/locale/ibm-cp1133/XI18N_OBJS 		 ./z/usr/share/X11/locale/ibm-cp1133/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ibm-cp1133/XLC_LOCALE 		 ./z/usr/share/X11/locale/ibm-cp1133/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iscii-dev/Compose 		 ./z/usr/share/X11/locale/iscii-dev/Compose
+FILE 664 - - z/usr/share/X11/locale/iscii-dev/XI18N_OBJS 		 ./z/usr/share/X11/locale/iscii-dev/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iscii-dev/XLC_LOCALE 		 ./z/usr/share/X11/locale/iscii-dev/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/isiri-3342/Compose 		 ./z/usr/share/X11/locale/isiri-3342/Compose
+FILE 664 - - z/usr/share/X11/locale/isiri-3342/XI18N_OBJS 		 ./z/usr/share/X11/locale/isiri-3342/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/isiri-3342/XLC_LOCALE 		 ./z/usr/share/X11/locale/isiri-3342/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-1/Compose 		 ./z/usr/share/X11/locale/iso8859-1/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-1/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-1/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-1/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-1/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-10/Compose 		 ./z/usr/share/X11/locale/iso8859-10/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-10/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-10/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-10/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-10/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-11/Compose 		 ./z/usr/share/X11/locale/iso8859-11/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-11/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-11/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-11/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-11/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-13/Compose 		 ./z/usr/share/X11/locale/iso8859-13/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-13/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-13/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-13/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-13/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-14/Compose 		 ./z/usr/share/X11/locale/iso8859-14/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-14/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-14/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-14/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-14/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-15/Compose 		 ./z/usr/share/X11/locale/iso8859-15/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-15/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-15/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-15/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-15/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-2/Compose 		 ./z/usr/share/X11/locale/iso8859-2/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-2/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-2/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-2/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-2/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-3/Compose 		 ./z/usr/share/X11/locale/iso8859-3/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-3/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-3/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-3/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-3/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-4/Compose 		 ./z/usr/share/X11/locale/iso8859-4/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-4/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-4/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-4/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-4/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-5/Compose 		 ./z/usr/share/X11/locale/iso8859-5/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-5/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-5/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-5/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-5/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-6/Compose 		 ./z/usr/share/X11/locale/iso8859-6/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-6/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-6/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-6/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-6/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-7/Compose 		 ./z/usr/share/X11/locale/iso8859-7/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-7/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-7/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-7/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-7/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-8/Compose 		 ./z/usr/share/X11/locale/iso8859-8/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-9/Compose 		 ./z/usr/share/X11/locale/iso8859-9/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-9/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-9/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-9/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-9/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/iso8859-9e/Compose 		 ./z/usr/share/X11/locale/iso8859-9e/Compose
+FILE 664 - - z/usr/share/X11/locale/iso8859-9e/XI18N_OBJS 		 ./z/usr/share/X11/locale/iso8859-9e/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/iso8859-9e/XLC_LOCALE 		 ./z/usr/share/X11/locale/iso8859-9e/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ja/Compose 		 ./z/usr/share/X11/locale/ja/Compose
+FILE 664 - - z/usr/share/X11/locale/ja/XI18N_OBJS 		 ./z/usr/share/X11/locale/ja/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ja/XLC_LOCALE 		 ./z/usr/share/X11/locale/ja/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ja.JIS/Compose 		 ./z/usr/share/X11/locale/ja.JIS/Compose
+FILE 664 - - z/usr/share/X11/locale/ja.JIS/XI18N_OBJS 		 ./z/usr/share/X11/locale/ja.JIS/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ja.JIS/XLC_LOCALE 		 ./z/usr/share/X11/locale/ja.JIS/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ja.SJIS/Compose 		 ./z/usr/share/X11/locale/ja.SJIS/Compose
+FILE 664 - - z/usr/share/X11/locale/ja.SJIS/XI18N_OBJS 		 ./z/usr/share/X11/locale/ja.SJIS/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ja.SJIS/XLC_LOCALE 		 ./z/usr/share/X11/locale/ja.SJIS/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ja_JP.UTF-8/Compose 		 ./z/usr/share/X11/locale/ja_JP.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/ja_JP.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/ja_JP.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ja_JP.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/ja_JP.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/km_KH.UTF-8/Compose 		 ./z/usr/share/X11/locale/km_KH.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/km_KH.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/km_KH.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/km_KH.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/km_KH.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ko/Compose 		 ./z/usr/share/X11/locale/ko/Compose
+FILE 664 - - z/usr/share/X11/locale/ko/XI18N_OBJS 		 ./z/usr/share/X11/locale/ko/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ko/XLC_LOCALE 		 ./z/usr/share/X11/locale/ko/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ko_KR.UTF-8/Compose 		 ./z/usr/share/X11/locale/ko_KR.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/ko_KR.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/ko_KR.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ko_KR.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/ko_KR.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/koi8-c/Compose 		 ./z/usr/share/X11/locale/koi8-c/Compose
+FILE 664 - - z/usr/share/X11/locale/koi8-c/XI18N_OBJS 		 ./z/usr/share/X11/locale/koi8-c/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/koi8-c/XLC_LOCALE 		 ./z/usr/share/X11/locale/koi8-c/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/koi8-r/Compose 		 ./z/usr/share/X11/locale/koi8-r/Compose
+FILE 664 - - z/usr/share/X11/locale/koi8-r/XI18N_OBJS 		 ./z/usr/share/X11/locale/koi8-r/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/koi8-r/XLC_LOCALE 		 ./z/usr/share/X11/locale/koi8-r/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/koi8-u/Compose 		 ./z/usr/share/X11/locale/koi8-u/Compose
+FILE 664 - - z/usr/share/X11/locale/koi8-u/XI18N_OBJS 		 ./z/usr/share/X11/locale/koi8-u/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/koi8-u/XLC_LOCALE 		 ./z/usr/share/X11/locale/koi8-u/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/locale.alias 		 ./z/usr/share/X11/locale/locale.alias
+FILE 664 - - z/usr/share/X11/locale/locale.dir 		 ./z/usr/share/X11/locale/locale.dir
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1251/Compose 		 ./z/usr/share/X11/locale/microsoft-cp1251/Compose
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1251/XI18N_OBJS 		 ./z/usr/share/X11/locale/microsoft-cp1251/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1251/XLC_LOCALE 		 ./z/usr/share/X11/locale/microsoft-cp1251/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1255/Compose 		 ./z/usr/share/X11/locale/microsoft-cp1255/Compose
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1255/XI18N_OBJS 		 ./z/usr/share/X11/locale/microsoft-cp1255/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1255/XLC_LOCALE 		 ./z/usr/share/X11/locale/microsoft-cp1255/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1256/Compose 		 ./z/usr/share/X11/locale/microsoft-cp1256/Compose
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1256/XI18N_OBJS 		 ./z/usr/share/X11/locale/microsoft-cp1256/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/microsoft-cp1256/XLC_LOCALE 		 ./z/usr/share/X11/locale/microsoft-cp1256/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/mulelao-1/Compose 		 ./z/usr/share/X11/locale/mulelao-1/Compose
+FILE 664 - - z/usr/share/X11/locale/mulelao-1/XI18N_OBJS 		 ./z/usr/share/X11/locale/mulelao-1/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/mulelao-1/XLC_LOCALE 		 ./z/usr/share/X11/locale/mulelao-1/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/nokhchi-1/Compose 		 ./z/usr/share/X11/locale/nokhchi-1/Compose
+FILE 664 - - z/usr/share/X11/locale/nokhchi-1/XI18N_OBJS 		 ./z/usr/share/X11/locale/nokhchi-1/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/nokhchi-1/XLC_LOCALE 		 ./z/usr/share/X11/locale/nokhchi-1/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/pt_BR.UTF-8/Compose 		 ./z/usr/share/X11/locale/pt_BR.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/pt_BR.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/pt_BR.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/pt_BR.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/pt_BR.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/ru_RU.UTF-8/Compose 		 ./z/usr/share/X11/locale/ru_RU.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/ru_RU.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/ru_RU.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/ru_RU.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/ru_RU.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/sr_CS.UTF-8/Compose 		 ./z/usr/share/X11/locale/sr_CS.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/sr_CS.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/sr_CS.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/sr_CS.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/sr_CS.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/tatar-cyr/Compose 		 ./z/usr/share/X11/locale/tatar-cyr/Compose
+FILE 664 - - z/usr/share/X11/locale/tatar-cyr/XI18N_OBJS 		 ./z/usr/share/X11/locale/tatar-cyr/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/tatar-cyr/XLC_LOCALE 		 ./z/usr/share/X11/locale/tatar-cyr/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/th_TH/Compose 		 ./z/usr/share/X11/locale/th_TH/Compose
+FILE 664 - - z/usr/share/X11/locale/th_TH/XI18N_OBJS 		 ./z/usr/share/X11/locale/th_TH/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/th_TH/XLC_LOCALE 		 ./z/usr/share/X11/locale/th_TH/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/th_TH.UTF-8/Compose 		 ./z/usr/share/X11/locale/th_TH.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/th_TH.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/th_TH.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/th_TH.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/th_TH.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/tscii-0/Compose 		 ./z/usr/share/X11/locale/tscii-0/Compose
+FILE 664 - - z/usr/share/X11/locale/tscii-0/XI18N_OBJS 		 ./z/usr/share/X11/locale/tscii-0/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/tscii-0/XLC_LOCALE 		 ./z/usr/share/X11/locale/tscii-0/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/vi_VN.tcvn/Compose 		 ./z/usr/share/X11/locale/vi_VN.tcvn/Compose
+FILE 664 - - z/usr/share/X11/locale/vi_VN.tcvn/XI18N_OBJS 		 ./z/usr/share/X11/locale/vi_VN.tcvn/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/vi_VN.tcvn/XLC_LOCALE 		 ./z/usr/share/X11/locale/vi_VN.tcvn/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/vi_VN.viscii/Compose 		 ./z/usr/share/X11/locale/vi_VN.viscii/Compose
+FILE 664 - - z/usr/share/X11/locale/vi_VN.viscii/XI18N_OBJS 		 ./z/usr/share/X11/locale/vi_VN.viscii/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/vi_VN.viscii/XLC_LOCALE 		 ./z/usr/share/X11/locale/vi_VN.viscii/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_CN/Compose 		 ./z/usr/share/X11/locale/zh_CN/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_CN/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_CN/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_CN/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_CN/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_CN.UTF-8/Compose 		 ./z/usr/share/X11/locale/zh_CN.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_CN.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_CN.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_CN.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_CN.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_CN.gb18030/Compose 		 ./z/usr/share/X11/locale/zh_CN.gb18030/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_CN.gb18030/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_CN.gb18030/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_CN.gb18030/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_CN.gb18030/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_CN.gbk/Compose 		 ./z/usr/share/X11/locale/zh_CN.gbk/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_CN.gbk/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_CN.gbk/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_CN.gbk/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_CN.gbk/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_HK.UTF-8/Compose 		 ./z/usr/share/X11/locale/zh_HK.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_HK.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_HK.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_HK.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_HK.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_HK.big5/Compose 		 ./z/usr/share/X11/locale/zh_HK.big5/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_HK.big5/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_HK.big5/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_HK.big5/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_HK.big5/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_HK.big5hkscs/Compose 		 ./z/usr/share/X11/locale/zh_HK.big5hkscs/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_HK.big5hkscs/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_HK.big5hkscs/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_HK.big5hkscs/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_HK.big5hkscs/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_TW/Compose 		 ./z/usr/share/X11/locale/zh_TW/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_TW/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_TW/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_TW/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_TW/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_TW.UTF-8/Compose 		 ./z/usr/share/X11/locale/zh_TW.UTF-8/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_TW.UTF-8/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_TW.UTF-8/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_TW.UTF-8/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_TW.UTF-8/XLC_LOCALE
+FILE 664 - - z/usr/share/X11/locale/zh_TW.big5/Compose 		 ./z/usr/share/X11/locale/zh_TW.big5/Compose
+FILE 664 - - z/usr/share/X11/locale/zh_TW.big5/XI18N_OBJS 		 ./z/usr/share/X11/locale/zh_TW.big5/XI18N_OBJS
+FILE 664 - - z/usr/share/X11/locale/zh_TW.big5/XLC_LOCALE 		 ./z/usr/share/X11/locale/zh_TW.big5/XLC_LOCALE
+FILE 664 - - z/usr/share/t1lib/t1lib.config 		 ./z/usr/share/t1lib/t1lib.config
+FILE 775 - - z/usr/sbin/t1libconfig 		 ./z/usr/sbin/t1libconfig
+FILE 664 - - z/etc/php.d/gd.ini 		 ./z/etc/php.d/gd.ini
+SYMB x x x z/usr/lib64/libjpeg.so.62 	 z/usr/lib64/libjpeg.so.62.1.0
+SYMB x x x z/usr/lib64/libpng15.so.15 	 z/usr/lib64/libpng15.so.15.13.0
+SYMB x x x z/usr/lib64/libX11-xcb.so.1 	 z/usr/lib64/libX11-xcb.so.1.0.0
+SYMB x x x z/usr/lib64/libX11.so.6 	 z/usr/lib64/libX11.so.6.3.0
+SYMB x x x z/usr/lib64/libXau.so.6 	 z/usr/lib64/libXau.so.6.0.0
+SYMB x x x z/usr/lib64/libxcb-composite.so.0 	 z/usr/lib64/libxcb-composite.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-damage.so.0 	 z/usr/lib64/libxcb-damage.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-dpms.so.0 	 z/usr/lib64/libxcb-dpms.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-dri2.so.0 	 z/usr/lib64/libxcb-dri2.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-dri3.so.0 	 z/usr/lib64/libxcb-dri3.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-glx.so.0 	 z/usr/lib64/libxcb-glx.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-present.so.0 	 z/usr/lib64/libxcb-present.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-randr.so.0 	 z/usr/lib64/libxcb-randr.so.0.1.0
+SYMB x x x z/usr/lib64/libxcb-record.so.0 	 z/usr/lib64/libxcb-record.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-render.so.0 	 z/usr/lib64/libxcb-render.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-res.so.0 	 z/usr/lib64/libxcb-res.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-screensaver.so.0 	 z/usr/lib64/libxcb-screensaver.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-shape.so.0 	 z/usr/lib64/libxcb-shape.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-shm.so.0 	 z/usr/lib64/libxcb-shm.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-sync.so.1 	 z/usr/lib64/libxcb-sync.so.1.0.0
+SYMB x x x z/usr/lib64/libxcb-xevie.so.0 	 z/usr/lib64/libxcb-xevie.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-xf86dri.so.0 	 z/usr/lib64/libxcb-xf86dri.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-xfixes.so.0 	 z/usr/lib64/libxcb-xfixes.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-xinerama.so.0 	 z/usr/lib64/libxcb-xinerama.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-xinput.so.0 	 z/usr/lib64/libxcb-xinput.so.0.1.0
+SYMB x x x z/usr/lib64/libxcb-xkb.so.1 	 z/usr/lib64/libxcb-xkb.so.1.0.0
+SYMB x x x z/usr/lib64/libxcb-xselinux.so.0 	 z/usr/lib64/libxcb-xselinux.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-xtest.so.0 	 z/usr/lib64/libxcb-xtest.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-xv.so.0 	 z/usr/lib64/libxcb-xv.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb-xvmc.so.0 	 z/usr/lib64/libxcb-xvmc.so.0.0.0
+SYMB x x x z/usr/lib64/libxcb.so.1 	 z/usr/lib64/libxcb.so.1.1.0
+SYMB x x x z/usr/lib64/libXpm.so.4 	 z/usr/lib64/libXpm.so.4.11.0
+SYMB x x x z/usr/lib64/libt1.so.5 	 z/usr/lib64/libt1.so.5.1.2
+SYMB x x x z/usr/lib64/libt1x.so.5 	 z/usr/lib64/libt1x.so.5.1.2
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg perl-log4j 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart

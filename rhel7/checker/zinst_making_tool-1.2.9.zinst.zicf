@@ -1,0 +1,42 @@
+### Package infomation
+## OS type: rhel, ubuntu, osx, freebsd
+OS = rhel7
+PACKAGENAME = zinst_making_tool
+VERSION = 1.2.9
+AUTHORIZED = folimz@gmail.com
+DESCRIPTION = 'zinst package create & helps for make easily - update for default custodian modified' 
+CUSTODIAN = codepost-infra
+
+## Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 775
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)644 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+FILE - - - bin/dist_install 		 ./dist_install
+FILE - - - bin/zinst_creator 		 ./zinst_creator
+CONF - - - bin/pkg_gen.sh	 		 ./pkg_gen.sh
+FILE - - - bin/rpm2zinst	 		 ./rpm2zinst
+FILE - - - bin/package_listup 		 ./package_listup
+
+
+### ### If you need a some command excute while the package remove, you can activate as below option with the uninstall.sh file
+#ZINST activate-uninstall
+
+
+ZINST set mailing code-post.com
+ZINST set OS_type "OS"

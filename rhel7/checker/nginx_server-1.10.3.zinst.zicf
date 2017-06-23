@@ -1,0 +1,122 @@
+
+### Package infomation
+## OS type: rhel7 or rhel, ubuntu, osx, freebsd
+OS = rhel7
+PACKAGENAME = nginx_server
+VERSION = 1.10.3
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'nginx_server package'
+CUSTODIAN = codepost-infra
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 664 - - z/etc/logrotate.d/nginx 		 ./z/etc/logrotate.d/nginx
+FILE 664 - - z/etc/nginx/fastcgi.conf 		 ./z/etc/nginx/fastcgi.conf
+FILE 664 - - z/etc/nginx/fastcgi.conf.default 		 ./z/etc/nginx/fastcgi.conf.default
+FILE 664 - - z/etc/nginx/fastcgi_params 		 ./z/etc/nginx/fastcgi_params
+FILE 664 - - z/etc/nginx/fastcgi_params.default 		 ./z/etc/nginx/fastcgi_params.default
+FILE 664 - - z/etc/nginx/koi-utf 		 ./z/etc/nginx/koi-utf
+FILE 664 - - z/etc/nginx/koi-win 		 ./z/etc/nginx/koi-win
+FILE 664 - - z/etc/nginx/mime.types 		 ./z/etc/nginx/mime.types
+FILE 664 - - z/etc/nginx/mime.types.default 		 ./z/etc/nginx/mime.types.default
+FILE 664 - - z/etc/nginx/scgi_params 		 ./z/etc/nginx/scgi_params
+FILE 664 - - z/etc/nginx/scgi_params.default 		 ./z/etc/nginx/scgi_params.default
+FILE 664 - - z/etc/nginx/uwsgi_params 		 ./z/etc/nginx/uwsgi_params
+FILE 664 - - z/etc/nginx/uwsgi_params.default 		 ./z/etc/nginx/uwsgi_params.default
+FILE 664 - - z/etc/nginx/win-utf 		 ./z/etc/nginx/win-utf
+FILE 664 - - z/etc/nginx/nginx.conf.bak 		 ./z/etc/nginx/nginx.conf.bak
+FILE 664 - - z/etc/nginx/conf.d/.zinst 		 ./z/etc/nginx/conf.d/.zinst
+FILE 664 - - z/etc/nginx/nginx.conf 		 ./z/etc/nginx/nginx.conf
+FILE 775 - - z/usr/bin/nginx-upgrade 		 ./z/usr/bin/nginx-upgrade
+FILE 664 - - z/usr/lib/systemd/system/nginx.service 		 ./z/usr/lib/systemd/system/nginx.service
+FILE 775 - - z/usr/lib64/nginx/modules/ngx_http_geoip_module.so 		 ./z/usr/lib64/nginx/modules/ngx_http_geoip_module.so
+FILE 775 - - z/usr/lib64/nginx/modules/ngx_http_image_filter_module.so 		 ./z/usr/lib64/nginx/modules/ngx_http_image_filter_module.so
+FILE 775 - - z/usr/lib64/nginx/modules/ngx_http_perl_module.so 		 ./z/usr/lib64/nginx/modules/ngx_http_perl_module.so
+FILE 775 - - z/usr/lib64/nginx/modules/ngx_http_xslt_filter_module.so 		 ./z/usr/lib64/nginx/modules/ngx_http_xslt_filter_module.so
+FILE 775 - - z/usr/lib64/nginx/modules/ngx_mail_module.so 		 ./z/usr/lib64/nginx/modules/ngx_mail_module.so
+FILE 775 - - z/usr/lib64/nginx/modules/ngx_stream_module.so 		 ./z/usr/lib64/nginx/modules/ngx_stream_module.so
+FILE 775 - - z/usr/sbin/nginx 		 ./z/usr/sbin/nginx
+FILE 664 - - z/usr/share/doc/nginx-1.10.2/CHANGES 		 ./z/usr/share/doc/nginx-1.10.2/CHANGES
+FILE 664 - - z/usr/share/doc/nginx-1.10.2/README 		 ./z/usr/share/doc/nginx-1.10.2/README
+FILE 664 - - z/usr/share/doc/nginx-1.10.2/README.dynamic 		 ./z/usr/share/doc/nginx-1.10.2/README.dynamic
+FILE 664 - - z/usr/share/doc/nginx-1.10.2/UPGRADE-NOTES-1.6-to-1.10 		 ./z/usr/share/doc/nginx-1.10.2/UPGRADE-NOTES-1.6-to-1.10
+FILE 664 - - z/usr/share/licenses/nginx-1.10.2/LICENSE 		 ./z/usr/share/licenses/nginx-1.10.2/LICENSE
+FILE 464 - - z/usr/share/man/man3/nginx.3pm.gz 		 ./z/usr/share/man/man3/nginx.3pm.gz
+FILE 664 - - z/usr/share/man/man8/nginx-upgrade.8.gz 		 ./z/usr/share/man/man8/nginx-upgrade.8.gz
+FILE 664 - - z/usr/share/man/man8/nginx.8.gz 		 ./z/usr/share/man/man8/nginx.8.gz
+FILE 664 - - z/usr/share/nginx/html/404.html 		 ./z/usr/share/nginx/html/404.html
+FILE 664 - - z/usr/share/nginx/html/50x.html 		 ./z/usr/share/nginx/html/50x.html
+FILE 664 - - z/usr/share/nginx/html/index.html 		 ./z/usr/share/nginx/html/index.html
+FILE 664 - - z/usr/share/nginx/html/nginx-logo.png 		 ./z/usr/share/nginx/html/nginx-logo.png
+FILE 664 - - z/usr/share/nginx/html/poweredby.png 		 ./z/usr/share/nginx/html/poweredby.png
+FILE 664 - - z/usr/share/vim/vimfiles/ftdetect/nginx.vim 		 ./z/usr/share/vim/vimfiles/ftdetect/nginx.vim
+FILE 664 - - z/usr/share/vim/vimfiles/indent/nginx.vim 		 ./z/usr/share/vim/vimfiles/indent/nginx.vim
+FILE 664 - - z/usr/share/vim/vimfiles/syntax/nginx.vim 		 ./z/usr/share/vim/vimfiles/syntax/nginx.vim
+FILE 664 - - z/var/log/nginx/access.log 		 ./z/var/log/nginx/access.log
+FILE 664 - - z/var/log/nginx/error.log 		 ./z/var/log/nginx/error.log
+FILE 664 - - z/var/log/nginx/access.log-20170526.gz 		 ./z/var/log/nginx/access.log-20170526.gz
+FILE 664 - - z/var/log/nginx/error.log-20170526.gz 		 ./z/var/log/nginx/error.log-20170526.gz
+FILE 664 - - z/var/pkgs/nginx-all-modules-1.10.2-1.el7.noarch.rpm 		 ./z/var/pkgs/nginx-all-modules-1.10.2-1.el7.noarch.rpm
+FILE 664 - - z/var/pkgs/nginx-filesystem-1.10.2-1.el7.noarch.rpm 		 ./z/var/pkgs/nginx-filesystem-1.10.2-1.el7.noarch.rpm
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+#ZINST requires pkg nginx_server
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM cd /data/z/var/pkgs/ ;rpm -Uvh nginx-all-modules*.rpm nginx-filesystem*.rpm nginx-mod-http-geoip*.rpm nginx-mod-http-image-filter*.rpm nginx-mod-http-perl*.rpm nginx-mod-http-xslt-filter*.rpm nginx-mod-mail*.rpm nginx-mod-stream*.rpm
+COMM yum -y install gperftools-libs libunwind
+COMM useradd -s /sbin/nologin -c "Nginx Server" -d /var/lib/nginx -u 995 nginx
+COMM mkdir -p /var/lib/nginx/tmp/client_body
+COMM cd /var/lib/nginx/tmp/
+COMM mkdir fastcgi proxy scgi uwsgi
+COMM chown -R nginx.nginx /var/lib/nginx/
+COMM cd /data/z/var/pkgs/ ;rpm --Uvh *.rpm
+COMM systemctl daemon-reload
+COMM systemctl enable nginx
+COMM systemctl restart nginx
+COMM systemctl status nginx
+

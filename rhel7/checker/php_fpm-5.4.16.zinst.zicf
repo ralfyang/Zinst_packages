@@ -1,0 +1,76 @@
+
+### Package infomation
+## OS type: rhel7 or rhel, ubuntu, osx, freebsd
+OS = rhel7
+PACKAGENAME = php_fpm
+VERSION = 5.4.16
+AUTHORIZED = peter@code-post.com
+DESCRIPTION = 'php FPM package for php'
+CUSTODIAN = codepost-infra
+
+### Global setting of the files
+OWNER = root
+GROUP = wheel
+PERM = 664
+
+
+### Regular Syntax
+### Based root Directory = /data/
+## --------------------------------------------------------------------------------------------------------------------
+## Option type | File Permission | File Owner | File Group | Destination Dir | Source Dir | Conf option(CONF type only)
+## --------------------------------------------------------------------------------------------------------------------
+##
+## Option type = FILE - Sorce file, CONF - Configuration file, SYMB - Symbolic link, CRON - Crontab
+## File permission =  ex)664 or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File Owner =  ex)krystal or root or "-" ( "-" is default, it will be accept by global setting if you used it)
+## File group =  ex)krystal or wheel or "-" ( "-" is default, it will be accept by global setting if you used it)
+## Destinatin Dir = Target directory for the file copy or symbolic link
+## Source Dir = Source directory for the file copy or symbolic link
+## Conf option - ex) expand-overwite or expand-nomerge, Optional: file overwrite or not(CONF only), default = expand-overwrite
+
+#CONF 664 - -			tmp/conf/httpd_gsshp.conf		./conf/httpd_gsshop.conf
+#FILE - - -				tmp/logrotation.sh			./logrotation.sh
+#FILE - nobody nobody	tmp/www/index.html			./html/index.html
+#SYMB x x x				tmp/www/top.html			tmp/www/index.html
+#CRON x - x				* * * * *					tmp/logrotation.sh
+
+FILE 664 - - z/etc/logrotate.d/php-fpm 		 ./z/etc/logrotate.d/php-fpm
+FILE 664 - - z/etc/php-fpm.conf 		 ./z/etc/php-fpm.conf
+FILE 664 - - z/etc/php-fpm.d/www.conf 		 ./z/etc/php-fpm.d/www.conf
+FILE 664 - - z/etc/sysconfig/php-fpm 		 ./z/etc/sysconfig/php-fpm
+FILE 664 - - z/var/run/php-fpm/php-fpm.pid 		 ./z/var/run/php-fpm/php-fpm.pid
+FILE 664 - - z/usr/lib/systemd/system/php-fpm.service 		 ./z/usr/lib/systemd/system/php-fpm.service
+FILE 664 - - z/usr/lib/tmpfiles.d/php-fpm.conf 		 ./z/usr/lib/tmpfiles.d/php-fpm.conf
+FILE 775 - - z/usr/sbin/php-fpm 		 ./z/usr/sbin/php-fpm
+FILE 664 - - z/usr/share/doc/php-fpm-5.4.16/fpm_LICENSE 		 ./z/usr/share/doc/php-fpm-5.4.16/fpm_LICENSE
+FILE 664 - - z/usr/share/doc/php-fpm-5.4.16/php-fpm.conf.default 		 ./z/usr/share/doc/php-fpm-5.4.16/php-fpm.conf.default
+FILE 664 - - z/usr/share/fpm/status.html 		 ./z/usr/share/fpm/status.html
+FILE 664 - - z/usr/share/man/man8/php-fpm.8.gz 		 ./z/usr/share/man/man8/php-fpm.8.gz
+FILE 620 - - z/var/log/php-fpm/error.log 		 ./z/var/log/php-fpm/error.log
+FILE 664 - - z/var/log/php-fpm/www-error.log 		 ./z/var/log/php-fpm/www-error.log
+
+### Zinst detail command
+### requires pkg = You can add an option to this line about of the dependency package for this work(install or upgrade).
+### ex) ZINST requires pkg [Packagename] [Lowest version] [latest version]
+
+### set = You can control the configuration in the CONF file by this options
+### ex) ZINST set [Variables name] [Value]
+#ZINST set MaxClient 64
+
+### post-activate = You can contral the daemon after the package install as below
+### ex) ZINST post-activate [Target executable file and directory] [Command: stop, start, restart]
+#
+
+#ZINST post-activate /data/tomcat/bin/tomcat restart
+ZINST requires pkg php_server 
+
+
+### If you need a some command excute while the package remove, you can activate as below option with modify the ./uninstall.sh file
+#ZINST activate-uninstall
+
+
+### Extra command
+## COMM = simple command after the package installed. basedir is the package dir 
+## ex) 
+## COMM /data/zinst/foo.bar/install.sh
+#COMM service network restart
