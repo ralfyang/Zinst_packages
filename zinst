@@ -18,6 +18,8 @@ ZinstSourceDir="$ZinstBaseRoot/vault/Source"
 #
 ### ------ Config Area ----- 19th line here
 
+
+ssh_port="22"
 ### Exception for Docker user
 ### Docker user can changes the hosts-file to the other hosts-file  as below solution
 ## RUN cp /etc/hosts /etc/hostsa
@@ -26,7 +28,7 @@ ZinstSourceDir="$ZinstBaseRoot/vault/Source"
 ## ENV LD_LIBRARY_PATH /lib-override
 
 ## Base information
-VERSION=7.0.1
+VERSION=7.0.4
 zinst_group="wheel"
 sudo_base="sudo"
 zinst_log="/dev/null"
@@ -148,10 +150,10 @@ ComPkg=($@)
 Check_command_install(){
 
 OS_name=$1
-## chech which command & install
-check_which=`which 2> /tmp/chk_req.out`
 
-        if [[ `(grep "not found" /tmp/chk_req.out )` != ""  ]] ; then
+## chech which command & install
+which 2> /tmp/chk_req.out
+        if [[ $(grep "not found" /tmp/chk_req.out ) != ""  ]] ; then
 		case $OS_name in
 			RHEL*)
 				$sudo_base yum install which -y ;;
@@ -237,19 +239,16 @@ CheckSaveDir=`ls $ZinstBaseRoot/z 2> $zinst_log |grep save`
 		$sudo_base mkdir -p $Save_Dir
 		$sudo_base chgrp $zinst_group $Save_Dir
 	fi
-	
-PackageAll=$@
-#########################################################################################
-############################ zinst parsing engine start #################################
 
-## Check for the Multi-host password automation
-Check_Multi_pass=`echo "$PackageAll" |grep " \-pass"`
-	if [[ $Check_Multi_pass != "" ]]; then
-		Check_Multi_pw="OK"
-		PackageAll=`echo "$PackageAll" | sed -e 's/ -pass/ /g'` 
-	fi
+Log_History_dir(){
+        History_LOG="$ZinstBaseRoot/vault/Source/.zinst_history_log"
+}
+Log_History_dir
 
 Pass_Checker() {
+
+## Test variable
+
  if [[ $Check_Multi_pw != "OK" ]]; then
                 :
         else
@@ -327,6 +326,24 @@ rm -f $Print_list
 
 }
 
+## Parsing!!!   importatant area
+Parser_engine(){
+PackageAll=$@
+#########################################################################################
+############################ zinst parsing engine start #################################
+
+## Check for the Multi-host password automation
+Check_Multi_pass=`echo "$PackageAll" |grep " \-pass"`
+	if [[ $Check_Multi_pass != "" ]]; then
+		Check_Multi_pw="OK"
+		PackageAll=`echo "$PackageAll" | sed -e 's/ -pass/ /g'` 
+	fi
+
+Check_ssh_port=`echo "$PackageAll" |egrep " \-p [[:digit:]]* "`
+	if [[ $Check_ssh_port != "" ]]; then
+		ssh_port=`echo $PackageAll | awk -F ' -p ' '{print $2}'| awk  -F ' ' '{print $1}'`
+		PackageAll=`echo "$PackageAll" | sed -e 's/ \-p [[:digit:]]* / /g'` 
+	fi
 
 ### Parsing for Host list
 HostCheck=`echo "$PackageAll" |grep " \-h \| \-H "`
@@ -487,12 +504,6 @@ ZOptions=${PackageArryOption[@]}
 Zset=${PackageArrySet[@]}
 ZHosts=${HostChanged[@]}
 
-Log_History_dir(){
-        History_LOG="$ZinstBaseRoot/vault/Source/.zinst_history_log"
-}
-Log_History_dir
-
-
 ### Alias for existed fuction
 ProcessPkg=$ZPackages
 ProcessPkgNum=${#PackageArry[@]}
@@ -504,6 +515,17 @@ Allcommand="$CommandX $ZPackages $ZOptions $Zset"
 
 ############################  zinst parsing engine end ##################################
 #########################################################################################
+
+
+
+## Test Output only for TDD
+
+
+}
+PackageAll=$@
+Parser_engine $PackageAll
+
+
 ### History File reset for permission
 $sudo_base chmod 664 $History_LOG 2> $zinst_log
 $sudo_base chgrp $zinst_group $History_LOG 2> $zinst_log
@@ -587,7 +609,7 @@ Parse_Result=$@
 									echo " =============  $PartedSource File not exist ============="
 									exit 0;
 								fi
-							$Comm_sshpass scp $PartedSource $TartgetHost:$TargetDir	
+							$Comm_sshpass scp -P $ssh_port $PartedSource $TartgetHost:$TargetDir	
 							let Scount=Scount+1
 						done
 					let Hcount=Hcount+1
@@ -595,7 +617,7 @@ Parse_Result=$@
 					Command_p="> mcp"
 					SourceFull=(`echo "$Source"`)
 					IPaddr=`/sbin/ifconfig |grep " addr:" |grep Bcast |head -1 | awk '{print $2}'|awk  -F ':' '{print $2}'`
-					$Comm_sshpass ssh -oStrictHostKeyChecking=no $TartgetHost "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p - From $IPaddr:  ${SourceFull[@]} -> $TargetDir \" >> $History_LOG"
+					$Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no $TartgetHost "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p - From $IPaddr:  ${SourceFull[@]} -> $TargetDir \" >> $History_LOG"
 				done
 		else
 			echo "$ROWW"
@@ -617,13 +639,13 @@ Parse_Result=$@
 					echo ""
 					echo "[:: $TartgetHost ::]"		
 					Scount=1
-					$Comm_sshpass scp $ZPackages $TartgetHost:~/ 2> $zinst_log
+					$Comm_sshpass scp -P $ssh_port $ZPackages $TartgetHost:~/ 2> $zinst_log
 					let Hcount=Hcount+1
 					Localhost=$HOSTNAME
 					Command_p="> Sent a sync file"
 					SourceFull=(`echo "$Source"`)
 					IPaddr=`/sbin/ifconfig |grep " addr:" |grep Bcast |head -1 | awk '{print $2}'|awk  -F ':' '{print $2}'`
-					$Comm_sshpass ssh -oStrictHostKeyChecking=no $TartgetHost "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p - From $IPaddr:  $SourceFull -> $TargetDir \" >> $History_LOG"
+					$Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no $TartgetHost "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p - From $IPaddr:  $SourceFull -> $TargetDir \" >> $History_LOG"
 				done
 		fi
 	fi
@@ -661,7 +683,7 @@ Parse_Result=$@
                     echo ""
                     echo "[:: $TartgetHost  ::]"        
 					TartgetHost=`echo $ZHosts | awk '{print $'$Hcount'}'`
-					$Comm_sshpass ssh -T -oStrictHostKeyChecking=no $UserID@$TartgetHost <<EOF1
+					$Comm_sshpass ssh -p $ssh_port -T -oStrictHostKeyChecking=no $UserID@$TartgetHost <<EOF1
 						if [ ! -e "~/.ssh" ]; then
 							mkdir ~/.ssh  2> /dev/null
 						fi
@@ -673,7 +695,7 @@ EOF1
 					Command_p="> Key Deploy"
 					SourceFull=(`echo "$Source"`)
 					IPaddr=`/sbin/ifconfig |grep " addr:" |grep Bcast |head -1 | awk '{print $2}'|awk  -F ':' '{print $2}'`
-					$Comm_sshpass ssh -oStrictHostKeyChecking=no $TartgetHost "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p - From $IPaddr:  ${SourceFull[@]} -> $TargetDir \" >> $History_LOG"
+					$Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no $TartgetHost "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p - From $IPaddr:  ${SourceFull[@]} -> $TargetDir \" >> $History_LOG"
 				done
 		else
 			echo "$ROWW"
@@ -698,7 +720,7 @@ RotaBeacon=0
 			do
 				HostF=$WhoStamp@${HostChanged[$Count]}
 				## ssh connection check
-				$Comm_sshpass ssh -oStrictHostKeyChecking=no $HostF "grep ^VERSION /usr/bin/zinst" > $ZinstBaseRoot/vault/Source/ssh_conn_test.log 2>&1
+				$Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no $HostF "grep ^VERSION /usr/bin/zinst" > $ZinstBaseRoot/vault/Source/ssh_conn_test.log 2>&1
 				CheckConnection=`$sudo_base cat $ZinstBaseRoot/vault/Source/ssh_conn_test.log |grep "No route\|not known\|Connection refused"`
 					if [[ $CheckConnection != "" ]]
 					then
@@ -715,10 +737,10 @@ RotaBeacon=0
 								zinst_checkLoc=`$sudo_base cat /usr/bin/zinst 2> $zinst_log |grep ^VERSION | sed -e 's/VERSION=//g'`
 									if [[ $(version_redefine "$zinst_checkDes") < $(version_redefine "$zinst_checkLoc") ]];
 									then
-										$Comm_sshpass scp /usr/bin/zinst $HostF:/usr/bin
+										$Comm_sshpass scp -P $ssh_port /usr/bin/zinst $HostF:/usr/bin
 									fi
 							else
-								$Comm_sshpass scp /usr/bin/zinst $HostF:/usr/bin/ 2> $zinst_log
+								$Comm_sshpass scp -P $ssh_port /usr/bin/zinst $HostF:/usr/bin/ 2> $zinst_log
 							fi
 
 						#### Check SSH command ########
@@ -731,7 +753,7 @@ RotaBeacon=0
 						CheckDesDIR=`$sudo_base grep " cannot access " $ZinstBaseRoot/vault/Source/ssh_conn_test.log`
 							if [[ $CommandX != "" ]]
 							then		
-	        						$Comm_sshpass ssh -oStrictHostKeyChecking=no -t $HostF "$sudo_base mkdir -p $ZinstBaseRoot/vault/Source;sudo chgrp -R $zinst_group $ZinstBaseRoot/vault" 2> $zinst_log
+	        						$Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no -t $HostF "$sudo_base mkdir -p $ZinstBaseRoot/vault/Source;sudo chgrp -R $zinst_group $ZinstBaseRoot/vault" 2> $zinst_log
 							fi
 
         					echo ""
@@ -752,7 +774,7 @@ RotaBeacon=0
 
 									if [[ $LocalPkg_chk != "" ]]
 									then
-										$Comm_sshpass scp $LocalRealPkg $HostF:$ZinstSourceDir/
+										$Comm_sshpass scp -P $ssh_port $LocalRealPkg $HostF:$ZinstSourceDir/
 									fi
 
 								let CountSub=CountSub+1
@@ -770,7 +792,7 @@ RotaBeacon=0
 						MultiCheck=`echo $ZOptions |grep -e "-multi"`
 							if [[ $MultiCheck = "" ]]
 							then
-								$Comm_sshpass ssh -oStrictHostKeyChecking=no -t $HostF "echo [ :: $HostF :: ];cd $ZinstSourceDir; source /etc/profile ;$szinst $RotaCommand" 2> $zinst_log
+								$Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no -t $HostF "echo [ :: $HostF :: ];cd $ZinstSourceDir; source /etc/profile ;$szinst $RotaCommand" 2> $zinst_log
 								IPaddr=`/sbin/ifconfig |grep " addr:" |grep Bcast |head -1 | awk '{print $2}'|awk  -F ':' '{print $2}'`
 									if [[ $szinst = "" ]];then
 										DestStamp="> SSH -"
@@ -778,9 +800,9 @@ RotaBeacon=0
 										DestStamp=" L"
 									fi
 
- 							    $Comm_sshpass ssh -oStrictHostKeyChecking=no -t $HostF "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $DestStamp From $IPaddr: $szinst $RotaCommand\" >> $History_LOG" 
+ 							    $Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no -t $HostF "echo -e \"`date +%Y.%m.%d_%T`\t $WhoStamps : $DestStamp From $IPaddr: $szinst $RotaCommand\" >> $History_LOG" 
 							else
-								$Comm_sshpass ssh -oStrictHostKeyChecking=no -t $HostF "echo [ :: $HostF :: ];cd $ZinstSourceDir; source /etc/profile ;$szinst $RotaCommand" & 
+								$Comm_sshpass ssh -p $ssh_port -oStrictHostKeyChecking=no -t $HostF "echo [ :: $HostF :: ];cd $ZinstSourceDir; source /etc/profile ;$szinst $RotaCommand" & 
 							fi
 
 					fi
@@ -993,6 +1015,8 @@ StableOptionCheck=`echo "${PackageArryOption[@]}" |grep "\-stable"`
 
 Save_Restore_file(){
 ### Save a restore file 
+
+
 Save_File_num=`ls $Save_Dir/ |egrep ^$Save_Filename | awk '{print NR}' |tail -1`
     if [[ $Save_File_num = ""  ]];
     then
@@ -1549,7 +1573,12 @@ CheckSetNum=${#CheckSetArry[@]}
 }
 
 Pkg_Remove(){
+
+
+
+
 ProcessPkg=($ZPackages)
+ProcessPkgNum=${#ProcessPkg[@]}
 	if [[ $ZPackages = "" ]]
 	then
 		echo "=============== Please insert a package name as you need to see ============"
@@ -1778,30 +1807,32 @@ echo ""| sort $Sort_version 1>&2 > /tmp/sort_check.out
 
 Cront_Command(){
 
+
 Command_p="+ Crontab - Edit"
 	case "$2" in
 	-l)
 		crontab -l ;;
 	-e)
-		crontab -e 
-		echo -e "`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p" >> $History_LOG ;;
+		crontab -e
+		echo -e "$(date +%Y.%m.%d_%T)\t $WhoStamps : $Command_p" >> $History_LOG ;;
 	-u)
-	case "$4" in
-		-l)
-			$sudo_base crontab -u $ZPackages -l ;;
-		-e)
-			$sudo_base crontab -u $ZPackages
-			echo -e "`date +%Y.%m.%d_%T`\t $WhoStamps : $Command_p -u $ZPackages " >> $History_LOG ;;
-		*)
-			echo " - Please insert an option as you need to change correctly - "
-			echo " ex) 'zinst crontab -e' to edit crontab"
-			echo " ex) 'zinst crontab -u root -l' to listing the crontab of the root user"
+		case "$4" in
+			 -l)
+				$sudo_base crontab -u $ZPackages -l ;;
+		        -e)
+				$sudo_base crontab -u $ZPackages
+				echo -e "$(date +%Y.%m.%d_%T)\t $WhoStamps : $Command_p -u $ZPackages " >> $History_LOG ;;
+		        *)
+				echo " - Please insert an option as you need to change correctly - "
+				echo " ex) 'zinst crontab -e' to edit crontab"
+				echo " ex) 'zinst crontab -u root -l' to listing the crontab of the root user"
+			;;
+		esac
 		;;
-	esac
-	;;
+
 	*)
 		echo " - Please insert an option as you need to change correctly - "
-		echo " ex) 'zinst crontab -e' to edit crontab"
+		echo " ex) 'zinst crontab -e' to edit crontab"	
 		echo " ex) 'zinst crontab -u root -l' to listing the crontab of the root user"
 	;;
 	esac
@@ -2057,6 +2088,7 @@ rm -f $Sorted_org_zsave $Sorted_tgt_zsave $tmp_results $remove_zsave_list $insta
 }
 
 Daemon_Control(){
+## Parsing!!!   importatant area
 
 Daemon_check_dir="$ZinstBaseRoot/vault/Source"
 
@@ -2073,11 +2105,18 @@ ColorDark="30"
 	while [[ $Counter -lt $ProcessPkgNum ]]
 	do
 		DaemonC=`echo "${ProcessPkg[$Counter]}"`
+			## Custom package check
+			if [[ -f "/etc/init.d/$DaemonC" ]];then
+				system_command=custome_ctl
+			fi
+
 			case $system_command in
 				systemctl)
-					systemCMD="systemctl $DaemonC $CommandX.service";;
+					systemCMD="systemctl $CommandX $DaemonC.service";;
 				service)
-					systemCMD="service $CommandX $DaemonC";;
+					systemCMD="service $DaemonC $CommandX";;
+				custome_ctl)
+					systemCMD="/etc/init.d/$DaemonC $CommandX";;
 				*)
 					echo " --- We are not support on this OS ---" 
 					exit 0;;
@@ -2304,6 +2343,7 @@ echo "--------------------------------------------------------------------------
 echo "		 history	[Number of Range] "
 echo "...................................................................................................... "
 echo "		 -pass		Option for Multi-host password automation"
+echo "		 -p [port]	Option for ssh port change as you need"
 echo "		 self-config	ip=x.x.x.x host=xxx.xxx.xxx dir=xxx"
 echo "		 self-update			 "
 echo "		 -version			 "
@@ -2415,6 +2455,7 @@ echo "		 history	[Number of Range] "
 echo "...................................................................................................... "
 echo " "
 echo "		 -pass					 Option for Multi-host password automation"
+echo "           -p [ssh port number of destination]	 Option for ssh port change as you need"
 echo "		 self-update			 "
 echo "		 self-config	ip=x.x.x.x host=xxx.xxx.xxx			 "
 echo "		 -version			 "
